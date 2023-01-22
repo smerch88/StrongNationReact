@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/144.80ad5111.chunk.js","mappings":"kJAQA,UARe,WACb,OACE,0BACE,yCAGL,C","sources":["pages/Donate.jsx"],"sourcesContent":["const Donate = () => {\n  return (\n    <div>\n      <h1>Donate page</h1>\n    </div>\n  );\n};\n\nexport default Donate;\n"],"names":[],"sourceRoot":""}

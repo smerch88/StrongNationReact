@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/790.0152884e.chunk.js","mappings":"kJAQA,UARc,WACZ,OACE,0BACE,wCAGL,C","sources":["pages/Admin.jsx"],"sourcesContent":["const Admin = () => {\n  return (\n    <div>\n      <h1>Admin page</h1>\n    </div>\n  );\n};\n\nexport default Admin;\n"],"names":[],"sourceRoot":""}
