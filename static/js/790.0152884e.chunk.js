@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkstrong_nation_react=self.webpackChunkstrong_nation_react||[]).push([[790],{790:function(n,e,t){t.r(e);var r=t(184);e.default=function(){return(0,r.jsx)("div",{children:(0,r.jsx)("h1",{children:"Admin page"})})}}}]);
-//# sourceMappingURL=790.0152884e.chunk.js.map
