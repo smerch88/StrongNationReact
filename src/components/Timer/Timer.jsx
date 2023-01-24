@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-function Timer() {
+export const Timer = () => {
   const [date, setDate] = useState(new Date());
 
   const STARTDATE = new Date('1 January, 2023');
@@ -24,6 +24,4 @@ function Timer() {
       {days} днів {date.toLocaleTimeString()}
     </span>
   );
-}
-
-export default Timer;
+};
