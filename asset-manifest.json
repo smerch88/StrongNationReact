@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/StrongNationReact/static/css/main.1d2447a2.css",
-    "main.js": "/StrongNationReact/static/js/main.f00bbba7.js",
+    "main.js": "/StrongNationReact/static/js/main.276e275f.js",
     "static/js/48.11790068.chunk.js": "/StrongNationReact/static/js/48.11790068.chunk.js",
     "static/js/144.38e6c658.chunk.js": "/StrongNationReact/static/js/144.38e6c658.chunk.js",
     "static/js/52.c4cbf37e.chunk.js": "/StrongNationReact/static/js/52.c4cbf37e.chunk.js",
@@ -15,7 +15,7 @@
     "static/media/montserrat-vietnamese-400-normal.woff2": "/StrongNationReact/static/media/montserrat-vietnamese-400-normal.8f3f4c99eb0eeb5990f1.woff2",
     "index.html": "/StrongNationReact/index.html",
     "main.1d2447a2.css.map": "/StrongNationReact/static/css/main.1d2447a2.css.map",
-    "main.f00bbba7.js.map": "/StrongNationReact/static/js/main.f00bbba7.js.map",
+    "main.276e275f.js.map": "/StrongNationReact/static/js/main.276e275f.js.map",
     "48.11790068.chunk.js.map": "/StrongNationReact/static/js/48.11790068.chunk.js.map",
     "144.38e6c658.chunk.js.map": "/StrongNationReact/static/js/144.38e6c658.chunk.js.map",
     "52.c4cbf37e.chunk.js.map": "/StrongNationReact/static/js/52.c4cbf37e.chunk.js.map",
@@ -23,6 +23,6 @@
   },
   "entrypoints": [
     "static/css/main.1d2447a2.css",
-    "static/js/main.f00bbba7.js"
+    "static/js/main.276e275f.js"
   ]
 }
