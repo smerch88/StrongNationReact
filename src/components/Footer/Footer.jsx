@@ -1,18 +1,10 @@
-import { Container, Link, Typography, useTheme } from '@mui/material';
+import { Container, Link, Typography } from '@mui/material';
 import { ReactComponent as ReactLogo } from './pictures/footer_logo.svg';
 
 export const Footer = () => {
-  const mainTheme = useTheme();
-  console.log(mainTheme.breakpoints);
   return (
     <footer>
-      <Container
-        maxWidth="sm"
-        sx={{
-          paddingLeft: '86px',
-          paddingRight: '86px',
-        }}
-      >
+      <Container>
         <ReactLogo width="107px" height="47px" />
         <Typography
           sx={{

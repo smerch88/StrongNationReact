@@ -56,14 +56,24 @@ mainTheme.components = {
     defaultProps: {
       sx: {
         // Якщо ширина екрану більше (up) брейкпоінта lg, то паддінг = ...
-        padding: '0 36px',
-        [mainTheme.breakpoints.up('lg')]: {
-          padding: '0 228px',
-        },
         // Якщо ширина екрану менша (down) брейкпоінта lg, то паддінг = ...
+        margin: '0 auto',
+        padding: '0 36px',
+        backgroundColor: 'blue',
+        maxWidth: '480px',
 
-        [mainTheme.breakpoints.down('lg')]: {
-          padding: '0 36px',
+        [mainTheme.breakpoints.up('sm')]: {
+          width: '480px',
+          backgroundColor: 'red',
+        },
+        [mainTheme.breakpoints.up('md')]: {
+          width: '768px',
+          backgroundColor: 'orange',
+        },
+        [mainTheme.breakpoints.up('lg')]: {
+          width: '1440px',
+          padding: '0 228px',
+          backgroundColor: 'green',
         },
       },
     },
