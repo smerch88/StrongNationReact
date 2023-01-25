@@ -48,6 +48,7 @@ const mainTheme = createTheme({
       fontSize: 30,
     },
   },
+  spacing: [0, 4, 8, 16, 32, 64],
 });
 
 mainTheme.components = {
@@ -96,8 +97,5 @@ mainTheme.typography.h1 = {
     fontSize: '50px',
   },
 };
-
-//spacing settings
-mainTheme.spacing = [0, 4, 8, 16, 32, 64];
 
 export default mainTheme;
