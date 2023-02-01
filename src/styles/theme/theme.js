@@ -3,14 +3,14 @@ import { createTheme } from '@mui/material';
 import '@fontsource/montserrat';
 // import Bebas_Neue_Cyrillic from './fonts/Bebas_Neue_Cyrillic.ttf';
 
-const mainTheme = createTheme({
+const theme = createTheme({
   breakpoints: {
-    keys: ['xs', 'sm', 'md', 'lg'],
+    keys: ['phone', 'phablet', 'tablet', 'desktop'],
     values: {
-      xs: 320,
-      sm: 480,
-      md: 768,
-      lg: 1440,
+      phone: 320,
+      phablet: 480,
+      tablet: 768,
+      desktop: 1440,
     },
   },
   palette: {
@@ -51,29 +51,28 @@ const mainTheme = createTheme({
   spacing: [0, 4, 8, 16, 32, 64],
 });
 
-mainTheme.components = {
+theme.components = {
   MuiContainer: {
     defaultProps: {
       sx: {
-        // Якщо ширина екрану більше (up) брейкпоінта lg, то паддінг = ...
-        // Якщо ширина екрану менша (down) брейкпоінта lg, то паддінг = ...
+        // Якщо ширина екрану більше (up) брейкпоінта desktop, то паддінг = ...
+        // Якщо ширина екрану менша (down) брейкпоінта desktop, то паддінг = ...
         margin: '0 auto',
         padding: '0 36px',
-        backgroundColor: 'blue',
-        maxWidth: '480px',
 
-        [mainTheme.breakpoints.up('sm')]: {
+        [theme.breakpoints.down('phablet')]: {
+          maxWidth: '480px',
+        },
+        [theme.breakpoints.up('phablet')]: {
           width: '480px',
-          backgroundColor: 'red',
         },
-        [mainTheme.breakpoints.up('md')]: {
+        [theme.breakpoints.up('tablet')]: {
           width: '768px',
-          backgroundColor: 'orange',
+          padding: '0 32px',
         },
-        [mainTheme.breakpoints.up('lg')]: {
+        [theme.breakpoints.up('desktop')]: {
           width: '1440px',
           padding: '0 228px',
-          backgroundColor: 'green',
         },
       },
     },
@@ -84,10 +83,10 @@ mainTheme.components = {
       {
         props: { variant: 'ukrstrong' },
         style: {
-          color: mainTheme.palette.colorList.white,
-          background: mainTheme.palette.colorList.green,
+          color: theme.palette.colorList.white,
+          background: theme.palette.colorList.green,
           '&:hover': {
-            background: mainTheme.palette.colorList.lightgreen,
+            background: theme.palette.colorList.lightgreen,
           },
         },
       },
@@ -100,12 +99,12 @@ mainTheme.components = {
 };
 
 //typography settings
-mainTheme.typography.h1 = {
+theme.typography.h1 = {
   fontSize: '30px',
   fontWeight: 700,
-  [mainTheme.breakpoints.up('lg')]: {
+  [theme.breakpoints.up('lg')]: {
     fontSize: '50px',
   },
 };
 
-export default mainTheme;
+export default theme;
