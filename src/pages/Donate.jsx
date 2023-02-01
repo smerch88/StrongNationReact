@@ -1,8 +1,17 @@
+import { Container } from '@mui/material';
+
 const Donate = () => {
   return (
-    <div>
+    <Container
+      maxWidth="sm"
+      sx={{
+        mt: '209px',
+        paddingLeft: '86px',
+        paddingRight: '86px',
+      }}
+    >
       <h1>Donate page</h1>
-    </div>
+    </Container>
   );
 };
 
