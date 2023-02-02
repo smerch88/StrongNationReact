@@ -1,7 +1,7 @@
 import { createTheme } from '@mui/material';
 
 import '@fontsource/montserrat';
-// import Bebas_Neue_Cyrillic from './fonts/Bebas_Neue_Cyrillic.ttf';
+import Bebas_Neue_Cyrillic from './fonts/Bebas_Neue_Cyrillic.ttf';
 
 const theme = createTheme({
   breakpoints: {
@@ -52,6 +52,30 @@ const theme = createTheme({
 });
 
 theme.components = {
+  MuiCssBaseline: {
+    styleOverrides: `
+        @font-face {
+          font-family: 'Bebas';
+          src: url(${Bebas_Neue_Cyrillic}) format('truetype');
+          font-style: normal;
+          font-weight: 400;
+        }
+        body {
+          display: flex;
+          flex-direction: column;
+          min-height: 100vh;
+        }
+        main { 
+          flex-grow: 1;
+        }
+        footer {
+          flex-shrink: 0;
+        }
+        h1{
+          margin: 0;
+        }
+      `,
+  },
   MuiContainer: {
     defaultProps: {
       sx: {
@@ -83,6 +107,13 @@ theme.components = {
       {
         props: { variant: 'ukrstrong' },
         style: {
+          fontFamily: 'Montserrat',
+          fontStyle: 'normal',
+          fontWeight: 400,
+          fontSize: '9px',
+          lineHeight: '0.82',
+          borderRadius: '24px',
+          padding: '14px 30px',
           color: theme.palette.colorList.white,
           background: theme.palette.colorList.green,
           '&:hover': {
@@ -99,12 +130,37 @@ theme.components = {
 };
 
 //typography settings
+theme.typography.body1 = {
+  margin: 0,
+  fontFamily: 'Bebas',
+  fontSize: '18px',
+  fontWeight: 400,
+};
 theme.typography.h1 = {
-  fontSize: '30px',
-  fontWeight: 700,
-  [theme.breakpoints.up('lg')]: {
+  margin: 0,
+  fontFamily: 'Bebas',
+  fontStyle: 'normal',
+  fontWeight: '700',
+  fontSize: ' 30px',
+  lineHeight: '1.5',
+  color: 'red',
+  [theme.breakpoints.up('tablet')]: {
     fontSize: '50px',
   },
+};
+theme.typography.h2 = {
+  margin: 0,
+  fontFamily: 'Bebas',
+  fontStyle: 'normal',
+  fontSize: '18px',
+  fontWeight: 700,
+};
+theme.typography.h3 = {
+  margin: 0,
+  fontFamily: 'Bebas',
+  fontStyle: 'normal',
+  fontSize: '16px',
+  fontWeight: 600,
 };
 
 export default theme;

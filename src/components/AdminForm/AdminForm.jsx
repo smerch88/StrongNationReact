@@ -56,7 +56,6 @@ export const AdminForm = () => {
         />
       </div>
       <Button
-        variant="contained"
         size="large"
         type="submit"
         sx={{

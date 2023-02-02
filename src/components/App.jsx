@@ -2,7 +2,7 @@ import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from './Layout';
 
-import { ThemeProvider } from '@mui/material';
+import { CssBaseline, ThemeProvider } from '@mui/material';
 import theme from 'styles/theme/theme';
 
 const HomePage = lazy(() => import('../pages/Home'));
@@ -13,6 +13,7 @@ export const App = () => {
   return (
     <>
       <ThemeProvider theme={theme}>
+        <CssBaseline />
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />
