@@ -1,3 +1,4 @@
+import { Typography } from '@mui/material';
 import { useState, useEffect } from 'react';
 
 export const Timer = () => {
@@ -20,8 +21,8 @@ export const Timer = () => {
   }, []);
 
   return (
-    <span>
+    <Typography variant="h3" component="span">
       {days} днів {date.toLocaleTimeString()}
-    </span>
+    </Typography>
   );
 };

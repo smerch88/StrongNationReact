@@ -5,9 +5,9 @@ import { Layout } from './Layout';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import theme from 'styles/theme/theme';
 
-const HomePage = lazy(() => import('../pages/Home'));
-const DonatePage = lazy(() => import('../pages/Donate'));
-const AdminPage = lazy(() => import('../pages/Admin'));
+const HomePage = lazy(() => import('../pages/Home/Home'));
+const DonatePage = lazy(() => import('../pages/Donate/Donate'));
+const AdminPage = lazy(() => import('../pages/Admin/Admin'));
 
 export const App = () => {
   return (

@@ -38,9 +38,9 @@ const StyledFooter = styled('footer')(({ theme }) => ({
   paddingBottom: '11px',
 
   padding: '30px',
-  bottom: 0,
-  position: 'fixed',
-  width: '100%',
+  // bottom: 0,
+  // position: 'fixed',
+  // width: '100%',
   [theme.breakpoints.up('desktop')]: {
     paddingTop: '29px',
     paddingBottom: '25px',

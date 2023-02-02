@@ -10,7 +10,7 @@ const theme = createTheme({
       phone: 320,
       phablet: 480,
       tablet: 768,
-      desktop: 1440,
+      desktop: 1280,
     },
   },
   palette: {
@@ -75,6 +75,9 @@ theme.components = {
         h1{
           margin: 0;
         }
+        ul{
+          list-style: none;
+        }
       `,
   },
   MuiContainer: {
@@ -96,8 +99,8 @@ theme.components = {
           padding: '0 32px',
         },
         [theme.breakpoints.up('desktop')]: {
-          width: '1440px',
-          padding: '0 228px',
+          width: '1280px',
+          padding: '0 68px',
         },
       },
     },
@@ -132,36 +135,76 @@ theme.components = {
 
 //typography settings
 theme.typography.body1 = {
-  margin: 0,
-  fontFamily: 'Bebas',
-  fontSize: '18px',
+  fontFamily: 'Arial',
+  fontStyle: 'normal',
   fontWeight: 400,
+  fontSize: '12px',
+  lineHeight: '14px',
+  [theme.breakpoints.up('desktop')]: {
+    fontSize: '25px',
+    lineHeight: '29px',
+  },
 };
 theme.typography.h1 = {
   margin: 0,
   fontFamily: 'Bebas',
   fontStyle: 'normal',
-  fontWeight: '700',
+  fontWeight: 700,
   fontSize: ' 30px',
   lineHeight: '1.5',
   color: 'red',
-  [theme.breakpoints.up('tablet')]: {
+  [theme.breakpoints.up('desktop')]: {
     fontSize: '50px',
   },
 };
 theme.typography.h2 = {
   margin: 0,
-  fontFamily: 'Bebas',
+  fontFamily: 'Montserrat',
   fontStyle: 'normal',
-  fontSize: '18px',
-  fontWeight: 700,
+  fontWeight: 500,
+  fontSize: '30px',
+  lineHeight: '37px',
+  [theme.breakpoints.up('desktop')]: {
+    fontWeight: 400,
+    fontSize: '50px',
+    lineHeight: '60px',
+  },
 };
 theme.typography.h3 = {
   margin: 0,
   fontFamily: 'Bebas',
   fontStyle: 'normal',
-  fontSize: '16px',
-  fontWeight: 600,
+  fontWeight: 400,
+  fontSize: '30px',
+  lineHeight: '36px',
+  [theme.breakpoints.up('desktop')]: {
+    fontSize: '50px',
+    lineHeight: '60px',
+  },
+};
+theme.typography.h4 = {
+  margin: 0,
+  fontFamily: 'Bebas',
+  fontStyle: 'normal',
+  fontWeight: 400,
+  fontSize: '40px',
+  lineHeight: '48px',
+  [theme.breakpoints.up('desktop')]: {
+    fontSize: '50px',
+    lineHeight: '60px',
+  },
+};
+theme.typography.h5 = {
+  margin: 0,
+  fontFamily: 'Bebas',
+  fontStyle: 'normal',
+  fontWeight: 700,
+  fontSize: '12px',
+  lineHeight: '14px',
+  [theme.breakpoints.up('desktop')]: {
+    fontSize: '15px',
+    lineHeight: '17px',
+  },
 };
 
 export default theme;
