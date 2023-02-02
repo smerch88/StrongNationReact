@@ -43,3 +43,9 @@ export const StatsTitle = styled(Typography)(({ theme }) => ({
     display: 'inline-block',
   },
 }));
+
+export const AboutTextWrapper = styled('div')(({ theme }) => ({
+  [theme.breakpoints.up('desktop')]: {
+    margin: '0 62px',
+  },
+}));
