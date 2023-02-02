@@ -54,6 +54,7 @@ const theme = createTheme({
 theme.components = {
   MuiCssBaseline: {
     styleOverrides: `
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
         @font-face {
           font-family: 'Bebas';
           src: url(${Bebas_Neue_Cyrillic}) format('truetype');
