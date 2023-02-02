@@ -1,4 +1,4 @@
-import { Box, Container, Typography } from '@mui/material';
+import { Container, Typography } from '@mui/material';
 import { Timer } from 'components/Timer/Timer';
 
 import content1 from '../../images/content1.jpg';
