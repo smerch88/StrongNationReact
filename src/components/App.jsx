@@ -5,6 +5,9 @@ import { Layout } from './Layout';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import theme from 'styles/theme/theme';
 
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 const HomePage = lazy(() => import('../pages/Home/Home'));
 const DonatePage = lazy(() => import('../pages/Donate/Donate'));
 const AdminPage = lazy(() => import('../pages/Admin/Admin'));
