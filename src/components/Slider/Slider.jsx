@@ -1,4 +1,4 @@
-import { useMediaQuery, useTheme } from '@mui/material';
+import { useMediaQuery } from '@mui/material';
 import { nanoid } from 'nanoid';
 import Slider from 'react-slick';
 
