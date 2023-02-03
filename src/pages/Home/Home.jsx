@@ -5,10 +5,12 @@ import content1 from '../../images/content1.jpg';
 import {
   AboutSection,
   AboutTextWrapper,
+  Li,
   MapSection,
   StatsSection,
   StatsTitle,
   StyledBox,
+  Ul,
 } from './Home.styled';
 
 const Home = () => {
@@ -72,72 +74,40 @@ const Home = () => {
             </StatsTitle>
             <Timer />
           </StyledBox>
-          <ul>
-            <li>
-              <Typography
-                sx={{ display: 'inline-block' }}
-                variant="h4"
-                component="span"
-              >
+          <Ul>
+            <Li>
+              <Typography variant="h4" component="span">
                 1240
               </Typography>
-              <Typography
-                sx={{ display: 'inline-block' }}
-                variant="h5"
-                component="p"
-              >
+              <Typography variant="h5" component="p">
                 одиниць Збройної техніки
               </Typography>
-            </li>
-            <li>
-              <Typography
-                sx={{ display: 'inline-block' }}
-                variant="h4"
-                component="span"
-              >
+            </Li>
+            <Li>
+              <Typography variant="h4" component="span">
                 150 340
               </Typography>
-              <Typography
-                sx={{ display: 'inline-block' }}
-                variant="h5"
-                component="p"
-              >
+              <Typography variant="h5" component="p">
                 грн на підтримку зсу
               </Typography>
-            </li>
-            <li>
-              <Typography
-                sx={{ display: 'inline-block' }}
-                variant="h4"
-                component="span"
-              >
+            </Li>
+            <Li>
+              <Typography variant="h4" component="span">
                 5430
               </Typography>
-              <Typography
-                sx={{ display: 'inline-block' }}
-                variant="h5"
-                component="p"
-              >
+              <Typography variant="h5" component="p">
                 кілограм продуктів
               </Typography>
-            </li>
-            <li>
-              <Typography
-                sx={{ display: 'inline-block' }}
-                variant="h4"
-                component="span"
-              >
+            </Li>
+            <Li>
+              <Typography variant="h4" component="span">
                 350
               </Typography>
-              <Typography
-                sx={{ display: 'inline-block' }}
-                variant="h5"
-                component="p"
-              >
+              <Typography variant="h5" component="p">
                 вантажівок з ліками
               </Typography>
-            </li>
-          </ul>
+            </Li>
+          </Ul>
         </Container>
       </StatsSection>
     </>

@@ -33,8 +33,10 @@ export const StyledBox = styled(Box)(({ theme }) => ({
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
+  marginBottom: '20px',
   [theme.breakpoints.up('desktop')]: {
     flexDirection: 'row',
+    marginBottom: '60px',
   },
 }));
 
@@ -47,5 +49,21 @@ export const StatsTitle = styled(Typography)(({ theme }) => ({
 export const AboutTextWrapper = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('desktop')]: {
     margin: '0 62px',
+  },
+}));
+
+export const Ul = styled('ul')(({ theme }) => ({
+  display: 'flex',
+  flexWrap: 'wrap',
+  [theme.breakpoints.up('desktop')]: {},
+}));
+
+export const Li = styled('li')(({ theme }) => ({
+  padding: '33px',
+  width: '50%',
+  textAlign: 'center',
+  [theme.breakpoints.up('desktop')]: {
+    width: '25%',
+    padding: 0,
   },
 }));
