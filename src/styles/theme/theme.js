@@ -80,6 +80,12 @@ theme.components = {
           padding: 0;
           list-style: none;
         }
+        .slick-slide > div {
+          margin: 0 10px;
+        }
+        .slick-list {
+          margin: 0 -10px;
+        }
       `,
   },
   MuiContainer: {
