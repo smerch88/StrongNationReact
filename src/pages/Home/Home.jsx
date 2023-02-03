@@ -40,10 +40,9 @@ const Home = () => {
     <>
       <MapSection>
         {/* map section */}
-        <Container>
-          <AutoPlay images={images1} rtl={true} />
-          <AutoPlay images={images2} rtl={false} />
-        </Container>
+        <AutoPlay images={images1} rtl={true} />
+        <AutoPlay images={images2} rtl={false} />
+        <Container></Container>
       </MapSection>
       <AboutSection>
         {/* who we are section */}

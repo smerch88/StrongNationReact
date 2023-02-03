@@ -16,10 +16,10 @@ const StyledHeader = styled('header')(({ theme }) => ({
   paddingTop: '11px',
   paddingBottom: '11px',
 
-  padding: '30px 0',
   [theme.breakpoints.up('desktop')]: {
     paddingTop: '17px',
     paddingBottom: '18px',
+    paddingLeft: '160px',
   },
 }));
 
