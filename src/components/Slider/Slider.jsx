@@ -16,7 +16,7 @@ export const AutoPlay = ({ ...props }) => {
     slidesToShow: slidesNumber.number,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 2000,
+    speed: 5000,
     autoplaySpeed: 1000,
     cssEase: 'linear',
     arrows: false,
