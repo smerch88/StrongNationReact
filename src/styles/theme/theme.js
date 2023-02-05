@@ -133,6 +133,25 @@ theme.components = {
           },
         },
       },
+      {
+        props: { variant: 'regions' },
+        style: {
+          padding: '6px 10px 3px',
+          border: '1px solid',
+          borderColor: theme.palette.colorList.white,
+          borderRadius: '12px',
+          fontFamily: 'Bebas',
+          fontStyle: 'normal',
+          fontWeight: '400',
+          fontSize: '15px',
+          lineHeight: '18px',
+          color: theme.palette.colorList.white,
+          background: 'transparent',
+          '&:hover': {
+            background: theme.palette.colorList.lightgreen,
+          },
+        },
+      },
     ],
     defaultProps: {
       variant: 'ukrstrong',
