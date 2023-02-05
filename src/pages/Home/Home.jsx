@@ -24,6 +24,7 @@ import {
   StyledBox,
   Ul,
 } from './Home.styled';
+import { ReadMore } from 'components/ReadMore/ReadMore';
 
 const Home = () => {
   const images1 = [content1, content2, content3, content4, content5, content6];
@@ -40,9 +41,11 @@ const Home = () => {
     <>
       <MapSection>
         {/* map section */}
-        <AutoPlay images={images1} rtl={true} />
-        <AutoPlay images={images2} rtl={false} />
-        <Container></Container>
+        <Container>
+          <ReadMore />
+          <AutoPlay images={images1} rtl={true} />
+          <AutoPlay images={images2} rtl={false} />
+        </Container>
       </MapSection>
       <AboutSection>
         {/* who we are section */}
