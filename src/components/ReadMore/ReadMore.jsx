@@ -1,9 +1,9 @@
 import { Box, Button, Typography, Modal, styled } from '@mui/material';
-// import { RegionsSlider } from 'components/Slider/RegionsSlider';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchRegions } from 'redux/regions/regions-operations';
 import { getRegions } from 'redux/regions/regions-selectors';
+import { Circles } from './Circles';
 
 const style = {
   position: 'absolute',
@@ -22,28 +22,6 @@ const RegionsList = styled('ul')(({ theme }) => ({
   overflowX: 'scroll',
   gap: '12px',
   padding: '32px 10px',
-}));
-
-const CirclesUl = styled('ul')(({ theme }) => ({
-  display: 'flex',
-  overflowX: 'scroll',
-  gap: '12px',
-  padding: '32px 10px',
-}));
-
-const Circle = styled('li')(({ theme }) => ({
-  borderRadius: '50%',
-  width: '150px',
-  height: '150px',
-
-  background: 'rgba(132, 148, 100, 0.6)',
-  border: '1px solid #FFFFFF',
-
-  textAlign: 'center',
-
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
 }));
 
 export const ReadMore = () => {
@@ -109,22 +87,7 @@ export const ReadMore = () => {
           </Box>
         </Modal>
       )}
-      {circles && (
-        <Box>
-          <CirclesUl>
-            {oblList
-              .filter(item => item.id === currentId)
-              .map(item => (
-                <div style={{ display: 'flex' }}>
-                  <Circle>{item.region}</Circle>
-                  <Circle>{item.feat1}</Circle>
-                  <Circle>{item.feat2}</Circle>
-                  <Circle>{item.feat3}</Circle>
-                </div>
-              ))}
-          </CirclesUl>
-        </Box>
-      )}
+      {circles && <Circles oblList={oblList} currentId={currentId} />}
       <Typography
         variant="h1"
         component="p"
