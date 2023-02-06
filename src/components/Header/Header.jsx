@@ -1,4 +1,5 @@
-import { Container, styled } from '@mui/material';
+import { Box, Button, Container, styled } from '@mui/material';
+import { Link } from 'react-router-dom';
 import { ReactComponent as ReactLogo } from './pictures/header_logo.svg';
 
 const StyledLogo = styled(ReactLogo)(({ theme }) => ({
@@ -27,7 +28,16 @@ export const Header = () => {
   return (
     <StyledHeader>
       <Container>
-        <StyledLogo width="96px" height="42px" />
+        <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+          <StyledLogo width="96px" height="42px" />
+          <Box>
+            <Link>про нас</Link>
+            <Link>Досягнення</Link>
+            <Link to="/donate">
+              <Button>пiдтримати</Button>
+            </Link>
+          </Box>
+        </Box>
       </Container>
     </StyledHeader>
   );
