@@ -102,10 +102,10 @@ theme.components = {
         [theme.breakpoints.up('phablet')]: {
           width: '480px',
         },
-        [theme.breakpoints.up('tablet')]: {
-          width: '768px',
-          padding: '0 32px',
-        },
+        // [theme.breakpoints.up('tablet')]: {
+        //   width: '768px',
+        //   padding: '0 32px',
+        // },
         [theme.breakpoints.up('desktop')]: {
           width: '1280px',
           padding: '0 68px',
@@ -136,6 +136,7 @@ theme.components = {
       {
         props: { variant: 'regions' },
         style: {
+          whiteSpace: 'nowrap',
           padding: '6px 10px 3px',
           border: '1px solid',
           borderColor: theme.palette.colorList.white,
@@ -179,7 +180,6 @@ theme.typography.h1 = {
   fontWeight: 700,
   fontSize: ' 30px',
   lineHeight: '1.5',
-  color: 'red',
   [theme.breakpoints.up('desktop')]: {
     fontSize: '50px',
   },

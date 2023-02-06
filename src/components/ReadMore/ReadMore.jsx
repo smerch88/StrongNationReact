@@ -1,4 +1,5 @@
 import { Box, Button, Typography, Modal, styled } from '@mui/material';
+// import { RegionsSlider } from 'components/Slider/RegionsSlider';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchRegions } from 'redux/regions/regions-operations';
@@ -18,7 +19,31 @@ const style = {
 
 const RegionsList = styled('ul')(({ theme }) => ({
   display: 'flex',
-  flexWrap: 'wrap',
+  overflowX: 'scroll',
+  gap: '12px',
+  padding: '32px 10px',
+}));
+
+const CirclesUl = styled('ul')(({ theme }) => ({
+  display: 'flex',
+  overflowX: 'scroll',
+  gap: '12px',
+  padding: '32px 10px',
+}));
+
+const Circle = styled('li')(({ theme }) => ({
+  borderRadius: '50%',
+  width: '150px',
+  height: '150px',
+
+  background: 'rgba(132, 148, 100, 0.6)',
+  border: '1px solid #FFFFFF',
+
+  textAlign: 'center',
+
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
 }));
 
 export const ReadMore = () => {
@@ -44,29 +69,19 @@ export const ReadMore = () => {
   };
 
   const handleClose = () => setOpen(false);
-  console.log(oblList);
+  console.log(oblList, 'oblList 1');
   return (
     <>
       <RegionsList>
         {oblList &&
-          oblList.map(
-            item => (
-              <li key={item.id}>
-                <Button
-                  variant="regions"
-                  onClick={handleOpen}
-                  data-id={item.id}
-                >
-                  {item.region}
-                </Button>
-              </li>
-            )
-            // console.log(item)
-          )}
+          oblList.map(item => (
+            <li key={item.id}>
+              <Button variant="regions" onClick={handleOpen} data-id={item.id}>
+                {item.region}
+              </Button>
+            </li>
+          ))}
       </RegionsList>
-      <Button onClick={handleOpenReadMore} data-id={1}>
-        Read More
-      </Button>
       {currentId && (
         <Modal
           open={open}
@@ -76,15 +91,48 @@ export const ReadMore = () => {
         >
           <Box sx={style}>
             <Typography id="modal-modal-title" variant="h6" component="h2">
-              Text in a modal {currentId}
+              Redion id: {currentId}
             </Typography>
             <Typography id="modal-modal-description" sx={{ mt: 2 }}>
               Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+              {oblList
+                .filter(item => item.id === currentId)
+                .map(item => (
+                  <div>
+                    <li>{item.region}</li>
+                    <li>{item.feat1}</li>
+                    <li>{item.feat2}</li>
+                    <li>{item.feat3}</li>
+                  </div>
+                ))}
             </Typography>
           </Box>
         </Modal>
       )}
-      {circles && <Box>Circle {currentId}</Box>}
+      {circles && (
+        <Box>
+          <CirclesUl>
+            {oblList
+              .filter(item => item.id === currentId)
+              .map(item => (
+                <div style={{ display: 'flex' }}>
+                  <Circle>{item.region}</Circle>
+                  <Circle>{item.feat1}</Circle>
+                  <Circle>{item.feat2}</Circle>
+                  <Circle>{item.feat3}</Circle>
+                </div>
+              ))}
+          </CirclesUl>
+        </Box>
+      )}
+      <Typography
+        variant="h1"
+        component="p"
+        onClick={handleOpenReadMore}
+        data-id={1}
+      >
+        Read More{'>>>'}
+      </Typography>
     </>
   );
 };
