@@ -6,7 +6,7 @@ export const StatsSection = styled('section')(({ theme }) => ({
   paddingTop: '33px',
   paddingBottom: '29px',
   color: [theme.palette.primary.contrastText],
-  backgroundColor: [theme.palette.background.green],
+  backgroundColor: [theme.palette.background.contrast],
   [theme.breakpoints.up('desktop')]: {
     paddingTop: '78px',
     paddingBottom: '65px',

@@ -36,3 +36,15 @@ export const removeRegion = createAsyncThunk(
     }
   }
 );
+
+export const addCountry = createAsyncThunk(
+  'contacts/addCountry',
+  async (data, thunkAPI) => {
+    try {
+      const response = await regions.post('', { ...data });
+      return response.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+);

@@ -16,22 +16,22 @@ const theme = createTheme({
   palette: {
     colorList: {
       black: '#000000',
-      grey: '#888888',
+      grey: '#455A64',
       white: '#FFFFFF',
-      green: '#839364',
-      lightgreen: '#AFB78E',
+      lightgrey: '#748E9A',
     },
     primary: {
-      main: '#839364',
-      light: '#888888',
+      main: '#455A64',
+      light: '#748E9A',
       contrastText: '#FFFFFF',
     },
     background: {
       default: '#FFFFFF',
-      green: '#839364',
+      contrast: '#455A64',
     },
     text: {
       primary: '#000000',
+      header: '#455A64',
     },
     secondary: {
       main: '#FFFFFF',
@@ -80,6 +80,10 @@ theme.components = {
           padding: 0;
           list-style: none;
         }
+        a{
+          text-decoration: none;
+          color: currentColor;
+        }
         .slick-slide > div {
           margin: 0 10px;
         }
@@ -127,9 +131,9 @@ theme.components = {
           borderRadius: '24px',
           padding: '14px 30px',
           color: theme.palette.colorList.white,
-          background: theme.palette.colorList.green,
+          background: theme.palette.primary.main,
           '&:hover': {
-            background: theme.palette.colorList.lightgreen,
+            background: theme.palette.primary.light,
           },
         },
       },
@@ -149,7 +153,7 @@ theme.components = {
           color: theme.palette.colorList.white,
           background: 'transparent',
           '&:hover': {
-            background: theme.palette.colorList.lightgreen,
+            background: theme.palette.colorList.lightgrey,
           },
         },
       },
@@ -186,11 +190,12 @@ theme.typography.h1 = {
 };
 theme.typography.h2 = {
   margin: 0,
-  fontFamily: 'Montserrat',
+  fontFamily: 'Bebas',
   fontStyle: 'normal',
-  fontWeight: 500,
+  fontWeight: 400,
   fontSize: '30px',
-  lineHeight: '37px',
+  lineHeight: '36px',
+  color: theme.palette.text.header,
   [theme.breakpoints.up('desktop')]: {
     fontWeight: 400,
     fontSize: '50px',
