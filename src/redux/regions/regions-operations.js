@@ -1,11 +1,12 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { regions } from 'components/services/api';
+import { addNewRegion, getAllRegions, regions } from 'components/services/api';
 
 export const fetchRegions = createAsyncThunk(
+  // gets all regions
   'contacts/fetchAll',
   async (_, thunkAPI) => {
     try {
-      const response = await regions.get('');
+      const response = await getAllRegions();
       return response.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
@@ -14,10 +15,11 @@ export const fetchRegions = createAsyncThunk(
 );
 
 export const addRegion = createAsyncThunk(
+  // adds a region by its name
   'contacts/addRegion',
-  async (data, thunkAPI) => {
+  async (region, thunkAPI) => {
     try {
-      const response = await regions.post('', { ...data });
+      const response = await addNewRegion(region);
       return response.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);

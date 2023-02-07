@@ -8,7 +8,6 @@ export const regions = axios.create({
 export const getAllRegions = async () => {
   try {
     const { data } = await regions.get('all/Ukraine');
-
     return data;
   } catch (error) {
     return error;
