@@ -1,6 +1,5 @@
 import { Container, Typography } from '@mui/material';
 import { AutoPlay } from 'components/Slider/Slider';
-import { Timer } from 'components/Timer/Timer';
 
 import content1 from '../../images/sliderImages/1.jpg';
 import content2 from '../../images/sliderImages/2.jpg';
@@ -14,17 +13,9 @@ import content9 from '../../images/sliderImages/9.jpg';
 import content10 from '../../images/sliderImages/10.jpg';
 import content11 from '../../images/sliderImages/11.jpg';
 
-import {
-  AboutSection,
-  AboutTextWrapper,
-  Li,
-  MapSection,
-  StatsSection,
-  StatsTitle,
-  StyledBox,
-  Ul,
-} from './Home.styled';
+import { AboutSection, AboutTextWrapper, MapSection } from './Home.styled';
 import { ReadMore } from 'components/ReadMore/ReadMore';
+import { Stats } from 'components/Stats/Stats';
 
 const Home = () => {
   const images1 = [content1, content2, content3, content4, content5, content6];
@@ -47,6 +38,7 @@ const Home = () => {
           <AutoPlay images={images2} rtl={false} />
         </Container>
       </MapSection>
+      <Stats />
       <AboutSection>
         {/* who we are section */}
         <Container>
@@ -76,55 +68,9 @@ const Home = () => {
               питаннях.
             </Typography>
             <br />
-            <Typography> Разом ми переможемо!</Typography>
           </AboutTextWrapper>
         </Container>
       </AboutSection>
-      <StatsSection>
-        <Container>
-          {/* stats section */}
-          <StyledBox>
-            <StatsTitle variant="h3" component="h2">
-              нашi досягнення за &nbsp;
-            </StatsTitle>
-            <Timer />
-          </StyledBox>
-          <Ul>
-            <Li>
-              <Typography variant="h4" component="span">
-                1240
-              </Typography>
-              <Typography variant="h5" component="p">
-                одиниць Збройної техніки
-              </Typography>
-            </Li>
-            <Li>
-              <Typography variant="h4" component="span">
-                150 340
-              </Typography>
-              <Typography variant="h5" component="p">
-                грн на підтримку зсу
-              </Typography>
-            </Li>
-            <Li>
-              <Typography variant="h4" component="span">
-                5430
-              </Typography>
-              <Typography variant="h5" component="p">
-                кілограм продуктів
-              </Typography>
-            </Li>
-            <Li>
-              <Typography variant="h4" component="span">
-                350
-              </Typography>
-              <Typography variant="h5" component="p">
-                вантажівок з ліками
-              </Typography>
-            </Li>
-          </Ul>
-        </Container>
-      </StatsSection>
     </>
   );
 };
