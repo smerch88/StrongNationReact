@@ -1,0 +1,49 @@
+import { Box, styled, Typography } from '@mui/material';
+
+export const StatsSection = styled('section')(({ theme }) => ({
+  paddingTop: '33px',
+  paddingBottom: '29px',
+  color: [theme.palette.primary.contrastText],
+  backgroundColor: [theme.palette.background.contrast],
+  [theme.breakpoints.up('desktop')]: {
+    paddingTop: '78px',
+    paddingBottom: '65px',
+  },
+}));
+
+export const StyledBox = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+  marginBottom: '20px',
+  [theme.breakpoints.up('desktop')]: {
+    flexDirection: 'row',
+    marginBottom: '60px',
+  },
+}));
+
+export const StatsTitle = styled(Typography)(({ theme }) => ({
+  [theme.breakpoints.up('desktop')]: {
+    display: 'inline-block',
+  },
+}));
+
+export const Ul = styled('ul')(({ theme }) => ({
+  display: 'flex',
+  flexWrap: 'wrap',
+  justifyContent: 'center',
+  [theme.breakpoints.up('desktop')]: {},
+}));
+
+export const Li = styled('li')(({ theme }) => ({
+  padding: '50px 0',
+  textAlign: 'center',
+  width: '100%',
+  '&:first-of-type': { borderBottom: '2px solid #FFFFFF' },
+  [theme.breakpoints.up('desktop')]: {
+    '&:first-of-type': { borderRight: '2px solid #FFFFFF', borderBottom: 0 },
+    width: 'auto',
+    padding: '60px 126px',
+  },
+}));
