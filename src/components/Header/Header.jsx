@@ -49,7 +49,6 @@ export const Header = () => {
     <ErrorBoundary>
       <StyledHeader>
         <Container>
-          <NavLink to="/news">AAAA</NavLink>
           <Box
             sx={{
               display: 'flex',
