@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/StrongNationReact/static/css/main.055ace08.css",
-    "main.js": "/StrongNationReact/static/js/main.299cb4c1.js",
+    "main.js": "/StrongNationReact/static/js/main.06e93cb7.js",
     "static/js/963.bc5d6745.chunk.js": "/StrongNationReact/static/js/963.bc5d6745.chunk.js",
-    "static/js/597.f067f7f8.chunk.js": "/StrongNationReact/static/js/597.f067f7f8.chunk.js",
+    "static/js/597.f5691049.chunk.js": "/StrongNationReact/static/js/597.f5691049.chunk.js",
     "static/js/969.122e0c92.chunk.js": "/StrongNationReact/static/js/969.122e0c92.chunk.js",
     "static/js/439.9fddfaca.chunk.js": "/StrongNationReact/static/js/439.9fddfaca.chunk.js",
     "static/js/945.a5118eaa.chunk.js": "/StrongNationReact/static/js/945.a5118eaa.chunk.js",
@@ -11,7 +11,6 @@
     "static/js/655.c2d2c75e.chunk.js": "/StrongNationReact/static/js/655.c2d2c75e.chunk.js",
     "static/js/649.b0ef8233.chunk.js": "/StrongNationReact/static/js/649.b0ef8233.chunk.js",
     "static/media/bgimagesection.jpg": "/StrongNationReact/static/media/bgimagesection.ec52408b078126fce709.jpg",
-    "static/media/footer_logo.svg": "/StrongNationReact/static/media/footer_logo.3d2779dd91639d68bec7ff0350cdca2a.svg",
     "static/media/6.jpg": "/StrongNationReact/static/media/6.edb4cdbec90461a7ff4f.jpg",
     "static/media/1.jpg": "/StrongNationReact/static/media/1.6a66cea54741394dbe0b.jpg",
     "static/media/2.jpg": "/StrongNationReact/static/media/2.7bc961206b9ec7427eb2.jpg",
@@ -29,6 +28,7 @@
     "static/media/montserrat-latin-ext-400-normal.woff2": "/StrongNationReact/static/media/montserrat-latin-ext-400-normal.0204ec08a4b574088f02.woff2",
     "static/media/montserrat-cyrillic-ext-400-normal.woff2": "/StrongNationReact/static/media/montserrat-cyrillic-ext-400-normal.bbf9e820a2563aac0d8b.woff2",
     "static/media/montserrat-cyrillic-400-normal.woff2": "/StrongNationReact/static/media/montserrat-cyrillic-400-normal.e5c5c19c23e370a342c8.woff2",
+    "static/media/footer_logo.svg": "/StrongNationReact/static/media/footer_logo.c819a4773340d107152de693d77f13a1.svg",
     "static/media/header_logo.svg": "/StrongNationReact/static/media/header_logo.c819a4773340d107152de693d77f13a1.svg",
     "static/media/montserrat-vietnamese-400-normal.woff2": "/StrongNationReact/static/media/montserrat-vietnamese-400-normal.8f3f4c99eb0eeb5990f1.woff2",
     "static/media/slick.svg": "/StrongNationReact/static/media/slick.2630a3e3eab21c607e21.svg",
@@ -38,9 +38,9 @@
     "index.html": "/StrongNationReact/index.html",
     "static/media/burger.svg": "/StrongNationReact/static/media/burger.9648735d64c6175bba3a7b62a2ba5b09.svg",
     "main.055ace08.css.map": "/StrongNationReact/static/css/main.055ace08.css.map",
-    "main.299cb4c1.js.map": "/StrongNationReact/static/js/main.299cb4c1.js.map",
+    "main.06e93cb7.js.map": "/StrongNationReact/static/js/main.06e93cb7.js.map",
     "963.bc5d6745.chunk.js.map": "/StrongNationReact/static/js/963.bc5d6745.chunk.js.map",
-    "597.f067f7f8.chunk.js.map": "/StrongNationReact/static/js/597.f067f7f8.chunk.js.map",
+    "597.f5691049.chunk.js.map": "/StrongNationReact/static/js/597.f5691049.chunk.js.map",
     "969.122e0c92.chunk.js.map": "/StrongNationReact/static/js/969.122e0c92.chunk.js.map",
     "439.9fddfaca.chunk.js.map": "/StrongNationReact/static/js/439.9fddfaca.chunk.js.map",
     "945.a5118eaa.chunk.js.map": "/StrongNationReact/static/js/945.a5118eaa.chunk.js.map",
@@ -50,6 +50,6 @@
   },
   "entrypoints": [
     "static/css/main.055ace08.css",
-    "static/js/main.299cb4c1.js"
+    "static/js/main.06e93cb7.js"
   ]
 }
