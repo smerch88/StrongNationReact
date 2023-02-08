@@ -9,11 +9,9 @@ const StyledLogo = styled(ReactLogo)(({ theme }) => ({
 }));
 
 const StyledContainer = styled(Container)(({ theme }) => ({
-  [theme.breakpoints.up('desktop')]: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
 }));
 
 const StyledTypography = styled(Typography)(({ theme }) => ({
@@ -34,17 +32,17 @@ const TextWrapper = styled('div')(({ theme }) => ({
   },
 }));
 const StyledFooter = styled('footer')(({ theme }) => ({
-  paddingTop: '17px',
-  paddingBottom: '11px',
+  boxShadow: '0px -4px 4px rgba(0, 0, 0, 0.25)',
+  paddingTop: '20px',
+  paddingBottom: '20px',
 
-  padding: '30px',
-  // bottom: 0,
-  // position: 'fixed',
-  // width: '100%',
+  [theme.breakpoints.up('tablet')]: {
+    paddingTop: '36px',
+    paddingBottom: '36px',
+  },
   [theme.breakpoints.up('desktop')]: {
-    paddingTop: '29px',
-    paddingBottom: '25px',
-    boxShadow: '0px -4px 4px rgba(0, 0, 0, 0.25)',
+    paddingTop: '60px',
+    paddingBottom: '60px',
   },
 }));
 

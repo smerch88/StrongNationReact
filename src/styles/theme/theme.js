@@ -10,7 +10,7 @@ const theme = createTheme({
       phone: 320,
       phablet: 480,
       tablet: 768,
-      desktop: 1280,
+      desktop: 1366,
     },
   },
   palette: {

@@ -10,11 +10,7 @@ const News = () => {
     dispatch(fetchAllPostsByCountry());
   }, [dispatch]);
 
-  return (
-    <>
-      <ListOfPosts />
-    </>
-  );
+  return <ListOfPosts />;
 };
 
 export default News;
