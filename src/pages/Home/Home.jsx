@@ -16,6 +16,7 @@ import content11 from '../../images/sliderImages/11.jpg';
 import { AboutSection, AboutTextWrapper, MapSection } from './Home.styled';
 import { ReadMore } from 'components/ReadMore/ReadMore';
 import { Stats } from 'components/Stats/Stats';
+import { Map } from 'components/Map/Map';
 
 const Home = () => {
   const images1 = [content1, content2, content3, content4, content5, content6];
@@ -31,8 +32,8 @@ const Home = () => {
   return (
     <>
       <MapSection>
-        {/* map section */}
         <Container>
+          <Map />
           <ReadMore />
           <AutoPlay images={images1} rtl={true} />
           <AutoPlay images={images2} rtl={false} />
