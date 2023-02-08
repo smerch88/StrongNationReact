@@ -19,6 +19,7 @@ const theme = createTheme({
       grey: '#455A64',
       white: '#FFFFFF',
       lightgrey: '#748E9A',
+      almostblack: '#1F2528',
     },
     primary: {
       main: '#455A64',
@@ -32,6 +33,7 @@ const theme = createTheme({
     text: {
       primary: '#000000',
       header: '#455A64',
+      navbutton: '#1F2528',
     },
     secondary: {
       main: '#FFFFFF',
@@ -83,6 +85,8 @@ theme.components = {
         a{
           text-decoration: none;
           color: currentColor;
+          margin: 0;
+          padding: 0;
         }
         .slick-slide > div {
           margin: 0 10px;
@@ -123,18 +127,31 @@ theme.components = {
       {
         props: { variant: 'ukrstrong' },
         style: {
-          fontFamily: 'Montserrat',
+          fontFamily: 'Bebas',
           fontStyle: 'normal',
           fontWeight: 400,
-          fontSize: '9px',
-          lineHeight: '0.82',
-          borderRadius: '24px',
+          borderRadius: '8px',
           padding: '14px 30px',
+          fontSize: '20px',
+          lineHeight: '24px',
           color: theme.palette.colorList.white,
           background: theme.palette.primary.main,
           '&:hover': {
             background: theme.palette.primary.light,
           },
+        },
+      },
+      {
+        props: { variant: 'navigation' },
+        style: {
+          margin: 0,
+          padding: 0,
+          fontFamily: 'Bebas',
+          fontStyle: 'normal',
+          fontWeight: 400,
+          fontSize: '20px',
+          lineHeight: '24px',
+          color: theme.palette.text.navbutton,
         },
       },
       {
