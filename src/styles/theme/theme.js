@@ -98,7 +98,7 @@ theme.components = {
         // Якщо ширина екрану більше (up) брейкпоінта desktop, то паддінг = ...
         // Якщо ширина екрану менша (down) брейкпоінта desktop, то паддінг = ...
         margin: '0 auto',
-        padding: '0 36px',
+        padding: '0 18px',
 
         [theme.breakpoints.down('phablet')]: {
           maxWidth: '480px',
@@ -106,13 +106,13 @@ theme.components = {
         [theme.breakpoints.up('phablet')]: {
           width: '480px',
         },
-        // [theme.breakpoints.up('tablet')]: {
-        //   width: '768px',
-        //   padding: '0 32px',
-        // },
+        [theme.breakpoints.up('tablet')]: {
+          width: '768px',
+          padding: '0 60px',
+        },
         [theme.breakpoints.up('desktop')]: {
-          width: '1280px',
-          padding: '0 68px',
+          width: '1366px',
+          padding: '0 115px',
         },
       },
     },
