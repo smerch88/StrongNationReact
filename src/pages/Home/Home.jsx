@@ -36,9 +36,9 @@ const Home = () => {
         <Container>
           <Map />
           <ReadMore />
-          <AutoPlay images={images1} rtl={true} />
-          <AutoPlay images={images2} rtl={false} />
         </Container>
+        <AutoPlay images={images1} rtl={true} />
+        <AutoPlay images={images2} rtl={false} />
       </MapSection>
       <Stats />
       <AboutSection>
