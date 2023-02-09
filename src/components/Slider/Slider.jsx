@@ -33,6 +33,12 @@ export const AutoPlay = ({ ...props }) => {
           slidesToShow: 3,
         },
       },
+      {
+        breakpoint: 320,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
     ],
   };
 
