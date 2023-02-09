@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/StrongNationReact/static/css/main.055ace08.css",
-    "main.js": "/StrongNationReact/static/js/main.06e93cb7.js",
-    "static/js/963.bc5d6745.chunk.js": "/StrongNationReact/static/js/963.bc5d6745.chunk.js",
+    "main.js": "/StrongNationReact/static/js/main.c1a23e8f.js",
+    "static/js/963.e5c44065.chunk.js": "/StrongNationReact/static/js/963.e5c44065.chunk.js",
     "static/js/597.f5691049.chunk.js": "/StrongNationReact/static/js/597.f5691049.chunk.js",
     "static/js/969.122e0c92.chunk.js": "/StrongNationReact/static/js/969.122e0c92.chunk.js",
     "static/js/439.9fddfaca.chunk.js": "/StrongNationReact/static/js/439.9fddfaca.chunk.js",
@@ -17,13 +17,13 @@
     "static/media/5.jpg": "/StrongNationReact/static/media/5.d48dc06b71aa2f9864d3.jpg",
     "static/media/10.jpg": "/StrongNationReact/static/media/10.9d1ac4586d59c2c192ad.jpg",
     "static/media/4.jpg": "/StrongNationReact/static/media/4.c54c2e990a2e1f2688d3.jpg",
-    "static/media/Bebas_Neue_Cyrillic.ttf": "/StrongNationReact/static/media/Bebas_Neue_Cyrillic.f39fe92d35bac3b2fe60.ttf",
     "static/media/3.jpg": "/StrongNationReact/static/media/3.dfabd2e7a3dd586ab5b2.jpg",
     "static/media/9.jpg": "/StrongNationReact/static/media/9.8d4a7bdf1ebcd8363948.jpg",
     "static/media/7.jpg": "/StrongNationReact/static/media/7.ddbbcc22be56ce87556d.jpg",
     "static/media/montserrat-all-400-normal.woff": "/StrongNationReact/static/media/montserrat-all-400-normal.327fab0afc997a2d9b16.woff",
     "static/media/8.jpg": "/StrongNationReact/static/media/8.e0521fc8f716446ee523.jpg",
     "static/media/11.jpg": "/StrongNationReact/static/media/11.02cc9554cc13aa13856f.jpg",
+    "static/media/Bebas_Neue_Cyrillic.ttf": "/StrongNationReact/static/media/Bebas_Neue_Cyrillic.9da1ba2d1a1db723123d.ttf",
     "static/media/montserrat-latin-400-normal.woff2": "/StrongNationReact/static/media/montserrat-latin-400-normal.acb6629fe45c43ad5d8b.woff2",
     "static/media/montserrat-latin-ext-400-normal.woff2": "/StrongNationReact/static/media/montserrat-latin-ext-400-normal.0204ec08a4b574088f02.woff2",
     "static/media/montserrat-cyrillic-ext-400-normal.woff2": "/StrongNationReact/static/media/montserrat-cyrillic-ext-400-normal.bbf9e820a2563aac0d8b.woff2",
@@ -38,8 +38,8 @@
     "index.html": "/StrongNationReact/index.html",
     "static/media/burger.svg": "/StrongNationReact/static/media/burger.9648735d64c6175bba3a7b62a2ba5b09.svg",
     "main.055ace08.css.map": "/StrongNationReact/static/css/main.055ace08.css.map",
-    "main.06e93cb7.js.map": "/StrongNationReact/static/js/main.06e93cb7.js.map",
-    "963.bc5d6745.chunk.js.map": "/StrongNationReact/static/js/963.bc5d6745.chunk.js.map",
+    "main.c1a23e8f.js.map": "/StrongNationReact/static/js/main.c1a23e8f.js.map",
+    "963.e5c44065.chunk.js.map": "/StrongNationReact/static/js/963.e5c44065.chunk.js.map",
     "597.f5691049.chunk.js.map": "/StrongNationReact/static/js/597.f5691049.chunk.js.map",
     "969.122e0c92.chunk.js.map": "/StrongNationReact/static/js/969.122e0c92.chunk.js.map",
     "439.9fddfaca.chunk.js.map": "/StrongNationReact/static/js/439.9fddfaca.chunk.js.map",
@@ -50,6 +50,6 @@
   },
   "entrypoints": [
     "static/css/main.055ace08.css",
-    "static/js/main.06e93cb7.js"
+    "static/js/main.c1a23e8f.js"
   ]
 }
