@@ -3,11 +3,12 @@ import { Box, Button, Container, useMediaQuery } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 import ErrorBoundary from 'components/ErrorBoundary/ErrorBoundary';
-import { StyledBurger, StyledHeader, StyledLogo } from './Header.Styled';
+import { StyledHeader, StyledLogo } from './Header.Styled';
+import BurgerMenu from 'components/BurgerMenu/BurgerMenu';
 
 const pages = [
   { name: 'новини', link: '/news' },
-  { name: 'про нас', link: '/aboutus' },
+  { name: 'про нас', link: '/about' },
   { name: 'контакти', link: '/contacts' },
 ];
 
@@ -31,7 +32,7 @@ export const Header = () => {
             <Link to="/">
               <StyledLogo width="96px" height="42px" />
             </Link>
-            {isSmallScreen && <StyledBurger />}
+            {isSmallScreen && <BurgerMenu />}
             {isBigScreen && (
               <Box
                 sx={{
