@@ -9,10 +9,11 @@ import {
 
 export const fetchRegions = createAsyncThunk(
   // gets all regions
-  'contacts/fetchAll',
+  'regions/fetchAll',
   async (_, thunkAPI) => {
     try {
       const response = await getAllRegions();
+      console.log(response, 'fetchRegions');
       return response;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
@@ -22,7 +23,7 @@ export const fetchRegions = createAsyncThunk(
 
 export const fetchRegionById = createAsyncThunk(
   // get a region by its id
-  'contacts/getRegionById',
+  'regions/getRegionById',
   async (id, thunkAPI) => {
     try {
       const response = await getRegionById(id);
@@ -35,7 +36,7 @@ export const fetchRegionById = createAsyncThunk(
 
 export const fetchRegionByName = createAsyncThunk(
   // get a region by its name
-  'contacts/getRegionByName',
+  'regions/getRegionByName',
   async (region, thunkAPI) => {
     try {
       const response = await getRegionByName(region);
@@ -48,7 +49,7 @@ export const fetchRegionByName = createAsyncThunk(
 
 export const addRegion = createAsyncThunk(
   // adds a region by its name
-  'contacts/addRegion',
+  'regions/addRegion',
   async (region, thunkAPI) => {
     try {
       const response = await addNewRegion(region);
@@ -60,7 +61,7 @@ export const addRegion = createAsyncThunk(
 );
 
 export const removeRegion = createAsyncThunk(
-  'contacts/removeRegion',
+  'regions/removeRegion',
   async (userId, thunkAPI) => {
     try {
       const response = await regions.delete(`${userId}`);
@@ -72,7 +73,7 @@ export const removeRegion = createAsyncThunk(
 );
 
 export const addCountry = createAsyncThunk(
-  'contacts/addCountry',
+  'regions/addCountry',
   async (data, thunkAPI) => {
     try {
       const response = await regions.post('', { ...data });

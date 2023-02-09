@@ -9,8 +9,13 @@ import {
 import { ReactComponent as ReactLogo } from './pictures/header_logo.svg';
 import { ReactComponent as Burger } from './pictures/burger.svg';
 import { Link } from 'react-router-dom';
+import ErrorBoundary from 'components/ErrorBoundary/ErrorBoundary';
 
 const StyledLogo = styled(ReactLogo)(({ theme }) => ({
+  [theme.breakpoints.up('tablet')]: {
+    width: '156px',
+    height: '53px',
+  },
   [theme.breakpoints.up('desktop')]: {
     width: '152px',
     height: '67px',
@@ -26,10 +31,13 @@ const StyledHeader = styled(AppBar)(({ theme }) => ({
   opacity: '0.7',
   boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
 
-  paddingTop: '28px',
-  paddingBottom: '28px',
+  paddingTop: '10px',
+  paddingBottom: '10px',
 
-  [theme.breakpoints.up('desktop')]: {},
+  [theme.breakpoints.up('tablet')]: {
+    paddingTop: '24px',
+    paddingBottom: '24px',
+  },
 }));
 
 const pages = [
@@ -45,47 +53,51 @@ export const Header = () => {
   );
 
   return (
-    <StyledHeader>
-      <Container>
-        <Box
-          sx={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-          }}
-        >
-          <StyledLogo width="96px" height="42px" />
-          {isSmallScreen && <StyledBurger />}
-          {isBigScreen && (
-            <Box
-              sx={{
-                flexGrow: 1,
-                display: 'flex',
-                justifyContent: 'flex-end',
-                alignItems: 'center',
-                gap: { tablet: '36px', desktop: '40px' },
-              }}
-              component="nav"
-            >
-              {pages.map(page => (
-                <Button
-                  variant="navigation"
-                  key={page.name}
-                  component={Link}
-                  to={page.link}
-                  // onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: 'black', display: 'block' }}
-                >
-                  {page.name}
+    <ErrorBoundary>
+      <StyledHeader>
+        <Container>
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+            }}
+          >
+            <Link to="/">
+              <StyledLogo width="96px" height="42px" />
+            </Link>
+            {isSmallScreen && <StyledBurger />}
+            {isBigScreen && (
+              <Box
+                sx={{
+                  flexGrow: 1,
+                  display: 'flex',
+                  justifyContent: 'flex-end',
+                  alignItems: 'center',
+                  gap: { tablet: '36px', desktop: '40px' },
+                }}
+                component="nav"
+              >
+                {pages.map(page => (
+                  <Button
+                    variant="navigation"
+                    key={page.name}
+                    component={Link}
+                    to={page.link}
+                    // onClick={handleCloseNavMenu}
+                    sx={{ my: 2, color: 'black', display: 'block' }}
+                  >
+                    {page.name}
+                  </Button>
+                ))}
+                <Button component={Link} to="/support">
+                  пiдтримати
                 </Button>
-              ))}
-              <Button component={Link} to="/support">
-                пiдтримати
-              </Button>
-            </Box>
-          )}
-        </Box>
-      </Container>
-    </StyledHeader>
+              </Box>
+            )}
+          </Box>
+        </Container>
+      </StyledHeader>
+    </ErrorBoundary>
   );
 };

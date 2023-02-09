@@ -17,6 +17,10 @@ export const StyledBox = styled(Box)(({ theme }) => ({
   alignItems: 'center',
   justifyContent: 'center',
   marginBottom: '20px',
+  [theme.breakpoints.up('tablet')]: {
+    flexDirection: 'row',
+    marginBottom: '60px',
+  },
   [theme.breakpoints.up('desktop')]: {
     flexDirection: 'row',
     marginBottom: '60px',
@@ -24,6 +28,9 @@ export const StyledBox = styled(Box)(({ theme }) => ({
 }));
 
 export const StatsTitle = styled(Typography)(({ theme }) => ({
+  [theme.breakpoints.up('tablet')]: {
+    display: 'inline-block',
+  },
   [theme.breakpoints.up('desktop')]: {
     display: 'inline-block',
   },
@@ -33,7 +40,6 @@ export const Ul = styled('ul')(({ theme }) => ({
   display: 'flex',
   flexWrap: 'wrap',
   justifyContent: 'center',
-  [theme.breakpoints.up('desktop')]: {},
 }));
 
 export const Li = styled('li')(({ theme }) => ({
@@ -41,6 +47,11 @@ export const Li = styled('li')(({ theme }) => ({
   textAlign: 'center',
   width: '100%',
   '&:first-of-type': { borderBottom: '2px solid #FFFFFF' },
+  [theme.breakpoints.up('tablet')]: {
+    '&:first-of-type': { borderRight: '2px solid #FFFFFF', borderBottom: 0 },
+    width: 'auto',
+    padding: '70px 48px',
+  },
   [theme.breakpoints.up('desktop')]: {
     '&:first-of-type': { borderRight: '2px solid #FFFFFF', borderBottom: 0 },
     width: 'auto',
