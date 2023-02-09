@@ -5,6 +5,7 @@ import { AutoPlayContainer, StyledImg } from './Slider.styled';
 
 export const AutoPlay = ({ ...props }) => {
   const settings = {
+    slidesToShow: 5,
     dots: false,
     infinite: true,
     autoplay: true,
@@ -18,7 +19,6 @@ export const AutoPlay = ({ ...props }) => {
         breakpoint: 1366,
         settings: {
           slidesToShow: 5,
-          infinite: true,
         },
       },
       {
@@ -29,6 +29,12 @@ export const AutoPlay = ({ ...props }) => {
       },
       {
         breakpoint: 480,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 320,
         settings: {
           slidesToShow: 3,
         },
