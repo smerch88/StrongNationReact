@@ -127,17 +127,22 @@ theme.components = {
       {
         props: { variant: 'ukrstrong' },
         style: {
+          textTransform: 'uppercase',
           fontFamily: 'Bebas',
           fontStyle: 'normal',
           fontWeight: 400,
           borderRadius: '8px',
-          padding: '14px 30px',
-          fontSize: '20px',
-          lineHeight: '24px',
+          padding: '13px 20px',
+          fontSize: '18px',
+          lineHeight: '22px',
           color: theme.palette.colorList.white,
           background: theme.palette.primary.main,
           '&:hover': {
             background: theme.palette.primary.light,
+          },
+          [theme.breakpoints.up('desktop')]: {
+            fontSize: '20px',
+            lineHeight: '24px',
           },
         },
       },
@@ -189,6 +194,10 @@ theme.typography.body1 = {
   fontWeight: 400,
   fontSize: '12px',
   lineHeight: '14px',
+  [theme.breakpoints.up('tablet')]: {
+    fontSize: '18px',
+    lineHeight: '21px',
+  },
   [theme.breakpoints.up('desktop')]: {
     fontSize: '25px',
     lineHeight: '29px',
@@ -205,20 +214,20 @@ theme.typography.h1 = {
     fontSize: '50px',
   },
 };
-theme.typography.h2 = {
-  margin: 0,
-  fontFamily: 'Bebas',
-  fontStyle: 'normal',
-  fontWeight: 400,
-  fontSize: '30px',
-  lineHeight: '36px',
-  color: theme.palette.text.header,
-  [theme.breakpoints.up('desktop')]: {
-    fontWeight: 400,
-    fontSize: '50px',
-    lineHeight: '60px',
-  },
-};
+// theme.typography.h2 = {
+//   margin: 0,
+//   fontFamily: 'Bebas',
+//   fontStyle: 'normal',
+//   fontWeight: 400,
+//   fontSize: '30px',
+//   lineHeight: '36px',
+//   color: theme.palette.text.header,
+//   [theme.breakpoints.up('desktop')]: {
+//     fontWeight: 400,
+//     fontSize: '50px',
+//     lineHeight: '60px',
+//   },
+// };
 theme.typography.h3 = {
   margin: 0,
   fontFamily: 'Bebas',
@@ -226,6 +235,10 @@ theme.typography.h3 = {
   fontWeight: 400,
   fontSize: '30px',
   lineHeight: '36px',
+  [theme.breakpoints.up('tablet')]: {
+    fontSize: '40px',
+    lineHeight: '48px',
+  },
   [theme.breakpoints.up('desktop')]: {
     fontSize: '50px',
     lineHeight: '60px',
