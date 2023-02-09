@@ -1,7 +1,10 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import ListOfPosts from 'components/ListOfPosts/ListOfPosts';
 import { fetchAllPostsByCountry } from 'redux/posts/posts-operations';
+
+import { Container } from '@mui/material';
+
+import ListOfPosts from 'components/Posts/ListOfPosts/ListOfPosts';
 
 const News = () => {
   const dispatch = useDispatch();
@@ -10,7 +13,13 @@ const News = () => {
     dispatch(fetchAllPostsByCountry());
   }, [dispatch]);
 
-  return <ListOfPosts />;
+  return (
+    <section>
+      <Container>
+        <ListOfPosts />
+      </Container>
+    </section>
+  );
 };
 
 export default News;

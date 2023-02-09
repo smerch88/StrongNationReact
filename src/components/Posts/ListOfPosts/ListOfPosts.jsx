@@ -1,6 +1,10 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+
 import { getAllPosts } from 'redux/posts/posts-selectors';
+import ItemOfPost from './ItemOfPost/ItemOfPost';
+
+import { UlElement } from './ListOfPosts.styled';
 
 export default function ListOfPosts() {
   const allPosts = useSelector(getAllPosts);
@@ -9,15 +13,10 @@ export default function ListOfPosts() {
     return;
   }
   return (
-    <ul>
+    <UlElement>
       {allPosts.map(item => (
-        <li key={item.id}>
-          <p>{item.description}</p>
-          <a href={item.link} target="blank">
-            {item.link}
-          </a>
-        </li>
+        <ItemOfPost key={item.id} post={item} />
       ))}
-    </ul>
+    </UlElement>
   );
 }
