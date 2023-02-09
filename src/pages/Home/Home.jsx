@@ -1,4 +1,4 @@
-import { Container, Typography } from '@mui/material';
+import { Container, Typography, useTheme } from '@mui/material';
 import { AutoPlay } from 'components/Slider/Slider';
 
 import content1 from '../../images/sliderImages/1.jpg';
@@ -29,6 +29,7 @@ const Home = () => {
     content1,
     content1,
   ];
+  const theme = useTheme();
   return (
     <>
       <MapSection>
@@ -44,7 +45,19 @@ const Home = () => {
         {/* who we are section */}
         <Container>
           <AboutTextWrapper>
-            <Typography variant="h2" align="center" mb="10px">
+            <Typography
+              variant="h3"
+              component="h2"
+              align="center"
+              color={[theme.palette.text.header]}
+              sx={{
+                marginBottom: {
+                  desktop: '50px',
+                  tablet: '33px',
+                  phone: '22px',
+                },
+              }}
+            >
               ПРО НАС
             </Typography>
             <Typography>
@@ -61,6 +74,12 @@ const Home = () => {
             </Typography>
             <br />
             <Typography>
+              Ціль фонду – допомога та соціальна підтримка незаможних верств
+              населення, пенсіонерів, дітей, багатодітних родин та наших мужніх
+              воїнів Збройних Сил України.
+            </Typography>
+            <br />
+            <Typography>
               Міміношвілі Вахтангі Омарійович також є засновником адвокатського
               бюро, керуючим партнером, адвокатом та членом Ради адвокатів
               Київської області. Тому, фонд “Хоробра Україна” надає як фізичну
@@ -68,7 +87,6 @@ const Home = () => {
               допомогу, маючи багаторічний досвід у будь яких юридичних
               питаннях.
             </Typography>
-            <br />
           </AboutTextWrapper>
         </Container>
       </AboutSection>
