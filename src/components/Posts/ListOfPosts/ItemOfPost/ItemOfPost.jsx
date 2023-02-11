@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   ImgBox,
   ImgElement,
@@ -8,14 +7,44 @@ import {
   PElement,
   WrapOfLink,
 } from './ItemOfPost.styled';
-import imgOfPost from '../../../../images/sliderImages/1.jpg';
+import { getPhotoForPost } from 'components/services/api-posts';
+import { useEffect, useState } from 'react';
 
 export default function ItemOfPost({ post }) {
+  const [image, setImage] = useState('');
+
+  useEffect(() => {
+    async function fetchData() {
+      const binaryCode = await getPhotoForPost(post.id);
+      if (binaryCode.name === 'AxiosError') {
+        console.log(`Post ${post.id} was not found`);
+        return;
+      }
+      console.log(`Binary code for post ${post.id}:`, binaryCode);
+      setImage(binaryCode);
+    }
+    fetchData();
+  }, [post.id]);
+
+  let imageSrc = '';
+  if (image) {
+    const base64Image = btoa(
+      new Uint8Array(image).reduce(
+        (data, byte) => data + String.fromCharCode(byte),
+        ''
+      )
+    );
+    imageSrc = `data:image/jpeg;base64,${base64Image}`;
+  }
+
   return (
     <LiElement>
       <ImgTextBox>
-      <ImgBox>
-        <ImgElement src={imgOfPost} alt="smth" />
+        <ImgBox>
+          <ImgElement
+            src={imageSrc || require('../../../../images/error/notFound.jpg')}
+            alt="smth"
+          />
         </ImgBox>
         <PElement>{post.description}</PElement>
       </ImgTextBox>
