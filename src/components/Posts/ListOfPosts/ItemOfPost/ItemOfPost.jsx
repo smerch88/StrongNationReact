@@ -1,6 +1,8 @@
 import React from 'react';
 import {
+  ImgBox,
   ImgElement,
+  ImgTextBox,
   LiElement,
   LinkElement,
   PElement,
@@ -11,10 +13,12 @@ import imgOfPost from '../../../../images/sliderImages/1.jpg';
 export default function ItemOfPost({ post }) {
   return (
     <LiElement>
-      <div style={{ display: 'flex', gap: '11px' }}>
+      <ImgTextBox>
+      <ImgBox>
         <ImgElement src={imgOfPost} alt="smth" />
+        </ImgBox>
         <PElement>{post.description}</PElement>
-      </div>
+      </ImgTextBox>
       <WrapOfLink>
         <LinkElement href={post.link} target="blank">
           {post.link}
