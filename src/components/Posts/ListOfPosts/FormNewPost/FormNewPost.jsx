@@ -66,8 +66,11 @@ export default function FormNewPost() {
   };
 
   const handleSubmit = (values, { resetForm }) => {
-    console.log(values);
+    const formData = new FormData();
+    formData.append('file', photo);
+
     const objData = {
+      formData: formData,
       region: region,
       description: values.description,
       link: values.link,
@@ -87,12 +90,7 @@ export default function FormNewPost() {
     };
 
     dispatch(addPost(objData));
-    console.log(idOfPost);
-    const formData = new FormData();
-    formData.append('file', photo);
-    addPhotoForPost('50', formData, {
-      'Content-Type': 'multipart/form-data',
-    });
+
     resetForm();
   };
 

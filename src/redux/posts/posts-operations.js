@@ -5,6 +5,8 @@ import {
   addPostByNameOfRegion,
 } from 'components/services/api-posts';
 
+import { addPhotoForPost } from 'components/services/api-posts';
+
 export const fetchAllPostsByCountry = createAsyncThunk(
   'posts/fetchAll',
   async (_, thunkAPI) => {
@@ -23,8 +25,9 @@ export const addPost = createAsyncThunk(
     try {
       const res = await addPostByNameOfRegion(
         body.region,
-        omit(body, 'region')
+        omit(body, 'region', 'formData')
       );
+      await addPhotoForPost(res.id, body.formData);
       return res;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
