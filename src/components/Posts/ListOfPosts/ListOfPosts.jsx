@@ -8,10 +8,11 @@ import { UlElement } from './ListOfPosts.styled';
 
 export default function ListOfPosts() {
   const allPosts = useSelector(getAllPosts);
-  console.log('allPosts', allPosts);
+
   if (allPosts.length === 0) {
     return;
   }
+
   return (
     <UlElement>
       {allPosts.map(item => (
