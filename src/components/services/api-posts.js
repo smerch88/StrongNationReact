@@ -6,7 +6,7 @@ export const post = axios.create({
 });
 
 export const photo = axios.create({
-  baseURL: 'http://strong-nation.online/post-photo/v1/upload/',
+  baseURL: 'http://strong-nation.online/post-photo/v1/',
   timeout: 1000,
 });
 
@@ -57,7 +57,16 @@ export const updatePostById = async body => {
 
 export const addPhotoForPost = async (id, body) => {
   try {
-    const { data } = await photo.post(`${id}`, body);
+    const { data } = await photo.post(`upload/${id}`, body);
+    return data;
+  } catch (error) {
+    return error;
+  }
+};
+
+export const getPhotoForPost = async (id, body) => {
+  try {
+    const { data } = await photo.post(`download/${id}`);
     return data;
   } catch (error) {
     return error;
