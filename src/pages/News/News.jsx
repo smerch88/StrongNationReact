@@ -5,6 +5,7 @@ import { fetchAllPostsByCountry } from 'redux/posts/posts-operations';
 import { Container } from '@mui/material';
 
 import ListOfPosts from 'components/Posts/ListOfPosts/ListOfPosts';
+import FormNewPost from 'components/Posts/ListOfPosts/FormNewPost/FormNewPost';
 
 const News = () => {
   const dispatch = useDispatch();
@@ -16,6 +17,12 @@ const News = () => {
   return (
     <section>
       <Container>
+        <div>
+          <h1>Новини</h1>
+          <div>
+            <FormNewPost></FormNewPost>
+          </div>
+        </div>
         <ListOfPosts />
       </Container>
     </section>
