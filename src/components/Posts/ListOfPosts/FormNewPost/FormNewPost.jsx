@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { Formik, ErrorMessage, Field } from 'formik';
 import * as Yup from 'yup';
 
 import { addPost } from 'redux/posts/posts-operations';
+import { addPhotoForPost } from 'components/services/api-posts';
 
 import ModalEl from 'components/Modal/Modal';
 import NativeSelectRegion from '../SelectInput/SelectInput';
@@ -23,14 +24,21 @@ export default function FormNewPost() {
   const [region, setRegion] = useState('');
   const [date, setDate] = useState(new Date());
 
-  const dispatch = useDispatch();
+  const [photo, setPhoto] = useState('');
 
+  const dispatch = useDispatch();
+  const idOfPost = useSelector(state => state.posts.idOfPost);
+  console.log(idOfPost);
   const handleChangeRegion = event => {
     setRegion(event.target.value);
   };
 
   const handleChangeDate = newValue => {
     setDate(newValue);
+  };
+
+  const handleGetPhoto = e => {
+    setPhoto(e.target.files[0]);
   };
 
   const schema = Yup.object().shape({
@@ -79,6 +87,12 @@ export default function FormNewPost() {
     };
 
     dispatch(addPost(objData));
+    console.log(idOfPost);
+    const formData = new FormData();
+    formData.append('file', photo);
+    addPhotoForPost('50', formData, {
+      'Content-Type': 'multipart/form-data',
+    });
     resetForm();
   };
 
@@ -145,6 +159,9 @@ export default function FormNewPost() {
                 handleChangeDate={handleChangeDate}
                 date={date}
               />
+            </label>
+            <label>
+              <Field type="file" name="photo" onChange={handleGetPhoto} />
             </label>
             <button style={{ marginTop: '20px' }} type="submit">
               Готово
