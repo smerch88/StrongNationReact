@@ -1,26 +1,29 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
-import { Formik, Field, ErrorMessage } from 'formik';
+import { Formik, ErrorMessage, Field } from 'formik';
 import * as Yup from 'yup';
+
+import { addPost } from 'redux/posts/posts-operations';
 
 import ModalEl from 'components/Modal/Modal';
 import NativeSelectRegion from '../SelectInput/SelectInput';
 
-import { DatePicker } from '@mui/x-date-pickers-pro/DatePicker';
-
 import {
+  StyledError,
   StyledForm,
   StyledInput,
   StyledLabel,
   StyledSpan,
 } from './FormNewPost.styled';
 
-// import DatePicker from 'components/Posts/DatePicker/DatePicker';
+import BasicDatePicker from 'components/Posts/DatePicker/DatePicker';
 
 export default function FormNewPost() {
   const [region, setRegion] = useState('');
   const [date, setDate] = useState(new Date());
-  console.log('date', date);
+
+  const dispatch = useDispatch();
 
   const handleChangeRegion = event => {
     setRegion(event.target.value);
@@ -31,10 +34,17 @@ export default function FormNewPost() {
   };
 
   const schema = Yup.object().shape({
-    militaryDonations: Yup.number('must be only number').required().integer(),
-    civiliansDonations: Yup.number('must be only number').required().integer(),
-    description: Yup.string().max(150, 'Too Long!'),
-    link: Yup.string().required(),
+    militaryDonations: Yup.number()
+      .typeError('must be any number!')
+      .required()
+      .integer(),
+    civiliansDonations: Yup.number()
+      .typeError('must be any number!')
+      .required()
+      .integer(),
+
+    description: Yup.string().max(150, 'Too Long!').required(),
+    link: Yup.string().typeError().required(),
     date: Yup.date().default(() => new Date()),
   });
 
@@ -49,6 +59,27 @@ export default function FormNewPost() {
 
   const handleSubmit = (values, { resetForm }) => {
     console.log(values);
+    const objData = {
+      region: region,
+      description: values.description,
+      link: values.link,
+      date: date,
+      categories: [
+        {
+          name: 'militaryDonations',
+          number: values.militaryDonations,
+          units: null,
+        },
+        {
+          name: 'civiliansDonations',
+          number: values.civiliansDonations,
+          units: 'kg',
+        },
+      ],
+    };
+
+    dispatch(addPost(objData));
+    resetForm();
   };
 
   return (
@@ -63,16 +94,16 @@ export default function FormNewPost() {
             <StyledLabel>
               <StyledSpan>На потреби військових</StyledSpan>
               <StyledInput type="text" name="militaryDonations" />
-              <ErrorMessage name="militaryDonations">
-                {msg => <div>{msg}</div>}
-              </ErrorMessage>
+              <StyledError>
+                <ErrorMessage name="militaryDonations" />
+              </StyledError>
             </StyledLabel>
             <StyledLabel>
               <StyledSpan>На потреби громадян</StyledSpan>
               <StyledInput type="text" name="civiliansDonations" />
-              <ErrorMessage name="civiliansDonations">
-                {msg => <div>{msg}</div>}
-              </ErrorMessage>
+              <StyledError>
+                <ErrorMessage name="civiliansDonations" />
+              </StyledError>
             </StyledLabel>
             <label>
               <span>Область</span>
@@ -80,43 +111,47 @@ export default function FormNewPost() {
                 handleChangeRegion={handleChangeRegion}
                 region={region}
               />
+              <StyledError>
+                <ErrorMessage name="region" />
+              </StyledError>
             </label>
-            <label>
-              <span>Короткий опис</span>
-              <Field as="textarea" name="description" />
-              <ErrorMessage name="description" />
-            </label>
-            <label>
+            <StyledLabel style={{ marginTop: '14px' }}>
+              <StyledSpan>Короткий опис</StyledSpan>
+              <Field
+                style={{
+                  paddingBottom: '5px',
+                  border: 'none',
+                  outline: 'transparent',
+                  borderBottom: '1px solid #000000',
+                }}
+                rows="1"
+                as="textarea"
+                name="description"
+              />
+              <StyledError>
+                <ErrorMessage name="description" />
+              </StyledError>
+            </StyledLabel>
+            <StyledLabel>
               <span>Посилання на джерело</span>
-              <Field type="url" name="link" />
-              <ErrorMessage name="link" />
-            </label>
+              <StyledInput type="url" name="link" />
+              <StyledError>
+                <ErrorMessage name="link" />
+              </StyledError>
+            </StyledLabel>
             <label>
               <span>Дата публікації</span>
-              <DatePicker />
-              {/* <DatePicker handleChangeDate={handleChangeDate} date={date} /> */}
-              <ErrorMessage name="date" />
+              <BasicDatePicker
+                handleChangeDate={handleChangeDate}
+                date={date}
+              />
             </label>
-            <button type="submit">Готово</button>
+            <button style={{ marginTop: '20px' }} type="submit">
+              Готово
+            </button>
           </StyledForm>
         </Formik>
       </ModalEl>
     </>
   );
 }
-
-// import React, { useState } from 'react';
-
-// const CharacterCounter = () => {
-//   const [inputValue, setInputValue] = useState('');
-
-//   return (
-//     <div>
-//       <label htmlFor="text-input">Enter text:</label>
-//       <input type="text" id="text-input" value={inputValue} onChange={(event) => setInputValue(event.target.value)} />
-//       <span id="character-count">{inputValue.length}</span> characters
-//     </div>
-//   );
-// };
-
-// export default CharacterCounter;
