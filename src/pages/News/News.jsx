@@ -20,7 +20,7 @@ const News = () => {
         <div>
           <h1>Новини</h1>
           <div>
-            <FormNewPost></FormNewPost>
+            <FormNewPost />
           </div>
         </div>
         <ListOfPosts />
