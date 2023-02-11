@@ -32,9 +32,11 @@ export const Stats = () => {
             <Typography variant="h4" component="span">
               {categories &&
                 new Intl.NumberFormat().format(
-                  categories.filter(
-                    category => category.name === 'militaryDonations'
-                  )[0].number
+                  Math.round(
+                    categories.filter(
+                      category => category.name === 'militaryDonations'
+                    )[0].number
+                  )
                 )}
             </Typography>
             <Typography variant="h5" component="p">
@@ -45,9 +47,11 @@ export const Stats = () => {
             <Typography variant="h4" component="span">
               {categories &&
                 new Intl.NumberFormat().format(
-                  categories.filter(
-                    category => category.name === 'civiliansDonations'
-                  )[0].number
+                  Math.round(
+                    categories.filter(
+                      category => category.name === 'civiliansDonations'
+                    )[0].number
+                  )
                 )}
             </Typography>
             <Typography variant="h5" component="p">

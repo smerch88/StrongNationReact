@@ -3,7 +3,7 @@ import { omit } from 'lodash';
 import {
   getAllPostsByCountry,
   addPostByNameOfRegion,
-  getPhotoForPost,
+  // getPhotoForPost,
 } from 'components/services/api-posts';
 
 import { addPhotoForPost } from 'components/services/api-posts';

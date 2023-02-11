@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import {
   fetchAllPostsByCountry,
   addPost,
-  getPostPicture,
+  // getPostPicture,
 } from './posts-operations';
 
 const postSlice = createSlice({
