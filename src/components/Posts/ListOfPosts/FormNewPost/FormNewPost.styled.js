@@ -21,6 +21,7 @@ export const StyledInput = styled(Field)(({ theme }) => ({
   outline: 'transparent',
   borderBottom: '1px solid #000000',
   width: '100%',
+  textAlign: 'right',
   //   [theme.breakpoints.up('desktop')]: {},
 }));
 
