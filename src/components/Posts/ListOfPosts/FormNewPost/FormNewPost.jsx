@@ -5,7 +5,6 @@ import { Formik, ErrorMessage, Field } from 'formik';
 import * as Yup from 'yup';
 
 import { addPost } from 'redux/posts/posts-operations';
-import { getPhotoForPost } from 'components/services/api-posts';
 
 import ModalEl from 'components/Modal/Modal';
 import NativeSelectRegion from '../SelectInput/SelectInput';
@@ -94,7 +93,6 @@ export default function FormNewPost() {
     };
 
     dispatch(addPost(objData));
-    getPhotoForPost(66);
     resetForm();
   };
 
