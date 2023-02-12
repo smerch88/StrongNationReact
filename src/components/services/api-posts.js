@@ -77,17 +77,11 @@ export const getPhotoForPost = async (postId, byteCode) => {
   }
 };
 
-// export const getPhotoForPost = async id => {
-//   try {
-//     const { data } = await photo.get(`delete/${id}`, {
-//       responseType: 'arraybuffer',
-//       transformResponse: [data => (byteCode ? new Uint8Array(data) : data)],
-//     });
-
-//     return data;
-//   } catch (error) {
-//     return error;
-//   }
-// };
-
-// http://localhost:8080/post/v1/delete/4
+export const deletePostById = async id => {
+  try {
+    const { data } = await post.delete(`delete/${id}`);
+    return data;
+  } catch (error) {
+    return error;
+  }
+};

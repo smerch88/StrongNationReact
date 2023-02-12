@@ -9,9 +9,13 @@ import {
 } from './ItemOfPost.styled';
 import { getPhotoForPost } from 'components/services/api-posts';
 import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { deletePost } from 'redux/posts/posts-operations';
 
 export default function ItemOfPost({ post }) {
   const [image, setImage] = useState('');
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     async function fetchData() {
@@ -54,6 +58,14 @@ export default function ItemOfPost({ post }) {
         </LinkElement>
         <PElement>{new Date(post.date).toLocaleDateString()}</PElement>
       </WrapOfLink>
+      <button
+        type="button"
+        onClick={() => {
+          dispatch(deletePost(post.id));
+        }}
+      >
+        Delete
+      </button>
     </LiElement>
   );
 }

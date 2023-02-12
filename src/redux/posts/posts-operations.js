@@ -3,7 +3,7 @@ import { omit } from 'lodash';
 import {
   getAllPostsByCountry,
   addPostByNameOfRegion,
-  // getPhotoForPost,
+  deletePostById,
 } from 'components/services/api-posts';
 
 import { addPhotoForPost } from 'components/services/api-posts';
@@ -36,14 +36,14 @@ export const addPost = createAsyncThunk(
   }
 );
 
-// export const getPostPicture = createAsyncThunk(
-//   'posts/getPicture',
-//   async (postId, thunkAPI) => {
-//     try {
-//       const res = await getPhotoForPost(postId);
-//       return res;
-//     } catch (error) {
-//       return thunkAPI.rejectWithValue(error.message);
-//     }
-//   }
-// );
+export const deletePost = createAsyncThunk(
+  'posts/deletePost',
+  async (id, thunkAPI) => {
+    try {
+      const res = await deletePostById(id);
+      return res;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);

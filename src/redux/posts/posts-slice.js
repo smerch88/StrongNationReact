@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import {
   fetchAllPostsByCountry,
   addPost,
-  // getPostPicture,
+  deletePost,
 } from './posts-operations';
 
 const postSlice = createSlice({
@@ -40,19 +40,18 @@ const postSlice = createSlice({
       .addCase(addPost.rejected, (state, action) => {
         state.error = action.payload;
         state.isLoading = false;
-        // })
-        // .addCase(getPostPicture.pending, state => {
-        //   state.isLoading = true;
-        // })
-        // .addCase(getPostPicture.fulfilled, (state, action) => {
-        //   state.isLoading = true;
-        //   state.error = false;
-        //   state.images = [action.payload, ...state.images];
-        //   state.idOfPost = action.payload.id;
-        // })
-        // .addCase(getPostPicture.rejected, (state, action) => {
-        //   state.error = action.payload;
-        //   state.isLoading = false;
+      })
+      .addCase(deletePost.pending, state => {
+        state.isLoading = true;
+      })
+      .addCase(deletePost.fulfilled, (state, action) => {
+        state.items = state.items.filter(item => item.id !== action.payload.id);
+        state.isLoading = true;
+        state.error = false;
+      })
+      .addCase(deletePost.rejected, (state, action) => {
+        state.error = action.payload;
+        state.isLoading = false;
       });
   },
 });
