@@ -10,17 +10,8 @@ import {
 import { useDispatch } from 'react-redux';
 import { deletePost } from 'redux/posts/posts-operations';
 
-
-
- 
-
-
-
-
-  
-
-  export default function ItemOfPost({ post }) {
-   const dispatch = useDispatch();
+export default function ItemOfPost({ post }) {
+  const dispatch = useDispatch();
   return (
     <LiElement>
       <ImgTextBox>
