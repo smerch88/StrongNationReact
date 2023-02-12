@@ -10,6 +10,8 @@ import { getPhotoForPost } from 'components/services/api-posts';
 import ModalEl from 'components/Modal/Modal';
 import NativeSelectRegion from '../SelectInput/SelectInput';
 
+import defaultPhoto from '../../../../images/error/notFound.jpg';
+
 import {
   StyledError,
   StyledForm,
@@ -24,7 +26,8 @@ export default function FormNewPost() {
   const [region, setRegion] = useState('');
   const [date, setDate] = useState(new Date());
 
-  const [photo, setPhoto] = useState('');
+  const [photo, setPhoto] = useState(defaultPhoto.files);
+  console.log('photo', photo);
 
   const dispatch = useDispatch();
   const idOfPost = useSelector(state => state.posts.idOfPost);
@@ -38,6 +41,7 @@ export default function FormNewPost() {
   };
 
   const handleGetPhoto = e => {
+    console.log(e.target.files[0]);
     setPhoto(e.target.files[0]);
   };
 

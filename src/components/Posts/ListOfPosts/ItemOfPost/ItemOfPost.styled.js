@@ -26,19 +26,16 @@ export const ImgElement = styled('img')(({ theme }) => ({
 }));
 
 export const ImgBox = styled('div')(({ theme }) => ({
-  minWidth: '114px',
-  maxWidth: '114.1px',
+  width: '114px',
+  height: '85px',
   borderRadius: '10px',
   overflow: 'hidden',
   [theme.breakpoints.up('tablet')]: {
-    minWidth: 'none',
-    maxWidth: '200px',
     width: '200px',
     height: '152px',
     borderRadius: '18px 18px 0 0',
   },
   [theme.breakpoints.up('desktop')]: {
-    maxWidth: '354px',
     width: '354px',
     height: '269px',
   },

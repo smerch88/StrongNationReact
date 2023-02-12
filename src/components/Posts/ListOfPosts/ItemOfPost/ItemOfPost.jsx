@@ -42,7 +42,7 @@ export default function ItemOfPost({ post }) {
       <ImgTextBox>
         <ImgBox>
           <ImgElement
-            src={imageSrc || require('../../../../images/error/notFound.jpg')}
+            src={`http://strong-nation.online/post-photo/v1/download/${post.id}`}
             alt="smth"
           />
         </ImgBox>
