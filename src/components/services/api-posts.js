@@ -63,3 +63,12 @@ export const addPhotoForPost = async (id, body) => {
     return error;
   }
 };
+
+export const deletePostById = async id => {
+  try {
+    const { data } = await post.delete(`delete/${id}`);
+    return data;
+  } catch (error) {
+    return error;
+  }
+};

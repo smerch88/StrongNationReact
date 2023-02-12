@@ -7,8 +7,11 @@ import {
   PElement,
   WrapOfLink,
 } from './ItemOfPost.styled';
+import { useDispatch } from 'react-redux';
+import { deletePost } from 'redux/posts/posts-operations';
 
 export default function ItemOfPost({ post }) {
+  const dispatch = useDispatch();
   return (
     <LiElement>
       <ImgTextBox>
@@ -26,6 +29,14 @@ export default function ItemOfPost({ post }) {
         </LinkElement>
         <PElement>{new Date(post.date).toLocaleDateString()}</PElement>
       </WrapOfLink>
+      <button
+        type="button"
+        onClick={() => {
+          dispatch(deletePost(post.id));
+        }}
+      >
+        Delete
+      </button>
     </LiElement>
   );
 }
