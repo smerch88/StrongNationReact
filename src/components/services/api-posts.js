@@ -2,12 +2,12 @@ import axios from 'axios';
 
 export const post = axios.create({
   baseURL: 'http://strong-nation.online/post/v1/',
-  timeout: 1000,
+  // timeout: 1000,
 });
 
 export const photo = axios.create({
   baseURL: 'http://strong-nation.online/post-photo/v1/',
-  timeout: 1000,
+  timeout: 30000,
 });
 
 export const getAllPostsByCountry = async () => {
@@ -64,9 +64,13 @@ export const addPhotoForPost = async (id, body) => {
   }
 };
 
-export const getPhotoForPost = async id => {
+export const getPhotoForPost = async (postId, byteCode) => {
   try {
-    const { data } = await photo.post(`download/${id}`);
+    const { data } = await photo.get(`download/${postId}`, {
+      responseType: 'arraybuffer',
+      transformResponse: [data => (byteCode ? new Uint8Array(data) : data)],
+    });
+
     return data;
   } catch (error) {
     return error;

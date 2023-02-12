@@ -1,5 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchAllPostsByCountry, addPost } from './posts-operations';
+import {
+  fetchAllPostsByCountry,
+  addPost,
+  // getPostPicture,
+} from './posts-operations';
 
 const postSlice = createSlice({
   name: 'posts',
@@ -8,6 +12,7 @@ const postSlice = createSlice({
     idOfPost: null,
     isLoading: false,
     error: null,
+    images: [],
   },
   extraReducers: builder => {
     builder
@@ -35,6 +40,19 @@ const postSlice = createSlice({
       .addCase(addPost.rejected, (state, action) => {
         state.error = action.payload;
         state.isLoading = false;
+        // })
+        // .addCase(getPostPicture.pending, state => {
+        //   state.isLoading = true;
+        // })
+        // .addCase(getPostPicture.fulfilled, (state, action) => {
+        //   state.isLoading = true;
+        //   state.error = false;
+        //   state.images = [action.payload, ...state.images];
+        //   state.idOfPost = action.payload.id;
+        // })
+        // .addCase(getPostPicture.rejected, (state, action) => {
+        //   state.error = action.payload;
+        //   state.isLoading = false;
       });
   },
 });

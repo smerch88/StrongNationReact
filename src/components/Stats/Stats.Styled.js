@@ -48,13 +48,25 @@ export const Li = styled('li')(({ theme }) => ({
   width: '100%',
   '&:first-of-type': { borderBottom: '2px solid #FFFFFF' },
   [theme.breakpoints.up('tablet')]: {
-    '&:first-of-type': { borderRight: '2px solid #FFFFFF', borderBottom: 0 },
-    width: 'auto',
     padding: '70px 48px',
+    paddingRight: 0,
+    width: 'auto',
+    '&:first-of-type': {
+      borderRight: '2px solid #FFFFFF',
+      borderBottom: 0,
+      paddingLeft: 0,
+      paddingRight: '48px',
+    },
   },
   [theme.breakpoints.up('desktop')]: {
-    '&:first-of-type': { borderRight: '2px solid #FFFFFF', borderBottom: 0 },
     width: 'auto',
     padding: '60px 126px',
+    paddingRight: 0,
+    '&:first-of-type': {
+      borderRight: '2px solid #FFFFFF',
+      borderBottom: 0,
+      paddingLeft: 0,
+      paddingRight: '126px',
+    },
   },
 }));
