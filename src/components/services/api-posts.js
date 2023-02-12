@@ -64,7 +64,7 @@ export const addPhotoForPost = async (id, body) => {
   }
 };
 
-export const getPhotoForPost = async (id, body) => {
+export const getPhotoForPost = async id => {
   try {
     const { data } = await photo.post(`download/${id}`);
     return data;
