@@ -64,19 +64,6 @@ export const addPhotoForPost = async (id, body) => {
   }
 };
 
-export const getPhotoForPost = async (postId, byteCode) => {
-  try {
-    const { data } = await photo.get(`download/${postId}`, {
-      responseType: 'arraybuffer',
-      transformResponse: [data => (byteCode ? new Uint8Array(data) : data)],
-    });
-
-    return data;
-  } catch (error) {
-    return error;
-  }
-};
-
 export const deletePostById = async id => {
   try {
     const { data } = await post.delete(`delete/${id}`);
