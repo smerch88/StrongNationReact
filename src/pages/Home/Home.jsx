@@ -18,8 +18,11 @@ import { ReadMore } from 'components/ReadMore/ReadMore';
 import { Stats } from 'components/Stats/Stats';
 import { Map } from 'components/Map/Map';
 import FreshNews from 'components/FreshNews/FreshNews';
+import { useState } from 'react';
 
 const Home = () => {
+  const [circles, setCircles] = useState(false);
+
   const images1 = [content1, content2, content3, content4, content5, content6];
   const images2 = [
     content7,
@@ -35,13 +38,13 @@ const Home = () => {
     <>
       <MapSection>
         <Container>
-          <Map />
-          <ReadMore />
+          {!circles && <Map />}
+          <ReadMore circles={circles} setCircles={setCircles} />
         </Container>
         <AutoPlay images={images1} rtl={true} />
         <AutoPlay images={images2} rtl={false} />
       </MapSection>
-      <FreshNews/>
+      <FreshNews />
       <Stats />
       <AboutSection>
         {/* who we are section */}

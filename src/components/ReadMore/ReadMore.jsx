@@ -13,10 +13,10 @@ const RegionsList = styled('ul')(({ theme }) => ({
   padding: '32px 10px',
 }));
 
-export const ReadMore = () => {
+export const ReadMore = props => {
   const dispatch = useDispatch();
 
-  const [circles, setCircles] = useState(false);
+  // const [circles, setCircles] = useState(false);
   const [currentId, setCurrentId] = useState(null);
   const oblList = useSelector(getRegions);
 
@@ -27,12 +27,12 @@ export const ReadMore = () => {
   const handleOpen = e => {
     const id = e.currentTarget.dataset.id;
     setCurrentId(id);
-    setCircles(true);
+    props.setCircles(true);
   };
 
-  console.log(oblList, 'oblList 1');
   return (
     <>
+      {props.circles && <Circles oblList={oblList} currentId={currentId} />}
       <RegionsList>
         {oblList &&
           oblList.map(item => (
@@ -43,7 +43,6 @@ export const ReadMore = () => {
             </li>
           ))}
       </RegionsList>
-      {circles && <Circles oblList={oblList} currentId={currentId} />}
       <Button data-id={1} component={Link} to="/news">
         дивитись бiльше
       </Button>

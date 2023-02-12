@@ -28,24 +28,55 @@ export const Circles = ({ oblList, currentId }) => {
   return (
     <>
       <Box>
-        <CirclesUl>
+        <CirclesUl sx={{ padding: 0 }}>
           {oblList &&
             oblList
               .filter(item => Number(item.id) === Number(currentId))
               .map(item => (
-                <div
-                  style={{ display: 'flex', flexWrap: 'wrap' }}
-                  key={item.id}
-                >
-                  <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-                    <Typography>витрачено на потреби вiйськових</Typography>
-                    <Circle>{item?.categories[0]?.number ?? 0}</Circle>
-                  </div>
-                  <div>
-                    <Circle>{item?.categories[1]?.number ?? 0}</Circle>
-                    <Typography>витрачено на потреби громадян</Typography>
-                  </div>
-                </div>
+                <Box sx={{ display: 'flex', flexWrap: 'wrap' }} key={item.id}>
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      flexWrap: 'wrap',
+                      justifyContent: 'space-around',
+                      marginBottom: '11px',
+                    }}
+                  >
+                    <Typography
+                      variant="h3"
+                      component="p"
+                      sx={{ width: '50%' }}
+                    >
+                      витрачено на потреби вiйськових
+                    </Typography>
+                    <Circle>
+                      <Typography variant="h3" component="p">
+                        {Math.round(item?.categories[0]?.number ?? 0)} грн
+                      </Typography>
+                    </Circle>
+                  </Box>
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      flexWrap: 'wrap',
+                      justifyContent: 'space-around',
+                      marginBottom: '22px',
+                    }}
+                  >
+                    <Circle>
+                      <Typography variant="h3" component="p">
+                        {Math.round(item?.categories[1]?.number ?? 0)} грн
+                      </Typography>
+                    </Circle>
+                    <Typography
+                      variant="h3"
+                      component="p"
+                      sx={{ width: '50%', textAlign: 'right' }}
+                    >
+                      витрачено на потреби громадян
+                    </Typography>
+                  </Box>
+                </Box>
               ))}
         </CirclesUl>
       </Box>

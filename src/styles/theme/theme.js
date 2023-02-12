@@ -42,7 +42,6 @@ const theme = createTheme({
     error: {
       main: '#49012E',
     },
-    
   },
   typography: {
     fontFamily: ['Arial', 'sans-serif'].join(','),
@@ -137,6 +136,7 @@ theme.components = {
           padding: '13px 20px',
           fontSize: '18px',
           lineHeight: '22px',
+          border: '1px solid #FFFFFF',
           color: theme.palette.colorList.white,
           background: theme.palette.primary.main,
           '&:hover': {
