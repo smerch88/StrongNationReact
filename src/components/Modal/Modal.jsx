@@ -9,6 +9,7 @@ const style = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
   width: '90%',
+  maxWidth: { tablet: '650px', desktop: '687px' },
   bgcolor: 'white',
   borderRadius: '24px',
   boxShadow: 24,
