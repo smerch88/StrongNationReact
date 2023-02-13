@@ -6,6 +6,7 @@ import { fetchRegions } from 'redux/regions/regions-operations';
 import { getRegions } from 'redux/regions/regions-selectors';
 import { Circles } from './Circles';
 import { HiArrowLongRight } from 'react-icons/hi2';
+import { TranslateRegionName } from './TranslateRegionName';
 
 const RegionsList = styled('ul')(({ theme }) => ({
   display: 'flex',
@@ -58,7 +59,7 @@ export const ReadMore = props => {
           oblList.map(item => (
             <li key={item.id}>
               <Button variant="regions" onClick={handleOpen} data-id={item.id}>
-                {item.name}
+                <TranslateRegionName name={item.name} />
               </Button>
             </li>
           ))}
