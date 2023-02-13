@@ -98,12 +98,11 @@ export const Circles = ({ oblList, currentId }) => {
                       component="p"
                       sx={{
                         width: '50%',
-                        textAlign: 'right',
                         fontSize: {
                           tablet: '30px',
                           desktop: '30px',
-                          textAlign: 'left',
                         },
+                        textAlign: { phone: 'right', tablet: 'left' },
                       }}
                     >
                       витрачено на потреби громадян

@@ -19,6 +19,7 @@
     "axios": "^1.2.3",
     "dayjs": "^1.11.7",
     "formik": "^2.2.9",
+    "hamburger-react": "^2.5.0",
     "install": "^0.13.0",
     "lodash": "^4.17.21",
     "nanoid": "^4.0.0",

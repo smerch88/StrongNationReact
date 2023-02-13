@@ -6,7 +6,6 @@ export const LiElement = styled('li')(({ theme }) => ({
   borderRadius: '18px',
   [theme.breakpoints.up('tablet')]: {
     width: 'calc((100% - 50px) / 3)',
-    height: '236px',
     padding: '0px',
     overflow: 'hidden',
     display: 'flex',
@@ -15,7 +14,6 @@ export const LiElement = styled('li')(({ theme }) => ({
   },
   [theme.breakpoints.up('desktop')]: {
     width: 'calc((100% - 72px) / 3)',
-    height: '396px',
   },
 }));
 

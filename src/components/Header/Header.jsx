@@ -1,4 +1,11 @@
-import { Box, Button, Container, useMediaQuery } from '@mui/material';
+import {
+  Box,
+  Button,
+  Container,
+  Toolbar,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material';
 
 import { Link } from 'react-router-dom';
 
@@ -17,10 +24,11 @@ export const Header = () => {
   const isSmallScreen = useMediaQuery(theme =>
     theme.breakpoints.down('tablet')
   );
+  const theme = useTheme();
 
   return (
     <ErrorBoundary>
-      <StyledHeader>
+      <StyledHeader sx={{ zIndex: theme.zIndex.drawer + 1 }}>
         <Container>
           <Box
             sx={{
@@ -32,7 +40,7 @@ export const Header = () => {
             <Link to="/">
               <StyledLogo width="96px" height="42px" />
             </Link>
-            {isSmallScreen && <BurgerMenu />}
+            <Toolbar>{isSmallScreen && <BurgerMenu />} </Toolbar>
             {isBigScreen && (
               <Box
                 sx={{
