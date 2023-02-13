@@ -16,7 +16,6 @@ export const Stats = () => {
   }, [dispatch]);
 
   const { categories } = useSelector(getCountry);
-
   return (
     <StatsSection>
       <Container>
