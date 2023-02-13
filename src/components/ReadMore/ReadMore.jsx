@@ -43,9 +43,11 @@ export const ReadMore = props => {
             </li>
           ))}
       </RegionsList>
-      <Button data-id={1} component={Link} to="/news">
-        дивитись бiльше
-      </Button>
+      {props.circles && (
+        <Button data-id={1} component={Link} to="/news">
+          дивитись бiльше
+        </Button>
+      )}
     </>
   );
 };

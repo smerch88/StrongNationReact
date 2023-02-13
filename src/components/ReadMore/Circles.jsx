@@ -51,7 +51,14 @@ export const Circles = ({ oblList, currentId }) => {
                     </Typography>
                     <Circle>
                       <Typography variant="h3" component="p">
-                        {Math.round(item?.categories[0]?.number ?? 0)} грн
+                        {Math.round(item?.categories[0]?.number ?? 0)}{' '}
+                        <Typography
+                          variant="h3"
+                          component="span"
+                          sx={{ fontSize: '25px' }}
+                        >
+                          грн
+                        </Typography>
                       </Typography>
                     </Circle>
                   </Box>
@@ -65,7 +72,14 @@ export const Circles = ({ oblList, currentId }) => {
                   >
                     <Circle>
                       <Typography variant="h3" component="p">
-                        {Math.round(item?.categories[1]?.number ?? 0)} грн
+                        {Math.round(item?.categories[1]?.number ?? 0)}{' '}
+                        <Typography
+                          variant="h3"
+                          component="span"
+                          sx={{ fontSize: '25px' }}
+                        >
+                          грн
+                        </Typography>
                       </Typography>
                     </Circle>
                     <Typography

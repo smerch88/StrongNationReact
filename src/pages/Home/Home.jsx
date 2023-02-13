@@ -41,9 +41,11 @@ const Home = () => {
           {!circles && <Map />}
           <ReadMore circles={circles} setCircles={setCircles} />
         </Container>
-        <AutoPlay images={images1} rtl={true} />
-        <AutoPlay images={images2} rtl={false} />
       </MapSection>
+      {/* Якщо помістити слайдер в секцію то буде вилазити за межі */}
+      <AutoPlay images={images1} rtl={true} />
+      <AutoPlay images={images2} rtl={false} />
+      {/* Якщо помістити слайдер в секцію то буде вилазити за межі */}
       <FreshNews />
       <Stats />
       <AboutSection>

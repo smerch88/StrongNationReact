@@ -18,6 +18,7 @@ export const AboutSection = styled('section')(({ theme }) => ({
 export const MapSection = styled('section')(({ theme }) => ({
   color: [theme.palette.primary.contrastText],
   background: `url(${bg})`,
+  backgroundSize: 'cover',
 }));
 
 export const AboutTextWrapper = styled('div')(({ theme }) => ({
