@@ -48,7 +48,7 @@ export const Li = styled('li')(({ theme }) => ({
   width: '100%',
   '&:first-of-type': { borderBottom: '2px solid #FFFFFF' },
   [theme.breakpoints.up('tablet')]: {
-    padding: '70px 48px',
+    padding: '30px 48px',
     paddingRight: 0,
     width: 'auto',
     '&:first-of-type': {
@@ -60,7 +60,7 @@ export const Li = styled('li')(({ theme }) => ({
   },
   [theme.breakpoints.up('desktop')]: {
     width: 'auto',
-    padding: '60px 126px',
+    padding: '20px 126px',
     paddingRight: 0,
     '&:first-of-type': {
       borderRight: '2px solid #FFFFFF',
