@@ -67,8 +67,8 @@ export default function TemporaryDrawer() {
         </ListItem>
         <ListItem
           component={Link}
-          to="/about"
-          sx={{ ...listItemProps, backgroundColor: `${bgColor('/about')}` }}
+          to="/support"
+          sx={{ ...listItemProps, backgroundColor: `${bgColor('/support')}` }}
         >
           <ListItemText
             align="center"
