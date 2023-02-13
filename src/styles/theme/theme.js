@@ -202,7 +202,7 @@ theme.typography.body1 = {
   },
   [theme.breakpoints.up('desktop')]: {
     fontSize: '25px',
-    lineHeight: '29px',
+    lineHeight: 'calc(29px/25px)',
   },
 };
 theme.typography.h1 = {
@@ -239,7 +239,7 @@ theme.typography.h3 = {
   lineHeight: '36px',
   [theme.breakpoints.up('tablet')]: {
     fontSize: '40px',
-    lineHeight: '48px',
+    lineHeight: 'calc(48px/40px)',
   },
   [theme.breakpoints.up('desktop')]: {
     fontSize: '50px',
@@ -255,7 +255,7 @@ theme.typography.h4 = {
   lineHeight: '84px',
   [theme.breakpoints.up('desktop')]: {
     fontSize: '100px',
-    lineHeight: '120px',
+    lineHeight: 'calc(120px/100px)',
   },
 };
 theme.typography.h5 = {
@@ -268,7 +268,7 @@ theme.typography.h5 = {
   lineHeight: '16px',
   [theme.breakpoints.up('desktop')]: {
     fontSize: '15px',
-    lineHeight: '17px',
+    lineHeight: 'calc(17px/15px)',
   },
 };
 

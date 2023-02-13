@@ -39,13 +39,22 @@ export const Circles = ({ oblList, currentId }) => {
                       display: 'flex',
                       flexWrap: 'wrap',
                       justifyContent: 'space-around',
-                      marginBottom: '11px',
+                      marginBottom: { phone: '22px', tablet: '30px' },
+                      width: { tablet: '50%' },
                     }}
                   >
                     <Typography
                       variant="h3"
                       component="p"
-                      sx={{ width: '50%' }}
+                      sx={{
+                        width: '50%',
+                        textAlign: 'right',
+                        fontSize: {
+                          tablet: '30px',
+                          desktop: '30px',
+                          textAlign: 'left',
+                        },
+                      }}
                     >
                       витрачено на потреби вiйськових
                     </Typography>
@@ -55,7 +64,7 @@ export const Circles = ({ oblList, currentId }) => {
                         <Typography
                           variant="h3"
                           component="span"
-                          sx={{ fontSize: '25px' }}
+                          sx={{ fontSize: { tablet: '25px', desktop: '25px' } }}
                         >
                           грн
                         </Typography>
@@ -68,6 +77,8 @@ export const Circles = ({ oblList, currentId }) => {
                       flexWrap: 'wrap',
                       justifyContent: 'space-around',
                       marginBottom: '22px',
+                      width: { tablet: '50%' },
+                      flexDirection: { tablet: 'row-reverse' },
                     }}
                   >
                     <Circle>
@@ -76,7 +87,7 @@ export const Circles = ({ oblList, currentId }) => {
                         <Typography
                           variant="h3"
                           component="span"
-                          sx={{ fontSize: '25px' }}
+                          sx={{ fontSize: { tablet: '25px', desktop: '25px' } }}
                         >
                           грн
                         </Typography>
@@ -85,7 +96,15 @@ export const Circles = ({ oblList, currentId }) => {
                     <Typography
                       variant="h3"
                       component="p"
-                      sx={{ width: '50%', textAlign: 'right' }}
+                      sx={{
+                        width: '50%',
+                        textAlign: 'right',
+                        fontSize: {
+                          tablet: '30px',
+                          desktop: '30px',
+                          textAlign: 'left',
+                        },
+                      }}
                     >
                       витрачено на потреби громадян
                     </Typography>
