@@ -3,6 +3,7 @@ import {
   fetchAllPostsByCountry,
   addPost,
   deletePost,
+  updatePost,
 } from './posts-operations';
 
 const postSlice = createSlice({
@@ -50,6 +51,23 @@ const postSlice = createSlice({
         state.error = false;
       })
       .addCase(deletePost.rejected, (state, action) => {
+        state.error = action.payload;
+        state.isLoading = false;
+      })
+      .addCase(updatePost.pending, state => {
+        state.isLoading = true;
+      })
+      .addCase(updatePost.fulfilled, (state, action) => {
+        state.items = state.items.map(item => {
+          if (item.id === action.payload.id) {
+            return action.payload;
+          }
+          return item;
+        });
+        state.isLoading = true;
+        state.error = false;
+      })
+      .addCase(updatePost.rejected, (state, action) => {
         state.error = action.payload;
         state.isLoading = false;
       });

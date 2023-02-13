@@ -4,6 +4,7 @@ import {
   getAllPostsByCountry,
   addPostByNameOfRegion,
   deletePostById,
+  updatePostById,
 } from 'components/services/api-posts';
 
 import { addPhotoForPost } from 'components/services/api-posts';
@@ -41,6 +42,18 @@ export const deletePost = createAsyncThunk(
   async (id, thunkAPI) => {
     try {
       const res = await deletePostById(id);
+      return res;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const updatePost = createAsyncThunk(
+  'posts/updatePost',
+  async (body, thunkAPI) => {
+    try {
+      const res = await updatePostById(body);
       return res;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

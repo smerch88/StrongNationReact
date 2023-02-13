@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Formik, ErrorMessage, Field } from 'formik';
 import * as Yup from 'yup';
 
-import { addPost } from 'redux/posts/posts-operations';
+import { addPost, updatePost } from 'redux/posts/posts-operations';
 
 import ModalEl from 'components/Modal/Modal';
 import NativeSelectRegion from '../SelectInput/SelectInput';
@@ -17,20 +17,18 @@ import {
   StyledInput,
   StyledLabel,
   StyledSpan,
-} from './FormNewPost.styled';
+} from '../FormNewPost/FormNewPost.styled';
 
 import BasicDatePicker from 'components/Posts/DatePicker/DatePicker';
 
-export default function FormNewPost() {
-  const [region, setRegion] = useState('');
-  const [date, setDate] = useState(new Date());
-
+export default function FormUpdatePost({ infoOfPost, post }) {
+  const [region, setRegion] = useState(post.region);
+  const [date, setDate] = useState(infoOfPost.date);
   const [photo, setPhoto] = useState(defaultPhoto.files);
-  console.log('photo', photo);
-
+  console.log('postееее', infoOfPost);
   const dispatch = useDispatch();
   const idOfPost = useSelector(state => state.posts.idOfPost);
-  console.log(idOfPost);
+
   const handleChangeRegion = event => {
     setRegion(event.target.value);
   };
@@ -40,7 +38,6 @@ export default function FormNewPost() {
   };
 
   const handleGetPhoto = e => {
-    console.log(e.target.files[0]);
     setPhoto(e.target.files[0]);
   };
 
@@ -60,20 +57,25 @@ export default function FormNewPost() {
   });
 
   const initialValues = {
-    militaryDonations: '',
-    civiliansDonations: '',
+    militaryDonations: infoOfPost.categories.filter(
+      item => item.name === 'militaryDonations'
+    )[0].number,
+    civiliansDonations: infoOfPost.categories.filter(
+      item => item.name === 'civiliansDonations'
+    )[0].number,
     region: '',
-    description: '',
-    link: '',
+    description: post.description,
+    link: infoOfPost.link,
     date: '',
   };
 
-  const handleSubmit = (values, { resetForm }) => {
+  const handleSubmit = (values, action) => {
     const formData = new FormData();
     formData.append('file', photo);
 
     const objData = {
-      formData: formData,
+      //   formData: formData,
+      id: infoOfPost.id,
       region: region,
       description: values.description,
       link: values.link,
@@ -92,13 +94,13 @@ export default function FormNewPost() {
       ],
     };
 
-    dispatch(addPost(objData));
-    resetForm();
+    dispatch(updatePost(objData));
+    action.resetForm();
   };
 
   return (
     <>
-      <ModalEl nameOfButton={'Створити новий пост'}>
+      <ModalEl nameOfButton={'Оновити'}>
         <Formik
           initialValues={initialValues}
           onSubmit={handleSubmit}
@@ -164,7 +166,7 @@ export default function FormNewPost() {
               <Field type="file" name="photo" onChange={handleGetPhoto} />
             </label>
             <button style={{ marginTop: '20px' }} type="submit">
-              Готово
+              Оновити
             </button>
           </StyledForm>
         </Formik>

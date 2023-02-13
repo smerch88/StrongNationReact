@@ -9,9 +9,20 @@ import {
 } from './ItemOfPost.styled';
 import { useDispatch } from 'react-redux';
 import { deletePost } from 'redux/posts/posts-operations';
+import FormUpdatePost from '../FormUpdatePost/FormUpdatePost';
+import { useEffect, useState } from 'react';
+import { getPostById } from 'components/services/api-posts';
 
 export default function ItemOfPost({ post }) {
+  const [infoOfPost, setInfoOfPost] = useState({});
   const dispatch = useDispatch();
+  console.log('infoOfPost', infoOfPost);
+  useEffect(() => {
+    getPostById(post.id).then(data => setInfoOfPost(data));
+  }, [post]);
+
+  if (!infoOfPost.id) return;
+
   return (
     <LiElement>
       <ImgTextBox>
@@ -29,14 +40,17 @@ export default function ItemOfPost({ post }) {
         </LinkElement>
         <PElement>{new Date(post.date).toLocaleDateString()}</PElement>
       </WrapOfLink>
-      <button
-        type="button"
-        onClick={() => {
-          dispatch(deletePost(post.id));
-        }}
-      >
-        Delete
-      </button>
+      <div style={{ display: 'flex' }}>
+        <button
+          type="button"
+          onClick={() => {
+            dispatch(deletePost(post.id));
+          }}
+        >
+          Delete
+        </button>
+        <FormUpdatePost infoOfPost={infoOfPost} post={post} />
+      </div>
     </LiElement>
   );
 }
