@@ -15,7 +15,7 @@ import BurgerMenu from 'components/BurgerMenu/BurgerMenu';
 
 const pages = [
   { name: 'новини', link: '/news' },
-  { name: 'про нас', link: '/about' },
+  { name: 'про нас', link: '/' },
   { name: 'контакти', link: '/contacts' },
 ];
 
