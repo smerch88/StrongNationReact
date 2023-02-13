@@ -16,13 +16,14 @@ const style = {
   p: '23px 20px',
 };
 
-export default function ModalEl({ children }) {
+export default function ModalEl({ children, nameOfButton }) {
   const [open, setOpen] = React.useState(false);
+  console.log('children', children);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   return (
     <div>
-      <Button onClick={handleOpen}>Open modal</Button>
+      <Button onClick={handleOpen}>{nameOfButton}</Button>
       <Modal
         open={open}
         onClose={handleClose}

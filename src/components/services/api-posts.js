@@ -46,9 +46,18 @@ export const addPostByNameOfRegion = async (region, body) => {
   }
 };
 
+export const getPostById = async id => {
+  try {
+    const { data } = await post.get(`get-by-post-id/${id}`);
+    return data;
+  } catch (error) {
+    return error;
+  }
+};
+
 export const updatePostById = async body => {
   try {
-    const { data } = await post.post('update', body);
+    const { data } = await post.put('update', body);
     return data;
   } catch (error) {
     return error;
