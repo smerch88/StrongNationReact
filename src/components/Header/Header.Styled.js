@@ -16,7 +16,7 @@ export const StyledLogo = styled(ReactLogo)(({ theme }) => ({
 export const StyledBurger = styled(Burger)(({ theme }) => ({}));
 
 export const StyledHeader = styled(AppBar)(({ theme }) => ({
-  position: 'static',
+  position: 'relative',
 
   background: '#FFFFFF',
   opacity: '0.7',
@@ -24,6 +24,8 @@ export const StyledHeader = styled(AppBar)(({ theme }) => ({
 
   paddingTop: '10px',
   paddingBottom: '10px',
+
+  zIndex: theme.zIndex.drawer + 1,
 
   [theme.breakpoints.up('tablet')]: {
     paddingTop: '24px',
