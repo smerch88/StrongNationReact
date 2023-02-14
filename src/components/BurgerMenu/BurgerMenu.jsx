@@ -117,7 +117,12 @@ export default function TemporaryDrawer() {
   console.log('open', open);
   return (
     <>
-      <Hamburger toggled={open} toggle={toggleDrawer(!open)} color="#455A64" />
+      <Hamburger
+        size={20}
+        toggled={open}
+        toggle={toggleDrawer(!open)}
+        color="#455A64"
+      />
       <Drawer
         anchor="top"
         open={open}

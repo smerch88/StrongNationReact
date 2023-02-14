@@ -12,6 +12,8 @@ import { deletePost } from 'redux/posts/posts-operations';
 import FormUpdatePost from '../FormUpdatePost/FormUpdatePost';
 import { useEffect, useState } from 'react';
 import { getPostById } from 'components/services/api-posts';
+import { Button } from '@mui/material';
+import ClearOutlinedIcon from '@mui/icons-material/ClearOutlined';
 
 export default function ItemOfPost({ post }) {
   const [infoOfPost, setInfoOfPost] = useState({});
@@ -41,14 +43,15 @@ export default function ItemOfPost({ post }) {
         <PElement>{new Date(post.date).toLocaleDateString()}</PElement>
       </WrapOfLink>
       <div style={{ display: 'flex' }}>
-        <button
+        <Button
+          variant="edit"
           type="button"
           onClick={() => {
             dispatch(deletePost(post.id));
           }}
         >
-          Delete
-        </button>
+          Видалити <ClearOutlinedIcon fontSize="small" />
+        </Button>
         <FormUpdatePost infoOfPost={infoOfPost} post={post} />
       </div>
     </LiElement>
