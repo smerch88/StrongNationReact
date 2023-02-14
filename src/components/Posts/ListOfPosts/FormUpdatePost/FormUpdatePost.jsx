@@ -100,7 +100,7 @@ export default function FormUpdatePost({ infoOfPost, post }) {
 
   return (
     <>
-      <ModalEl nameOfButton={'Оновити'}>
+      <ModalEl nameOfButton={'Редагувати'}>
         <Formik
           initialValues={initialValues}
           onSubmit={handleSubmit}

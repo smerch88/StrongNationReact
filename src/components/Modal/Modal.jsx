@@ -2,6 +2,7 @@ import React from 'react';
 
 import Modal from '@mui/material/Modal';
 import { Box, Button } from '@mui/material';
+import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 
 const style = {
   position: 'absolute',
@@ -23,7 +24,9 @@ export default function ModalEl({ children, nameOfButton }) {
   const handleClose = () => setOpen(false);
   return (
     <div>
-      <Button onClick={handleOpen}>{nameOfButton}</Button>
+      <Button variant="edit" onClick={handleOpen}>
+        {nameOfButton} <EditOutlinedIcon fontSize="small" />
+      </Button>
       <Modal
         open={open}
         onClose={handleClose}
