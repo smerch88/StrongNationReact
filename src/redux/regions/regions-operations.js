@@ -13,7 +13,6 @@ export const fetchRegions = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const response = await getAllRegions();
-      console.log(response, 'fetchRegions');
       return response;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);

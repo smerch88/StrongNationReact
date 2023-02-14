@@ -18,7 +18,7 @@ import ClearOutlinedIcon from '@mui/icons-material/ClearOutlined';
 export default function ItemOfPost({ post }) {
   const [infoOfPost, setInfoOfPost] = useState({});
   const dispatch = useDispatch();
-  console.log('infoOfPost', infoOfPost);
+  
   useEffect(() => {
     getPostById(post.id).then(data => setInfoOfPost(data));
   }, [post]);

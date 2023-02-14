@@ -22,15 +22,14 @@ import {
 import BasicDatePicker from 'components/Posts/DatePicker/DatePicker';
 
 export default function FormNewPost() {
+  const [open, setOpen] = useState(false);
   const [region, setRegion] = useState('');
   const [date, setDate] = useState(new Date());
 
   const [photo, setPhoto] = useState(defaultPhoto.files);
-  console.log('photo', photo);
-
   const dispatch = useDispatch();
   const idOfPost = useSelector(state => state.posts.idOfPost);
-  console.log(idOfPost);
+
   const handleChangeRegion = event => {
     setRegion(event.target.value);
   };
@@ -40,7 +39,6 @@ export default function FormNewPost() {
   };
 
   const handleGetPhoto = e => {
-    console.log(e.target.files[0]);
     setPhoto(e.target.files[0]);
   };
 
@@ -93,12 +91,17 @@ export default function FormNewPost() {
     };
 
     dispatch(addPost(objData));
+    setOpen(false);
     resetForm();
   };
 
   return (
     <>
-      <ModalEl nameOfButton={'Створити новий пост'}>
+      <ModalEl
+        nameOfButton={'Створити новий пост'}
+        open={open}
+        setOpen={setOpen}
+      >
         <Formik
           initialValues={initialValues}
           onSubmit={handleSubmit}

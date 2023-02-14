@@ -65,12 +65,17 @@ theme.components = {
           font-weight: 400;
         }
         body {
+       
+          overflow-x: hidden;
+        }
+        #root {
           display: flex;
           flex-direction: column;
           min-height: 100vh;
         }
         main { 
           flex-grow: 1;
+          overflow-x: hidden;
         }
         footer {
           flex-shrink: 0;
@@ -109,14 +114,14 @@ theme.components = {
           maxWidth: '480px',
         },
         [theme.breakpoints.up('phablet')]: {
-          width: '480px',
+          maxWidth: '480px',
         },
         [theme.breakpoints.up('tablet')]: {
-          width: '768px',
+          maxWidth: '768px',
           padding: '0 60px',
         },
         [theme.breakpoints.up('desktop')]: {
-          width: '1366px',
+          maxWidth: '1366px',
           padding: '0 115px',
         },
       },
@@ -141,6 +146,31 @@ theme.components = {
           background: theme.palette.primary.main,
           '&:hover': {
             background: theme.palette.primary.light,
+          },
+          [theme.breakpoints.up('desktop')]: {
+            fontSize: '20px',
+            lineHeight: '24px',
+          },
+        },
+      },
+      {
+        props: { variant: 'createNewPost' },
+        style: {
+          textTransform: 'uppercase',
+          fontFamily: 'Bebas',
+          fontStyle: 'normal',
+          fontWeight: 400,
+          borderRadius: '8px',
+          padding: '13px 20px',
+          fontSize: '14px',
+          lineHeight: '22px',
+          border: '1px solid',
+          borderColor: theme.palette.colorList.grey,
+          color: theme.palette.colorList.grey,
+          background: 'transparent',
+          '&:hover': {
+            background: theme.palette.colorList.grey,
+            color: theme.palette.colorList.white,
           },
           [theme.breakpoints.up('desktop')]: {
             fontSize: '20px',

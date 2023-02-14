@@ -10,10 +10,16 @@ const postSlice = createSlice({
   name: 'posts',
   initialState: {
     items: [],
+    itemsOfRegion: '',
     idOfPost: null,
     isLoading: false,
     error: null,
     images: [],
+  },
+  reducers: {
+    getFilter(state, action) {
+      state.itemsOfRegion = action.payload;
+    },
   },
   extraReducers: builder => {
     builder
@@ -74,5 +80,6 @@ const postSlice = createSlice({
   },
 });
 
-const { reducer } = postSlice;
+const { actions, reducer } = postSlice;
+export const { getFilter } = actions;
 export default reducer;
