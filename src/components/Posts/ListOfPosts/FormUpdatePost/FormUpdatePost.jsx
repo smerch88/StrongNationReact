@@ -25,7 +25,8 @@ export default function FormUpdatePost({ infoOfPost, post }) {
   const [region, setRegion] = useState(post.region);
   const [date, setDate] = useState(infoOfPost.date);
   const [photo, setPhoto] = useState(defaultPhoto.files);
-  console.log('postееее', infoOfPost);
+  const [open, setOpen] = useState(false);
+
   const dispatch = useDispatch();
   const idOfPost = useSelector(state => state.posts.idOfPost);
 
@@ -74,7 +75,7 @@ export default function FormUpdatePost({ infoOfPost, post }) {
     formData.append('file', photo);
 
     const objData = {
-      //   formData: formData,
+      formData: formData,
       id: infoOfPost.id,
       region: region,
       description: values.description,
@@ -95,12 +96,13 @@ export default function FormUpdatePost({ infoOfPost, post }) {
     };
 
     dispatch(updatePost(objData));
+    setOpen(false);
     action.resetForm();
   };
 
   return (
     <>
-      <ModalEl nameOfButton={'Редагувати'}>
+      <ModalEl nameOfButton={'Редагувати'} open={open} setOpen={setOpen}>
         <Formik
           initialValues={initialValues}
           onSubmit={handleSubmit}

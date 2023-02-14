@@ -6,6 +6,7 @@ import { Container } from '@mui/material';
 
 import ListOfPosts from 'components/Posts/ListOfPosts/ListOfPosts';
 import FormNewPost from 'components/Posts/ListOfPosts/FormNewPost/FormNewPost';
+import ListOfRegions from 'components/Posts/ListOfPosts/ListOfRegions/ListOfRegions';
 
 const News = () => {
   const dispatch = useDispatch();
@@ -17,10 +18,17 @@ const News = () => {
   return (
     <section>
       <Container>
-        <div>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+          }}
+        >
           <h1>Новини</h1>
-          <div>
+          <div style={{ display: 'flex', gap: '18px' }}>
             <FormNewPost />
+            <ListOfRegions />
           </div>
         </div>
         <ListOfPosts />

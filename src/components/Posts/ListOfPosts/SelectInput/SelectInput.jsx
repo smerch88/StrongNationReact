@@ -35,7 +35,7 @@ export default function NativeSelectRegion({ handleChangeRegion, region }) {
         <MenuItem value="Donetsk">Донецьк</MenuItem>
         <MenuItem value="Zhytomyr">Житомир</MenuItem>
         <MenuItem value="Zaporizhzhia">Запорiжжя</MenuItem>
-        <MenuItem value="Ivano-Frankivsk">iвано-Франкiвськ</MenuItem>
+        <MenuItem value="Ivano-Frankivsk">Івано-Франкiвськ</MenuItem>
         <MenuItem value="Kyiv">Київ</MenuItem>
         <MenuItem value="Kropyvnytskyi">Кропивницький</MenuItem>
         <MenuItem value="Crimea">Крим</MenuItem>

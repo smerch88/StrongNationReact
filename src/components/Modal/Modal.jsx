@@ -3,6 +3,7 @@ import React from 'react';
 import Modal from '@mui/material/Modal';
 import { Box, Button } from '@mui/material';
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 const style = {
   position: 'absolute',
@@ -17,18 +18,38 @@ const style = {
   p: '23px 20px',
 };
 
-export default function ModalEl({ children, nameOfButton }) {
-  const [open, setOpen] = React.useState(false);
-  console.log('children', children);
+export default function ModalEl({ children, nameOfButton, open, setOpen }) {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  const variantOfButton = nameOfButton => {
+    console.log(nameOfButton);
+    switch (nameOfButton) {
+      case 'Редагувати':
+        return 'edit';
+
+      case 'Всі області':
+        return 'ukrstrong';
+
+      case 'Створити новий пост':
+        return 'createNewPost';
+
+      default:
+        return 'ukrstrong';
+    }
+  };
   return (
     <div>
-      <Button variant="edit" onClick={handleOpen}>
-        {nameOfButton} <EditOutlinedIcon fontSize="small" />
+      <Button variant={variantOfButton(nameOfButton)} onClick={handleOpen}>
+        {nameOfButton}
+        {nameOfButton === 'Редагувати' ? (
+          <EditOutlinedIcon fontSize="small" />
+        ) : nameOfButton === 'Всі області' ? (
+          <KeyboardArrowDownIcon fontSize="small" />
+        ) : null}
       </Button>
       <Modal
-        open={open}
+        open={open ?? false}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
