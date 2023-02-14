@@ -1,6 +1,6 @@
-import { Container, styled } from '@mui/material';
+import { styled } from '@mui/material';
 
-export const AutoPlayContainer = styled(Container)(({ theme }) => ({
+export const AutoPlayContainer = styled('div')(({ theme }) => ({
   padding: 0,
   [theme.breakpoints.up('tablet')]: {
     padding: 0,

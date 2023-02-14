@@ -42,9 +42,9 @@ const Home = () => {
           <ReadMore circles={circles} setCircles={setCircles} />
         </Container>
         {/* Якщо не помістити слайдер в секцію то буде вилазити за межі, видно на 480 і менше я не знаю як пофіксити */}
-        <AutoPlay images={images1} rtl={true} />
-        <AutoPlay images={images2} rtl={false} />
       </MapSection>
+      <AutoPlay images={images1} rtl={true} />
+      <AutoPlay images={images2} rtl={false} />
       <FreshNews />
       <Stats />
       <AboutSection>
