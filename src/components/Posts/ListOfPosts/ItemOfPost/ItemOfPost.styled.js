@@ -23,6 +23,16 @@ export const ImgElement = styled('img')(({ theme }) => ({
   objectFit: 'cover',
 }));
 
+export const ImgTextBox = styled('div')(({ theme }) => ({
+  display: 'flex',
+  justifyContent: 'space-between',
+  gap: '11px',
+  [theme.breakpoints.up('tablet')]: {
+    flexDirection: 'column',
+    gap: '0px',
+  },
+}));
+
 export const ImgBox = styled('div')(({ theme }) => ({
   minWidth: '114px',
   maxWidth: '114.01px',
@@ -86,15 +96,6 @@ export const LinkElement = styled('a')(({ theme }) => ({
   [theme.breakpoints.up('desktop')]: {
     fontSize: '12px',
     lineHeight: '14px',
-  },
-}));
-
-export const ImgTextBox = styled('div')(({ theme }) => ({
-  display: 'flex',
-  gap: '11px',
-  [theme.breakpoints.up('tablet')]: {
-    flexDirection: 'column',
-    gap: '0px',
   },
 }));
 

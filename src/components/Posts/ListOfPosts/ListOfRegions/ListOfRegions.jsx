@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ModalEl from 'components/Modal/Modal';
 import { useDispatch } from 'react-redux';
 import { getFilter } from 'redux/posts/posts-slice';
+import { Btn, LineTop, WrapOfRegions } from './ListOfRegions.styled';
 
 export default function ListOfRegions() {
   const [open, setOpen] = useState(false);
@@ -15,7 +16,8 @@ export default function ListOfRegions() {
   return (
     <>
       <ModalEl nameOfButton={'Всі області'} open={open} setOpen={setOpen}>
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <LineTop></LineTop>
+        <WrapOfRegions>
           <div
             style={{
               display: 'flex',
@@ -23,78 +25,78 @@ export default function ListOfRegions() {
               gap: '10px',
             }}
           >
-            <button
+            <Btn
               style={{ textAlign: 'left' }}
               type="button"
               name=""
               onClick={handleClick}
             >
               всi областi
-            </button>
-            <button
+            </Btn>
+            <Btn
               style={{ textAlign: 'left' }}
               type="button"
               name="Vinnytsia"
               onClick={handleClick}
             >
               Вiнниця
-            </button>
-            <button
+            </Btn>
+            <Btn
               style={{ textAlign: 'left' }}
               type="button"
               name="Dnipro"
               onClick={handleClick}
             >
               Днiпро
-            </button>
-            <button
+            </Btn>
+            <Btn
               style={{ textAlign: 'left' }}
               type="button"
               name="Donetsk"
               onClick={handleClick}
             >
               Донецьк
-            </button>
-            <button
+            </Btn>
+            <Btn
               style={{ textAlign: 'left' }}
               type="button"
               name="Zhytomyr"
               onClick={handleClick}
             >
               Житомир
-            </button>
-            <button
+            </Btn>
+            <Btn
               style={{ textAlign: 'left' }}
               type="button"
               name="Zaporizhzhia"
               onClick={handleClick}
             >
               Запорiжжя
-            </button>
-            <button
+            </Btn>
+            <Btn
               style={{ textAlign: 'left' }}
               type="button"
               name="Ivano-Frankivsk"
               onClick={handleClick}
             >
               Івано-Франкiвськ
-            </button>
-            <button
+            </Btn>
+            <Btn
               style={{ textAlign: 'left' }}
               type="button"
               name="Kyiv"
               onClick={handleClick}
             >
               Київ
-            </button>
-            <button
+            </Btn>
+            <Btn
               style={{ textAlign: 'left' }}
               type="button"
               name="Kropyvnytskyi"
               onClick={handleClick}
             >
               Кропивницький
-            </button>
+            </Btn>
           </div>
           <div
             style={{
@@ -103,78 +105,78 @@ export default function ListOfRegions() {
               gap: '10px',
             }}
           >
-            <button
+            <Btn
               style={{ textAlign: 'left' }}
               type="button"
               name="Crimea"
               onClick={handleClick}
             >
               Крим
-            </button>
-            <button
+            </Btn>
+            <Btn
               style={{ textAlign: 'left' }}
               type="button"
               name="Luhansk"
               onClick={handleClick}
             >
               Луганськ
-            </button>
-            <button
+            </Btn>
+            <Btn
               style={{ textAlign: 'left' }}
               type="button"
               name="Lviv"
               onClick={handleClick}
             >
               Львiв
-            </button>
-            <button
+            </Btn>
+            <Btn
               style={{ textAlign: 'left' }}
               type="button"
               name="Lutsk"
               onClick={handleClick}
             >
               Луцьк
-            </button>
-            <button
+            </Btn>
+            <Btn
               style={{ textAlign: 'left' }}
               type="button"
               name="Mykolaiv"
               onClick={handleClick}
             >
               Миколаїв
-            </button>
-            <button
+            </Btn>
+            <Btn
               style={{ textAlign: 'left' }}
               type="button"
               name="Odesa"
               onClick={handleClick}
             >
               Одеса
-            </button>
-            <button
+            </Btn>
+            <Btn
               style={{ textAlign: 'left' }}
               type="button"
               name="Poltava"
               onClick={handleClick}
             >
               Полтава
-            </button>
-            <button
+            </Btn>
+            <Btn
               style={{ textAlign: 'left' }}
               type="button"
               name="Rivne"
               onClick={handleClick}
             >
               Рiвне
-            </button>
-            <button
+            </Btn>
+            <Btn
               style={{ textAlign: 'left' }}
               type="button"
               name="Sumy"
               onClick={handleClick}
             >
               Суми
-            </button>
+            </Btn>
           </div>
           <div
             style={{
@@ -183,72 +185,72 @@ export default function ListOfRegions() {
               gap: '10px',
             }}
           >
-            <button
+            <Btn
               style={{ textAlign: 'left' }}
               type="button"
               name="Ternopil"
               onClick={handleClick}
             >
               Тернопiль
-            </button>
-            <button
+            </Btn>
+            <Btn
               style={{ textAlign: 'left' }}
               type="button"
               name="Uzhhorod"
               onClick={handleClick}
             >
               Ужгород
-            </button>
-            <button
+            </Btn>
+            <Btn
               style={{ textAlign: 'left' }}
               type="button"
               name="Kharkiv"
               onClick={handleClick}
             >
               Харкiв
-            </button>
-            <button
+            </Btn>
+            <Btn
               style={{ textAlign: 'left' }}
               type="button"
               name="Kherson"
               onClick={handleClick}
             >
               Херсон
-            </button>
-            <button
+            </Btn>
+            <Btn
               style={{ textAlign: 'left' }}
               type="button"
               name="Khmelnytskyi"
               onClick={handleClick}
             >
               Хмельницький
-            </button>
-            <button
+            </Btn>
+            <Btn
               style={{ textAlign: 'left' }}
               type="button"
               name="Cherkasy"
               onClick={handleClick}
             >
               Черкаси
-            </button>
-            <button
+            </Btn>
+            <Btn
               style={{ textAlign: 'left' }}
               type="button"
               name="Chernivtsi"
               onClick={handleClick}
             >
               Чернiвцi
-            </button>
-            <button
+            </Btn>
+            <Btn
               style={{ textAlign: 'left' }}
               type="button"
               name="Chernihiv"
               onClick={handleClick}
             >
               Чернiгiв
-            </button>
+            </Btn>
           </div>
-        </div>
+        </WrapOfRegions>
       </ModalEl>
     </>
   );
