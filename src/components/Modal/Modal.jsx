@@ -43,9 +43,9 @@ export default function ModalEl({ children, nameOfButton, open, setOpen }) {
       <Button variant={variantOfButton(nameOfButton)} onClick={handleOpen}>
         {nameOfButton}
         {nameOfButton === 'Редагувати' ? (
-          <EditOutlinedIcon fontSize="small" />
+          <EditOutlinedIcon fontSize="small" sx={{ ml: '7px' }} />
         ) : nameOfButton === 'Всі області' ? (
-          <KeyboardArrowDownIcon fontSize="small" />
+          <KeyboardArrowDownIcon fontSize="small" sx={{ ml: '10px' }} />
         ) : null}
       </Button>
       <Modal
