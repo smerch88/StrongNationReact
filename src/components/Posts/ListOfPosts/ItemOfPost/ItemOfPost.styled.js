@@ -24,23 +24,27 @@ export const ImgElement = styled('img')(({ theme }) => ({
 }));
 
 export const ImgBox = styled('div')(({ theme }) => ({
-  width: '114px',
+  minWidth: '114px',
+  maxWidth: '114.01px',
   height: '85px',
   borderRadius: '10px',
   overflow: 'hidden',
   [theme.breakpoints.up('tablet')]: {
-    width: '200px',
+    minWidth: '200px',
+    maxWidth: '200.01px',
     height: '152px',
     borderRadius: '18px 18px 0 0',
   },
   [theme.breakpoints.up('desktop')]: {
-    width: '354px',
+    minWidth: '354px',
+    maxWidth: '354.01px',
     height: '269px',
   },
 }));
 
 export const PElement = styled('p')(({ theme }) => ({
   margin: '0',
+  wordBreak: 'break-all',
   [theme.breakpoints.up('tablet')]: {
     fontSize: '10px',
     lineHeight: '11px',
