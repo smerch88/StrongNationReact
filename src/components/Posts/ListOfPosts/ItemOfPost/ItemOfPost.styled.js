@@ -23,6 +23,16 @@ export const ImgElement = styled('img')(({ theme }) => ({
   objectFit: 'cover',
 }));
 
+export const ImgTextBox = styled('div')(({ theme }) => ({
+  display: 'flex',
+  justifyContent: 'space-between',
+  gap: '11px',
+  [theme.breakpoints.up('tablet')]: {
+    flexDirection: 'column',
+    gap: '0px',
+  },
+}));
+
 export const ImgBox = styled('div')(({ theme }) => ({
   width: '114px',
   height: '85px',
@@ -41,6 +51,8 @@ export const ImgBox = styled('div')(({ theme }) => ({
 
 export const PElement = styled('p')(({ theme }) => ({
   margin: '0',
+  maxWidth: '200px',
+  overflowWrap: 'anywhere',
   [theme.breakpoints.up('tablet')]: {
     fontSize: '10px',
     lineHeight: '11px',
@@ -82,15 +94,6 @@ export const LinkElement = styled('a')(({ theme }) => ({
   [theme.breakpoints.up('desktop')]: {
     fontSize: '12px',
     lineHeight: '14px',
-  },
-}));
-
-export const ImgTextBox = styled('div')(({ theme }) => ({
-  display: 'flex',
-  gap: '11px',
-  [theme.breakpoints.up('tablet')]: {
-    flexDirection: 'column',
-    gap: '0px',
   },
 }));
 
