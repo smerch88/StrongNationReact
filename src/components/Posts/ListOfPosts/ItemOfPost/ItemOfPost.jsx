@@ -5,6 +5,7 @@ import {
   LiElement,
   LinkElement,
   PElement,
+  WrapOfBtn,
   WrapOfLink,
 } from './ItemOfPost.styled';
 import { useDispatch } from 'react-redux';
@@ -18,7 +19,7 @@ import ClearOutlinedIcon from '@mui/icons-material/ClearOutlined';
 export default function ItemOfPost({ post }) {
   const [infoOfPost, setInfoOfPost] = useState({});
   const dispatch = useDispatch();
-  
+
   useEffect(() => {
     getPostById(post.id).then(data => setInfoOfPost(data));
   }, [post]);
@@ -42,7 +43,7 @@ export default function ItemOfPost({ post }) {
         </LinkElement>
         <PElement>{new Date(post.date).toLocaleDateString()}</PElement>
       </WrapOfLink>
-      <div style={{ display: 'flex' }}>
+      <WrapOfBtn>
         <Button
           variant="edit"
           type="button"
@@ -50,10 +51,10 @@ export default function ItemOfPost({ post }) {
             dispatch(deletePost(post.id));
           }}
         >
-          Видалити <ClearOutlinedIcon fontSize="small" />
+          Видалити <ClearOutlinedIcon fontSize="small" sx={{ ml: '7px' }} />
         </Button>
         <FormUpdatePost infoOfPost={infoOfPost} post={post} />
-      </div>
+      </WrapOfBtn>
     </LiElement>
   );
 }

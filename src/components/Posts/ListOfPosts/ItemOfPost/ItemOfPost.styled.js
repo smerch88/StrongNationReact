@@ -6,7 +6,7 @@ export const LiElement = styled('li')(({ theme }) => ({
   borderRadius: '18px',
   [theme.breakpoints.up('tablet')]: {
     width: 'calc((100% - 50px) / 3)',
-    padding: '0px',
+    padding: '0 0 14px 0',
     overflow: 'hidden',
     display: 'flex',
     flexDirection: 'column',
@@ -59,11 +59,11 @@ export const WrapOfLink = styled('div')(({ theme }) => ({
   justifyContent: 'space-between',
   marginTop: '7px',
   [theme.breakpoints.up('tablet')]: {
-    padding: '0px 7px 7px 7px',
+    padding: '0px 7px',
     margin: '0',
   },
   [theme.breakpoints.up('desktop')]: {
-    padding: '0px 10px 10px 10px',
+    padding: '0px 10px',
   },
 }));
 
@@ -91,5 +91,21 @@ export const ImgTextBox = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('tablet')]: {
     flexDirection: 'column',
     gap: '0px',
+  },
+}));
+
+export const WrapOfBtn = styled('div')(({ theme }) => ({
+  display: 'flex',
+  gap: '6px',
+  marginTop: '17px',
+
+  [theme.breakpoints.up('tablet')]: {
+    marginTop: '14px',
+    padding: '0px 7px',
+  },
+
+  [theme.breakpoints.up('desktop')]: {
+    marginTop: '17px',
+    padding: '0px 10px',
   },
 }));
