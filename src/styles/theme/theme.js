@@ -10,7 +10,7 @@ const theme = createTheme({
       phone: 320,
       phablet: 480,
       tablet: 768,
-      desktop: 1280,
+      desktop: 1366,
     },
   },
   palette: {
@@ -19,6 +19,7 @@ const theme = createTheme({
       grey: '#455A64',
       white: '#FFFFFF',
       lightgrey: '#748E9A',
+      almostblack: '#1F2528',
     },
     primary: {
       main: '#455A64',
@@ -28,10 +29,12 @@ const theme = createTheme({
     background: {
       default: '#FFFFFF',
       contrast: '#455A64',
+      paper: 'rgba(33, 33, 33, 0.82)',
     },
     text: {
       primary: '#000000',
       header: '#455A64',
+      navbutton: '#1F2528',
     },
     secondary: {
       main: '#FFFFFF',
@@ -62,12 +65,17 @@ theme.components = {
           font-weight: 400;
         }
         body {
+       
+          overflow-x: hidden;
+        }
+        #root {
           display: flex;
           flex-direction: column;
           min-height: 100vh;
         }
         main { 
           flex-grow: 1;
+          overflow-x: hidden;
         }
         footer {
           flex-shrink: 0;
@@ -83,6 +91,8 @@ theme.components = {
         a{
           text-decoration: none;
           color: currentColor;
+          margin: 0;
+          padding: 0;
         }
         .slick-slide > div {
           margin: 0 10px;
@@ -98,21 +108,21 @@ theme.components = {
         // Якщо ширина екрану більше (up) брейкпоінта desktop, то паддінг = ...
         // Якщо ширина екрану менша (down) брейкпоінта desktop, то паддінг = ...
         margin: '0 auto',
-        padding: '0 36px',
+        padding: '0 18px',
 
         [theme.breakpoints.down('phablet')]: {
           maxWidth: '480px',
         },
         [theme.breakpoints.up('phablet')]: {
-          width: '480px',
+          maxWidth: '480px',
         },
-        // [theme.breakpoints.up('tablet')]: {
-        //   width: '768px',
-        //   padding: '0 32px',
-        // },
+        [theme.breakpoints.up('tablet')]: {
+          maxWidth: '768px',
+          padding: '0 60px',
+        },
         [theme.breakpoints.up('desktop')]: {
-          width: '1280px',
-          padding: '0 68px',
+          maxWidth: '1366px',
+          padding: '0 115px',
         },
       },
     },
@@ -123,18 +133,64 @@ theme.components = {
       {
         props: { variant: 'ukrstrong' },
         style: {
-          fontFamily: 'Montserrat',
+          textTransform: 'uppercase',
+          fontFamily: 'Bebas',
           fontStyle: 'normal',
           fontWeight: 400,
-          fontSize: '9px',
-          lineHeight: '0.82',
-          borderRadius: '24px',
-          padding: '14px 30px',
+          borderRadius: '8px',
+          padding: '10px 13px',
+          fontSize: '14px',
+          lineHeight: 'calc(17px/14px)',
+          border: '1px solid',
+          borderColor: theme.palette.colorList.grey,
           color: theme.palette.colorList.white,
           background: theme.palette.primary.main,
           '&:hover': {
             background: theme.palette.primary.light,
           },
+          [theme.breakpoints.up('desktop')]: {
+            fontSize: '20px',
+            lineHeight: '24px',
+          },
+        },
+      },
+      {
+        props: { variant: 'createNewPost' },
+        style: {
+          textTransform: 'uppercase',
+          fontFamily: 'Bebas',
+          fontStyle: 'normal',
+          fontWeight: 400,
+          borderRadius: '8px',
+          padding: '10px 13px',
+          fontSize: '14px',
+          lineHeight: 'calc(17px/14px)',
+          border: '1px solid',
+          borderColor: theme.palette.colorList.grey,
+          color: theme.palette.colorList.grey,
+          background: 'transparent',
+          '&:hover': {
+            background: theme.palette.colorList.grey,
+            color: theme.palette.colorList.white,
+            borderColor: theme.palette.colorList.lightgrey,
+          },
+          [theme.breakpoints.up('desktop')]: {
+            fontSize: '20px',
+            lineHeight: '24px',
+          },
+        },
+      },
+      {
+        props: { variant: 'navigation' },
+        style: {
+          margin: 0,
+          padding: 0,
+          fontFamily: 'Bebas',
+          fontStyle: 'normal',
+          fontWeight: 400,
+          fontSize: '20px',
+          lineHeight: '24px',
+          color: theme.palette.text.navbutton,
         },
       },
       {
@@ -157,6 +213,30 @@ theme.components = {
           },
         },
       },
+      {
+        props: { variant: 'edit' },
+        style: {
+          textTransform: 'capitalize',
+          blockSize: '20px',
+          whiteSpace: 'nowrap',
+          padding: '13px 6px 10px',
+          border: '1px solid',
+          borderColor: theme.palette.colorList.grey,
+          borderRadius: '8px 8px 8px 4px',
+          fontFamily: 'Arial',
+          fontStyle: 'normal',
+          fontWeight: '500',
+          fontSize: '10px',
+          lineHeight: 'calc(12px/10px)',
+          color: theme.palette.colorList.grey,
+          background: 'transparent',
+          '&:hover': {
+            background: theme.palette.colorList.lightgrey,
+            color: theme.palette.colorList.white,
+            borderColor: theme.palette.colorList.lightgrey,
+          },
+        },
+      },
     ],
     defaultProps: {
       variant: 'ukrstrong',
@@ -172,9 +252,13 @@ theme.typography.body1 = {
   fontWeight: 400,
   fontSize: '12px',
   lineHeight: '14px',
+  [theme.breakpoints.up('tablet')]: {
+    fontSize: '18px',
+    lineHeight: '21px',
+  },
   [theme.breakpoints.up('desktop')]: {
     fontSize: '25px',
-    lineHeight: '29px',
+    lineHeight: 'calc(29px/25px)',
   },
 };
 theme.typography.h1 = {
@@ -188,20 +272,20 @@ theme.typography.h1 = {
     fontSize: '50px',
   },
 };
-theme.typography.h2 = {
-  margin: 0,
-  fontFamily: 'Bebas',
-  fontStyle: 'normal',
-  fontWeight: 400,
-  fontSize: '30px',
-  lineHeight: '36px',
-  color: theme.palette.text.header,
-  [theme.breakpoints.up('desktop')]: {
-    fontWeight: 400,
-    fontSize: '50px',
-    lineHeight: '60px',
-  },
-};
+// theme.typography.h2 = {
+//   margin: 0,
+//   fontFamily: 'Bebas',
+//   fontStyle: 'normal',
+//   fontWeight: 400,
+//   fontSize: '30px',
+//   lineHeight: '36px',
+//   color: theme.palette.text.header,
+//   [theme.breakpoints.up('desktop')]: {
+//     fontWeight: 400,
+//     fontSize: '50px',
+//     lineHeight: '60px',
+//   },
+// };
 theme.typography.h3 = {
   margin: 0,
   fontFamily: 'Bebas',
@@ -209,6 +293,10 @@ theme.typography.h3 = {
   fontWeight: 400,
   fontSize: '30px',
   lineHeight: '36px',
+  [theme.breakpoints.up('tablet')]: {
+    fontSize: '40px',
+    lineHeight: 'calc(48px/40px)',
+  },
   [theme.breakpoints.up('desktop')]: {
     fontSize: '50px',
     lineHeight: '60px',
@@ -223,7 +311,7 @@ theme.typography.h4 = {
   lineHeight: '84px',
   [theme.breakpoints.up('desktop')]: {
     fontSize: '100px',
-    lineHeight: '120px',
+    lineHeight: 'calc(120px/100px)',
   },
 };
 theme.typography.h5 = {
@@ -236,7 +324,7 @@ theme.typography.h5 = {
   lineHeight: '16px',
   [theme.breakpoints.up('desktop')]: {
     fontSize: '15px',
-    lineHeight: '17px',
+    lineHeight: 'calc(17px/15px)',
   },
 };
 

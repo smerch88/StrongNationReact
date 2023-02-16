@@ -15,13 +15,13 @@ const handleRejected = (state, action) => {
 };
 
 const initialState = {
-  contacts: [],
+  regions: [],
   isLoading: false,
   error: null,
 };
 
 const regionsSlice = createSlice({
-  name: 'contacts',
+  name: 'regions',
   initialState: initialState,
   extraReducers: builder =>
     builder

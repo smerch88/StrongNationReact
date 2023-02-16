@@ -1,5 +1,45 @@
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import {
+  StyledContainer,
+  SupportCopyButton,
+  SupportStyledBox,
+  SupportText,
+  SupportTextPhrase,
+  SupportTitle,
+} from './Support.styled';
+import { IoDocumentsOutline } from "react-icons/io5"
+
+
 const Support = () => {
-  return <>Support</>;
+
+const copyToClipboard = (e) => {
+navigator.clipboard.writeText(e.target.value);
+Notify.success('Номер скопійовано в буфер обміну!', {width: '280px', position: 'center-top', borderRadius: '15px', fontSize: '14px', success: {background: '#455A64',}});
+}
+
+  return (
+    <section>
+      <StyledContainer>
+        <SupportTitle variant="h3" component="h1">
+          благодiйний фонд "Хоробра Україна"
+        </SupportTitle>
+        <SupportStyledBox>
+          <SupportCopyButton onClick={copyToClipboard} type='button' value='4874242500193480'>Картка<IoDocumentsOutline/></SupportCopyButton>
+          <SupportText variant="h5" component="p">4874242500193480</SupportText>
+        </SupportStyledBox>
+        <SupportStyledBox>
+          <SupportCopyButton onClick={copyToClipboard} type='button' value='Value 2, some card number'>IBAN (UAH)<IoDocumentsOutline/></SupportCopyButton>
+          <SupportText variant="h5" component="p">UA343348510000000026007176726</SupportText>
+        </SupportStyledBox>
+        <SupportStyledBox>
+          <SupportCopyButton onClick={copyToClipboard} type='button' value='Value 3, some card number'>IBAN (USD)<IoDocumentsOutline/></SupportCopyButton>
+          <SupportText variant="h5" component="p">UA343348510000000026007176726</SupportText>
+        </SupportStyledBox>
+        <SupportTextPhrase variant="h5">Всі фінансові звіти будуть опубліковані.
+Разом до перемоги!</SupportTextPhrase>
+      </StyledContainer>
+    </section>
+  );
 };
 
 export default Support;

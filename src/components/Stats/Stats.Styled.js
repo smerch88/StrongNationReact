@@ -17,6 +17,10 @@ export const StyledBox = styled(Box)(({ theme }) => ({
   alignItems: 'center',
   justifyContent: 'center',
   marginBottom: '20px',
+  [theme.breakpoints.up('tablet')]: {
+    flexDirection: 'row',
+    marginBottom: '60px',
+  },
   [theme.breakpoints.up('desktop')]: {
     flexDirection: 'row',
     marginBottom: '60px',
@@ -24,6 +28,9 @@ export const StyledBox = styled(Box)(({ theme }) => ({
 }));
 
 export const StatsTitle = styled(Typography)(({ theme }) => ({
+  [theme.breakpoints.up('tablet')]: {
+    display: 'inline-block',
+  },
   [theme.breakpoints.up('desktop')]: {
     display: 'inline-block',
   },
@@ -33,7 +40,6 @@ export const Ul = styled('ul')(({ theme }) => ({
   display: 'flex',
   flexWrap: 'wrap',
   justifyContent: 'center',
-  [theme.breakpoints.up('desktop')]: {},
 }));
 
 export const Li = styled('li')(({ theme }) => ({
@@ -41,9 +47,26 @@ export const Li = styled('li')(({ theme }) => ({
   textAlign: 'center',
   width: '100%',
   '&:first-of-type': { borderBottom: '2px solid #FFFFFF' },
-  [theme.breakpoints.up('desktop')]: {
-    '&:first-of-type': { borderRight: '2px solid #FFFFFF', borderBottom: 0 },
+  [theme.breakpoints.up('tablet')]: {
+    padding: '30px 48px',
+    paddingRight: 0,
     width: 'auto',
-    padding: '60px 126px',
+    '&:first-of-type': {
+      borderRight: '2px solid #FFFFFF',
+      borderBottom: 0,
+      paddingLeft: 0,
+      paddingRight: '48px',
+    },
+  },
+  [theme.breakpoints.up('desktop')]: {
+    width: 'auto',
+    padding: '20px 126px',
+    paddingRight: 0,
+    '&:first-of-type': {
+      borderRight: '2px solid #FFFFFF',
+      borderBottom: 0,
+      paddingLeft: 0,
+      paddingRight: '126px',
+    },
   },
 }));
