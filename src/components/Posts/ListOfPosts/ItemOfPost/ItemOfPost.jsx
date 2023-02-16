@@ -1,3 +1,5 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import {
   ImgBox,
   ImgElement,
@@ -23,8 +25,8 @@ export default function ItemOfPost({ post }) {
   useEffect(() => {
     getPostById(post.id).then(data => setInfoOfPost(data));
   }, [post]);
-
-  if (!infoOfPost.id) return;
+  console.log(post);
+  if (!infoOfPost.id) return null;
 
   return (
     <LiElement>
@@ -38,7 +40,7 @@ export default function ItemOfPost({ post }) {
         <PElement>{post.description}</PElement>
       </ImgTextBox>
       <WrapOfLink>
-        <LinkElement href={post.link} target="blank">
+        <LinkElement href={post.link} target="_blank">
           {post.link}
         </LinkElement>
         <PElement>{new Date(post.date).toLocaleDateString()}</PElement>
@@ -58,3 +60,12 @@ export default function ItemOfPost({ post }) {
     </LiElement>
   );
 }
+
+ItemOfPost.propTypes = {
+  post: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    description: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+  }).isRequired,
+};
