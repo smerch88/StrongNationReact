@@ -60,10 +60,10 @@ export default function FormUpdatePost({ infoOfPost, post }) {
   const initialValues = {
     militaryDonations: infoOfPost.categories.filter(
       item => item.name === 'militaryDonations'
-    )[0].number,
+    )[0]?.number,
     civiliansDonations: infoOfPost.categories.filter(
       item => item.name === 'civiliansDonations'
-    )[0].number,
+    )[0]?.number,
     region: '',
     description: post.description,
     link: infoOfPost.link,

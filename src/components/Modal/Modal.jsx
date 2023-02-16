@@ -4,6 +4,8 @@ import Modal from '@mui/material/Modal';
 import { Box, Button } from '@mui/material';
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import CloseIcon from '@mui/icons-material/Close';
+import { BtnCloseModal } from './Modal.styled';
 
 const style = {
   position: 'absolute',
@@ -23,7 +25,6 @@ export default function ModalEl({ children, nameOfButton, open, setOpen }) {
   const handleClose = () => setOpen(false);
 
   const variantOfButton = nameOfButton => {
-    console.log(nameOfButton);
     switch (nameOfButton) {
       case 'Редагувати':
         return 'edit';
@@ -43,9 +44,9 @@ export default function ModalEl({ children, nameOfButton, open, setOpen }) {
       <Button variant={variantOfButton(nameOfButton)} onClick={handleOpen}>
         {nameOfButton}
         {nameOfButton === 'Редагувати' ? (
-          <EditOutlinedIcon fontSize="small" />
+          <EditOutlinedIcon fontSize="small" sx={{ ml: '7px' }} />
         ) : nameOfButton === 'Всі області' ? (
-          <KeyboardArrowDownIcon fontSize="small" />
+          <KeyboardArrowDownIcon fontSize="small" sx={{ ml: '10px' }} />
         ) : null}
       </Button>
       <Modal
@@ -58,7 +59,12 @@ export default function ModalEl({ children, nameOfButton, open, setOpen }) {
           backdropFilter: 'blur(7.5px)',
         }}
       >
-        <Box sx={style}>{children}</Box>
+        <Box sx={style}>
+          <BtnCloseModal onClick={handleClose}>
+            <CloseIcon sx={{ color: '#748E9A' }} />
+          </BtnCloseModal>
+          {children}
+        </Box>
       </Modal>
     </div>
   );

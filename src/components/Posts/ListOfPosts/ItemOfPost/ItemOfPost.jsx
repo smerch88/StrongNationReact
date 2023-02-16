@@ -1,3 +1,5 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import {
   ImgBox,
   ImgElement,
@@ -5,6 +7,7 @@ import {
   LiElement,
   LinkElement,
   PElement,
+  WrapOfBtn,
   WrapOfLink,
 } from './ItemOfPost.styled';
 import { useDispatch } from 'react-redux';
@@ -18,31 +21,31 @@ import ClearOutlinedIcon from '@mui/icons-material/ClearOutlined';
 export default function ItemOfPost({ post }) {
   const [infoOfPost, setInfoOfPost] = useState({});
   const dispatch = useDispatch();
-  
+
   useEffect(() => {
     getPostById(post.id).then(data => setInfoOfPost(data));
   }, [post]);
-
-  if (!infoOfPost.id) return;
+  console.log(post);
+  if (!infoOfPost.id) return null;
 
   return (
     <LiElement>
       <ImgTextBox>
         <ImgBox>
           <ImgElement
-            src={`http://strong-nation.online/post-photo/v1/download/${post.id}`}
+            src={`http://strong-nation.online/api/v2/post-photo/download/${post.id}`}
             alt="smth"
           />
         </ImgBox>
         <PElement>{post.description}</PElement>
       </ImgTextBox>
       <WrapOfLink>
-        <LinkElement href={post.link} target="blank">
+        <LinkElement href={post.link} target="_blank">
           {post.link}
         </LinkElement>
         <PElement>{new Date(post.date).toLocaleDateString()}</PElement>
       </WrapOfLink>
-      <div style={{ display: 'flex' }}>
+      <WrapOfBtn>
         <Button
           variant="edit"
           type="button"
@@ -50,10 +53,19 @@ export default function ItemOfPost({ post }) {
             dispatch(deletePost(post.id));
           }}
         >
-          Видалити <ClearOutlinedIcon fontSize="small" />
+          Видалити <ClearOutlinedIcon fontSize="small" sx={{ ml: '7px' }} />
         </Button>
         <FormUpdatePost infoOfPost={infoOfPost} post={post} />
-      </div>
+      </WrapOfBtn>
     </LiElement>
   );
 }
+
+ItemOfPost.propTypes = {
+  post: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    description: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+  }).isRequired,
+};
