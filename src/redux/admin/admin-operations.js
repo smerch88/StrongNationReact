@@ -1,11 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { adminLogOut, clearAuthHeader, loginAdmin, setAuthHeader } from 'components/services/api-admin';
 
-const {
-  loginAdmin,
-  adminLogOut,
-  setAuthHeader,
-  clearAuthHeader,
-} = require('components/services/api-admin');
 
 export const loginAdminRequest = createAsyncThunk(
   'admin/login',

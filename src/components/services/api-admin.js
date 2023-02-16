@@ -15,6 +15,7 @@ export const clearAuthHeader = () => {
 export const loginAdmin = async formData => {
   try {
     const { data } = await adminApi.post(formData);
+    console.log('Data', data)
     return data;
   } catch (error) {
     return error;

@@ -23,6 +23,7 @@ export const AdminForm = () => {
       email,
       password,
     };
+    
 console.log(formData)
 dispatch(loginAdminRequest(formData));
     const form = e.currentTarget;
