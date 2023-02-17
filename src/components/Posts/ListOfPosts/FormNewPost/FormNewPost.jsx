@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { Formik, ErrorMessage, Field } from 'formik';
 import * as Yup from 'yup';
@@ -28,7 +28,6 @@ export default function FormNewPost() {
 
   const [photo, setPhoto] = useState(defaultPhoto.files);
   const dispatch = useDispatch();
-  const idOfPost = useSelector(state => state.posts.idOfPost);
 
   const handleChangeRegion = event => {
     setRegion(event.target.value);
