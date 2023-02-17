@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/439.9fddfaca.chunk.js","mappings":"mJAIA,UAJgB,WACd,OAAO,yCACR,C","sources":["pages/Support/Support.jsx"],"sourcesContent":["const Support = () => {\n  return <>Support</>;\n};\n\nexport default Support;\n"],"names":[],"sourceRoot":""}
