@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { loginAdminRequest, logOutAdminRequest } from './admin-operations';
+import { loginAdminRequest, logOutAdminRequest, refreshAdmin } from './admin-operations';
+
 
 const initialState = {
-  userData: null,
   token: null,
   isLoading: false,
   error: null,
@@ -12,7 +12,11 @@ const initialState = {
 const adminSlice = createSlice({
   name: 'admin',
   initialState,
-  reducers: {},
+  // reducers:{
+  //   refreshAdmin(state){
+  //     state.isLoggedIn = true;
+  //   }
+  // },
   extraReducers: builder =>
   builder
 
@@ -24,11 +28,9 @@ const adminSlice = createSlice({
     
   })
   .addCase(loginAdminRequest.fulfilled, (state, action) => {
-    console.log(action)
     state.isLoading = false;
-    // state.token = action.payload.token;
+    state.token = action.payload.token;
     state.isLoggedIn = true;
-    state.userData = action.payload;
   })
   .addCase(loginAdminRequest.rejected, (state, action) => {
     state.isLoading = false;
@@ -44,15 +46,19 @@ const adminSlice = createSlice({
   .addCase(logOutAdminRequest.fulfilled, (state, action) => {
     state.isLoading = false;
     state.token = null;
-    state.userData = null;
     state.isLoggedIn = false;
   })
   .addCase(logOutAdminRequest.rejected, (state, action) => {
     state.isLoading = false;
     state.error = action.payload;
   })
+
+  .addCase(refreshAdmin.fulfilled, (state) => {
+    state.isLoggedIn = true;
+  })
+
+
 });
 
-const { reducer } = adminSlice;
-
-export default reducer;
+// export const { refreshAdmin } = adminSlice.actions;
+export const adminReducer = adminSlice.reducer;

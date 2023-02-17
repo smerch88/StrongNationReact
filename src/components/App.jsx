@@ -1,4 +1,4 @@
-import { lazy } from 'react';
+import { lazy, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from './Layout';
 
@@ -8,6 +8,8 @@ import theme from 'styles/theme/theme';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
+import { useDispatch } from 'react-redux';
+import { refreshAdmin } from 'redux/admin/admin-operations';
 
 const HomePage = lazy(() => import('../pages/Home/Home'));
 const NewsPage = lazy(() => import('../pages/News/News'));
@@ -16,6 +18,13 @@ const SupportPage = lazy(() => import('../pages/Support/Support'));
 const AdminPage = lazy(() => import('../pages/Admin/Admin'));
 
 export const App = () => {
+  
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(refreshAdmin());
+  }, [dispatch]);
+
   return (
     <>
       <ErrorBoundary>

@@ -6,7 +6,7 @@ import InputAdornment from '@mui/material/InputAdornment';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { useDispatch } from 'react-redux';
-import { loginAdminRequest } from 'redux/admin/admin-operations';
+import { loginAdminRequest, logOutAdminRequest } from 'redux/admin/admin-operations';
 
 export const AdminForm = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -18,17 +18,18 @@ export const AdminForm = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-
     const formData = {
       email,
       password,
     };
-    
-console.log(formData)
 dispatch(loginAdminRequest(formData));
     const form = e.currentTarget;
-    form.reset();
+    // form.reset();
   };
+
+const toLogOutAdmin = () => {
+  dispatch(logOutAdminRequest())
+}
 
   return (
     <Box component="form" onSubmit={handleSubmit}>
@@ -79,6 +80,7 @@ dispatch(loginAdminRequest(formData));
         Продовжити
       </Button>
       <Button
+      onClick={toLogOutAdmin}
         size="large"
         type="button"
         sx={{

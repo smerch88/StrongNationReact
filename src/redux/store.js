@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { countryReducer } from './country/country-slice';
 import { regionsReducer } from './regions/regions-slice';
-import adminReducer from './admin/admin-slice';
+import {adminReducer} from './admin/admin-slice';
 import postsReducer from './posts/posts-slice';
 import storage from 'redux-persist/lib/storage';
 import {
@@ -16,10 +16,9 @@ import {
 } from 'redux-persist';
 
 const persistConfig = {
-  key: 'admin',
-  storage,
-  version: 1,
+  key: 'token',
   whitelist: ['token'],
+  storage,
 };
 
 const persistedReducer = persistReducer(persistConfig, adminReducer);
