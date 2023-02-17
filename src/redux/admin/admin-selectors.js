@@ -1,1 +1,1 @@
-export const getIsAdmin = state => state.isAdmin.isAdmin;
+export const isLoggedInSelector = state => state.admin.isLoggedIn;

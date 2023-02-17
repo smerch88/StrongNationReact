@@ -5,17 +5,27 @@ import IconButton from '@mui/material/IconButton';
 import InputAdornment from '@mui/material/InputAdornment';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import { useDispatch, useSelector } from 'react-redux';
+import { loginAdminRequest } from 'redux/admin/admin-operations';
+
 
 export const AdminForm = () => {
-  const [showPassword, setShowPassword] = useState(false);
 
+  const [showPassword, setShowPassword] = useState(false);
   const handleClickShowPassword = () => setShowPassword(show => !show);
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const dispatch = useDispatch();
 
   const handleSubmit = e => {
     e.preventDefault();
+    const formData = {
+      email,
+      password,
+    };
+dispatch(loginAdminRequest(formData));
     const form = e.currentTarget;
-    console.log(form.elements.email.value);
-    console.log(form.elements.password.value);
     form.reset();
   };
 
@@ -23,6 +33,7 @@ export const AdminForm = () => {
     <Box component="form" onSubmit={handleSubmit}>
       <div>
         <TextField
+        onChange={e => setEmail(e.target.value)}
           required
           label="Email"
           name="email"
@@ -34,6 +45,7 @@ export const AdminForm = () => {
       </div>
       <div>
         <TextField
+         onChange={e => setPassword(e.target.value)}
           required
           label="Пароль"
           name="password"
@@ -65,6 +77,7 @@ export const AdminForm = () => {
       >
         Продовжити
       </Button>
-    </Box>
+
+    </Box>  
   );
 };
