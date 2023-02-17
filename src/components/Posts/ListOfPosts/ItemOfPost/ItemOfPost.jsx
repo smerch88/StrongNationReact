@@ -10,22 +10,24 @@ import {
   WrapOfBtn,
   WrapOfLink,
 } from './ItemOfPost.styled';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { deletePost } from 'redux/posts/posts-operations';
 import FormUpdatePost from '../FormUpdatePost/FormUpdatePost';
 import { useEffect, useState } from 'react';
 import { getPostById } from 'components/services/api-posts';
 import { Button } from '@mui/material';
 import ClearOutlinedIcon from '@mui/icons-material/ClearOutlined';
+import { isLoggedInSelector } from 'redux/admin/admin-selectors';
 
 export default function ItemOfPost({ post }) {
+  const isLoggedIn = useSelector(isLoggedInSelector)
   const [infoOfPost, setInfoOfPost] = useState({});
   const dispatch = useDispatch();
 
   useEffect(() => {
     getPostById(post.id).then(data => setInfoOfPost(data));
   }, [post]);
-  console.log(post);
+  // console.log(post);
   if (!infoOfPost.id) return null;
 
   return (
@@ -45,7 +47,7 @@ export default function ItemOfPost({ post }) {
         </LinkElement>
         <PElement>{new Date(post.date).toLocaleDateString()}</PElement>
       </WrapOfLink>
-      <WrapOfBtn>
+     {isLoggedIn && <WrapOfBtn>
         <Button
           variant="edit"
           type="button"
@@ -56,7 +58,7 @@ export default function ItemOfPost({ post }) {
           Видалити <ClearOutlinedIcon fontSize="small" sx={{ ml: '7px' }} />
         </Button>
         <FormUpdatePost infoOfPost={infoOfPost} post={post} />
-      </WrapOfBtn>
+      </WrapOfBtn>}
     </LiElement>
   );
 }

@@ -11,6 +11,7 @@ import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
 import { useDispatch } from 'react-redux';
 import { refreshAdmin } from 'redux/admin/admin-operations';
 
+
 const HomePage = lazy(() => import('../pages/Home/Home'));
 const NewsPage = lazy(() => import('../pages/News/News'));
 const ContactsPage = lazy(() => import('../pages/Contacts/Contacts'));
@@ -18,7 +19,7 @@ const SupportPage = lazy(() => import('../pages/Support/Support'));
 const AdminPage = lazy(() => import('../pages/Admin/Admin'));
 
 export const App = () => {
-  
+
   const dispatch = useDispatch();
 
   useEffect(() => {

@@ -46,12 +46,9 @@ export const refreshAdmin = createAsyncThunk(
     if (persistedToken === null) {
       return thunkAPI.rejectWithValue('Unable to fetch user');
     }
-
     try {
       return setAuthHeader(persistedToken);
     } catch (error) {
-      // Notify.failure('Something Went Wrong');
-
       return thunkAPI.rejectWithValue(error.message);
     }
   }

@@ -5,10 +5,12 @@ import IconButton from '@mui/material/IconButton';
 import InputAdornment from '@mui/material/InputAdornment';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import { useDispatch } from 'react-redux';
-import { loginAdminRequest, logOutAdminRequest } from 'redux/admin/admin-operations';
+import { useDispatch, useSelector } from 'react-redux';
+import { loginAdminRequest } from 'redux/admin/admin-operations';
+
 
 export const AdminForm = () => {
+
   const [showPassword, setShowPassword] = useState(false);
   const handleClickShowPassword = () => setShowPassword(show => !show);
 
@@ -24,12 +26,8 @@ export const AdminForm = () => {
     };
 dispatch(loginAdminRequest(formData));
     const form = e.currentTarget;
-    // form.reset();
+    form.reset();
   };
-
-const toLogOutAdmin = () => {
-  dispatch(logOutAdminRequest())
-}
 
   return (
     <Box component="form" onSubmit={handleSubmit}>
@@ -79,18 +77,7 @@ const toLogOutAdmin = () => {
       >
         Продовжити
       </Button>
-      <Button
-      onClick={toLogOutAdmin}
-        size="large"
-        type="button"
-        sx={{
-          ml: '30px',
-          mt: '62px',
-          mb: '31px',
-        }}
-      >
-        Вийти
-      </Button>
-    </Box>
+
+    </Box>  
   );
 };
