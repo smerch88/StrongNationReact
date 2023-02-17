@@ -5,6 +5,11 @@ export const post = axios.create({
   // timeout: 1000,
 });
 
+export const postGET = axios.create({
+  baseURL: 'http://strong-nation.online/api/v2/post/',
+  // timeout: 1000,
+});
+
 export const photo = axios.create({
   baseURL: 'http://strong-nation.online/api/v2/post-photo/',
   timeout: 30000,
@@ -12,7 +17,7 @@ export const photo = axios.create({
 
 export const getAllPostsByCountry = async () => {
   try {
-    const { data } = await post.get('all/Ukraine');
+    const { data } = await postGET.get('all/Ukraine');
     return data;
   } catch (error) {
     return error;
@@ -21,7 +26,7 @@ export const getAllPostsByCountry = async () => {
 
 export const getAllPostsByIdOfRegion = async id => {
   try {
-    const { data } = await post.get(`all-by-region-id/${id}`);
+    const { data } = await postGET.get(`all-by-region-id/${id}`);
     return data;
   } catch (error) {
     return error;
@@ -30,7 +35,7 @@ export const getAllPostsByIdOfRegion = async id => {
 
 export const getAllPostsByNameOfRegion = async region => {
   try {
-    const { data } = await post.get(`all/Ukraine/${region}`);
+    const { data } = await postGET.get(`all/Ukraine/${region}`);
     return data;
   } catch (error) {
     return error;
@@ -48,7 +53,7 @@ export const addPostByNameOfRegion = async (region, body) => {
 
 export const getPostById = async id => {
   try {
-    const { data } = await post.get(`get-by-post-id/${id}`);
+    const { data } = await postGET.get(`get-by-post-id/${id}`);
     return data;
   } catch (error) {
     return error;

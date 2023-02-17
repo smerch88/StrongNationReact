@@ -1,16 +1,20 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { adminLogOut, clearAuthHeader, loginAdmin, setAuthHeader } from 'components/services/api-admin';
+import {
+  adminLogOut,
+  clearAuthHeader,
+  loginAdmin,
+  setAuthHeader,
+} from 'components/services/api-admin';
 import { Notify } from 'notiflix';
-
 
 export const loginAdminRequest = createAsyncThunk(
   'admin/login',
   async (formData, thunkApi) => {
     try {
       const response = await loginAdmin(formData);
-      console.log(response)
-      if (!response.token){
-        throw new Error('Invalid email or password')
+      console.log(response);
+      if (!response.token) {
+        throw new Error('Invalid email or password');
       }
       setAuthHeader(response.token);
       return response;
@@ -37,19 +41,14 @@ export const logOutAdminRequest = createAsyncThunk(
 export const refreshAdmin = createAsyncThunk(
   'admin/refresh',
   async (_, thunkAPI) => {
-
     const state = thunkAPI.getState();
-
     const persistedToken = state.admin.token;
     if (persistedToken === null) {
-
       return thunkAPI.rejectWithValue('Unable to fetch user');
     }
 
     try {
-
       return setAuthHeader(persistedToken);
-
     } catch (error) {
       // Notify.failure('Something Went Wrong');
 

@@ -5,9 +5,14 @@ export const regions = axios.create({
   // timeout: 1000,
 });
 
+export const regionsGet = axios.create({
+  baseURL: 'http://strong-nation.online/api/v2/region/',
+  // timeout: 1000,
+});
+
 export const getAllRegions = async () => {
   try {
-    const { data } = await regions.get('all/Ukraine');
+    const { data } = await regionsGet.get('all/Ukraine');
     return data;
   } catch (error) {
     return error;
@@ -16,7 +21,7 @@ export const getAllRegions = async () => {
 
 export const getRegionById = async id => {
   try {
-    const { data } = await regions.get(`get-by-id/${id}`);
+    const { data } = await regionsGet.get(`get-by-id/${id}`);
     return data;
   } catch (error) {
     return error;
@@ -25,7 +30,7 @@ export const getRegionById = async id => {
 
 export const getRegionByName = async region => {
   try {
-    const { data } = await regions.get(`get/Ukraine/${region}`);
+    const { data } = await regionsGet.get(`get/Ukraine/${region}`);
     return data;
   } catch (error) {
     return error;
