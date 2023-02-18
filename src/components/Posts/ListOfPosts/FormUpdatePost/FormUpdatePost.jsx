@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { Formik, ErrorMessage, Field } from 'formik';
 import * as Yup from 'yup';
 
-import { addPost, updatePost } from 'redux/posts/posts-operations';
+import { updatePost } from 'redux/posts/posts-operations';
 
 import ModalEl from 'components/Modal/Modal';
 import NativeSelectRegion from '../SelectInput/SelectInput';
@@ -28,7 +28,6 @@ export default function FormUpdatePost({ infoOfPost, post }) {
   const [open, setOpen] = useState(false);
 
   const dispatch = useDispatch();
-  const idOfPost = useSelector(state => state.posts.idOfPost);
 
   const handleChangeRegion = event => {
     setRegion(event.target.value);
