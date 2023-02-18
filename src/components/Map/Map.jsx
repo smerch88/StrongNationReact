@@ -5,6 +5,8 @@ import { useSelector } from 'react-redux';
 import { getRegions } from 'redux/regions/regions-selectors';
 import { useDispatch } from 'react-redux';
 import { fetchRegions } from 'redux/regions/regions-operations';
+import { setOblId } from 'redux/oblID/oblId-slice';
+import { getOblId } from 'redux/oblID/oblId-selectors';
 
 export const Map = () => {
   const dispatch = useDispatch();
@@ -18,11 +20,17 @@ export const Map = () => {
     dispatch(fetchRegions());
   }, [dispatch]);
 
+  const oblID = useSelector(getOblId);
+  console.log(oblID, 'oblID oblID');
+
   return (
     <>
       <div
         onMouseEnter={
-          () => setIsShown(true)
+          () => {
+            setIsShown(true);
+            setOblId(1);
+          }
           // Можливо саме тут робити запит по айдішці? При наведенні...
           // Якщо path.id===item.id, то витягуємо інфу по цій області
           // Як достучатися до айдішок path щоб потім з цієї айдішки перекинути пропс
@@ -337,7 +345,7 @@ export const Map = () => {
           </Text>
         </svg>
       </div>
-      {isShown && <Circles oblList={oblList} currentId={31} />}
+      {isShown && <Circles oblList={oblList} currentId={oblID} />}
     </>
   );
 };

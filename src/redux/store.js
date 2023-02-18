@@ -3,6 +3,8 @@ import { countryReducer } from './country/country-slice';
 import { regionsReducer } from './regions/regions-slice';
 import {adminReducer} from './admin/admin-slice';
 import postsReducer from './posts/posts-slice';
+import { oblIdReducer } from './oblID/oblId-slice';
+
 import storage from 'redux-persist/lib/storage';
 import {
   persistStore,
@@ -29,6 +31,7 @@ export const store = configureStore({
     country: countryReducer,
     regions: regionsReducer,
     posts: postsReducer,
+    oblId: oblIdReducer,
   },
   middleware: getDefaultMiddleware =>
   getDefaultMiddleware({
