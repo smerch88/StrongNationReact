@@ -1,14 +1,15 @@
-import { Box, styled, Typography } from '@mui/material';
+import { Box, styled } from '@mui/material';
 
 export const StatsSection = styled('section')(({ theme }) => ({
-  paddingTop: '33px',
-  paddingBottom: '29px',
+  paddingTop: '52px',
+  paddingBottom: '20px',
   color: [theme.palette.primary.contrastText],
   backgroundColor: [theme.palette.background.contrast],
-  [theme.breakpoints.up('desktop')]: {
-    paddingTop: '78px',
-    paddingBottom: '65px',
+  [theme.breakpoints.up('tablet')]: {
+    paddingTop: '60px',
+    paddingBottom: '60px',
   },
+  [theme.breakpoints.up('desktop')]: {},
 }));
 
 export const StyledBox = styled(Box)(({ theme }) => ({
@@ -16,7 +17,6 @@ export const StyledBox = styled(Box)(({ theme }) => ({
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
-  marginBottom: '20px',
   [theme.breakpoints.up('tablet')]: {
     flexDirection: 'row',
     marginBottom: '60px',
@@ -24,15 +24,6 @@ export const StyledBox = styled(Box)(({ theme }) => ({
   [theme.breakpoints.up('desktop')]: {
     flexDirection: 'row',
     marginBottom: '60px',
-  },
-}));
-
-export const StatsTitle = styled(Typography)(({ theme }) => ({
-  [theme.breakpoints.up('tablet')]: {
-    display: 'inline-block',
-  },
-  [theme.breakpoints.up('desktop')]: {
-    display: 'inline-block',
   },
 }));
 
@@ -48,7 +39,7 @@ export const Li = styled('li')(({ theme }) => ({
   width: '100%',
   '&:first-of-type': { borderBottom: '2px solid #FFFFFF' },
   [theme.breakpoints.up('tablet')]: {
-    padding: '30px 48px',
+    padding: '10px 48px',
     paddingRight: 0,
     width: 'auto',
     '&:first-of-type': {

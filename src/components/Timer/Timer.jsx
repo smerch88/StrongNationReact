@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Typography } from '@mui/material';
 import { useState, useEffect } from 'react';
 
@@ -21,8 +22,8 @@ export const Timer = () => {
   }, []);
 
   return (
-    <Typography variant="h3" component="span">
-      {days} днів {date.toLocaleTimeString()}
+    <Typography variant="h3" component="span" sx={{ display: 'inline-block' }}>
+      нашi досягнення за {days} дні
     </Typography>
   );
 };

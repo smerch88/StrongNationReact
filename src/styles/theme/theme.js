@@ -151,6 +151,7 @@ theme.components = {
           [theme.breakpoints.up('desktop')]: {
             fontSize: '20px',
             lineHeight: '24px',
+            padding: '12px 20px',
           },
         },
       },
@@ -257,8 +258,8 @@ theme.typography.body1 = {
     lineHeight: '21px',
   },
   [theme.breakpoints.up('desktop')]: {
-    fontSize: '25px',
-    lineHeight: 'calc(29px/25px)',
+    fontSize: '21px',
+    lineHeight: 'calc(21px/18px)',
   },
 };
 theme.typography.h1 = {
@@ -272,20 +273,7 @@ theme.typography.h1 = {
     fontSize: '50px',
   },
 };
-// theme.typography.h2 = {
-//   margin: 0,
-//   fontFamily: 'Bebas',
-//   fontStyle: 'normal',
-//   fontWeight: 400,
-//   fontSize: '30px',
-//   lineHeight: '36px',
-//   color: theme.palette.text.header,
-//   [theme.breakpoints.up('desktop')]: {
-//     fontWeight: 400,
-//     fontSize: '50px',
-//     lineHeight: '60px',
-//   },
-// };
+
 theme.typography.h3 = {
   margin: 0,
   fontFamily: 'Bebas',

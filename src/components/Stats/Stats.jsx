@@ -6,7 +6,7 @@ import { fetchCountry } from 'redux/country/country-operations';
 import { getCountry } from 'redux/country/country-selectors';
 
 import { Container, Typography } from '@mui/material';
-import { Li, StatsSection, StatsTitle, StyledBox, Ul } from './Stats.Styled';
+import { Li, StatsSection, StyledBox, Ul } from './Stats.Styled';
 
 export const Stats = () => {
   const dispatch = useDispatch();
@@ -21,9 +21,6 @@ export const Stats = () => {
       <Container>
         {/* stats section */}
         <StyledBox>
-          <StatsTitle variant="h3" component="h2">
-            нашi досягнення за &nbsp;
-          </StatsTitle>
           <Timer />
         </StyledBox>
         <Ul>
@@ -38,7 +35,15 @@ export const Stats = () => {
                   )
                 )}
             </Typography>
-            <Typography variant="h5" component="p">
+            <Typography
+              variant="h5"
+              component="p"
+              sx={{
+                marginTop: {
+                  tablet: '15px',
+                },
+              }}
+            >
               грн на підтримку військових
             </Typography>
           </Li>
@@ -53,7 +58,15 @@ export const Stats = () => {
                   )
                 )}
             </Typography>
-            <Typography variant="h5" component="p">
+            <Typography
+              variant="h5"
+              component="p"
+              sx={{
+                marginTop: {
+                  tablet: '15px',
+                },
+              }}
+            >
               грн на підтримку громадян
             </Typography>
           </Li>
