@@ -46,7 +46,7 @@ export const AutoPlay = ({ ...props }) => {
     <AutoPlayContainer>
       <Slider {...settings}>
         {props.images.map(img => (
-          <Box key={nanoid()} sx={{}}>
+          <Box key={nanoid()}>
             <StyledImg src={img} alt="" loading="lazy" />
           </Box>
         ))}
