@@ -1,4 +1,4 @@
-import { Box, Button, styled } from '@mui/material';
+import { Box, Button } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -7,19 +7,7 @@ import { getRegions } from 'redux/regions/regions-selectors';
 import { Circles } from './Circles';
 import { HiArrowLongRight } from 'react-icons/hi2';
 import { TranslateRegionName } from './TranslateRegionName';
-
-const RegionsList = styled('ul')(({ theme }) => ({
-  display: 'flex',
-  overflowX: 'scroll',
-  gap: '12px',
-  paddingBottom: '20px',
-  [theme.breakpoints.up('tablet')]: {
-    paddingBottom: '40px',
-  },
-  [theme.breakpoints.up('desktop')]: {
-    display: 'none',
-  },
-}));
+import { RegionsList } from './ReadMore.styled';
 
 export const ReadMore = props => {
   const dispatch = useDispatch();
