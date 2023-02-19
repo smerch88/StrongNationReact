@@ -1,7 +1,7 @@
 const { createSlice } = require('@reduxjs/toolkit');
 
 const oblIdInitalState = {
-  oblId: 10,
+  oblId: 0,
 };
 
 const oblIdSlice = createSlice({
