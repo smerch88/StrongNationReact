@@ -1,10 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useRef, useState } from 'react';
 import { Text, Path } from './Map.styled';
 import { Circles } from 'components/ReadMore/Circles';
 import { useSelector } from 'react-redux';
 import { getRegions } from 'redux/regions/regions-selectors';
 import { useDispatch } from 'react-redux';
-import { fetchRegions } from 'redux/regions/regions-operations';
 import { setOblId } from 'redux/oblID/oblId-slice';
 import { getOblId } from 'redux/oblID/oblId-selectors';
 
