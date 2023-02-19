@@ -1,6 +1,6 @@
 import { styled } from '@mui/material';
 
-import bg from '../../images/bgimagesection.jpg';
+import bg from '../../images/bgimagesection.jpeg';
 
 export const AboutSection = styled('section')(({ theme }) => ({
   paddingTop: '43px',

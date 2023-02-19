@@ -1,17 +1,17 @@
 import { Container, Typography, useTheme } from '@mui/material';
 import { AutoPlay } from 'components/Slider/Slider';
 
-import content1 from '../../images/sliderImages/1.jpg';
-import content2 from '../../images/sliderImages/2.jpg';
-import content3 from '../../images/sliderImages/3.jpg';
-import content4 from '../../images/sliderImages/4.jpg';
-import content5 from '../../images/sliderImages/5.jpg';
-import content6 from '../../images/sliderImages/6.jpg';
-import content7 from '../../images/sliderImages/7.jpg';
-import content8 from '../../images/sliderImages/8.jpg';
-import content9 from '../../images/sliderImages/9.jpg';
-import content10 from '../../images/sliderImages/10.jpg';
-import content11 from '../../images/sliderImages/11.jpg';
+import content1 from '../../images/sliderImages/1.jpeg';
+import content2 from '../../images/sliderImages/2.jpeg';
+import content3 from '../../images/sliderImages/3.jpeg';
+import content4 from '../../images/sliderImages/4.jpeg';
+import content5 from '../../images/sliderImages/5.jpeg';
+import content6 from '../../images/sliderImages/6.jpeg';
+import content7 from '../../images/sliderImages/7.jpeg';
+import content8 from '../../images/sliderImages/8.jpeg';
+import content9 from '../../images/sliderImages/9.jpeg';
+import content10 from '../../images/sliderImages/10.jpeg';
+import content11 from '../../images/sliderImages/11.jpeg';
 
 import { AboutSection, AboutTextWrapper, MapSection } from './Home.styled';
 import { ReadMore } from 'components/ReadMore/ReadMore';
