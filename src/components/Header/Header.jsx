@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom';
 import ErrorBoundary from 'components/ErrorBoundary/ErrorBoundary';
 import { StyledHeader, StyledLogo } from './Header.Styled';
 import BurgerMenu from 'components/BurgerMenu/BurgerMenu';
+import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
 
 const pages = [
   { name: 'новини', link: '/news' },
@@ -66,6 +67,7 @@ export const Header = () => {
                 ))}
                 <Button component={Link} to="/support">
                   пiдтримати
+                  <TrendingFlatIcon sx={{ marginLeft: '10px' }} />
                 </Button>
               </Box>
             )}

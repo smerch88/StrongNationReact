@@ -103,8 +103,25 @@ export default function TemporaryDrawer() {
           <ListItemText
             align="center"
             primary={
-              <Button sx={itemProps}>
-                підтримати <TrendingFlatIcon sx={{ marginLeft: '10px' }} />
+              <Button
+                sx={{
+                  ...itemProps,
+                  fontSize: {
+                    phone: ' 30px',
+                  },
+                  LineHeight: {
+                    phone: '36px',
+                  },
+                  paddingLeft: {
+                    phone: '40px',
+                  },
+                  paddingRight: {
+                    phone: '40px',
+                  },
+                }}
+              >
+                підтримати
+                <TrendingFlatIcon sx={{ marginLeft: '10px' }} />
               </Button>
             }
             variant="h3"
