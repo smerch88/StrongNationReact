@@ -38,7 +38,7 @@ export const Header = () => {
               alignItems: 'center',
             }}
           >
-            <Link to="/">
+            <Link to="/" alt="Хоробра Україна">
               <StyledLogo width="96px" height="42px" />
             </Link>
             <Toolbar>{isSmallScreen && <BurgerMenu />} </Toolbar>

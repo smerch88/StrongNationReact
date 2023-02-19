@@ -47,7 +47,11 @@ export const AutoPlay = ({ ...props }) => {
       <Slider {...settings}>
         {props.images.map(img => (
           <Box key={nanoid()}>
-            <StyledImg src={img} alt="" loading="lazy" />
+            <StyledImg
+              src={img}
+              alt="зображення демонструє роботу волонтерів"
+              loading="lazy"
+            />
           </Box>
         ))}
       </Slider>

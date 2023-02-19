@@ -35,7 +35,7 @@ export default function ItemOfPost({ post }) {
         <ImgBox>
           <ImgElement
             src={`https://strong-nation.online/api/v2/post-photo/download/${post.id}`}
-            alt="smth"
+            alt="зображення до поста"
           />
         </ImgBox>
         <PElement>{post.description}</PElement>
