@@ -34,7 +34,7 @@ export default function ItemOfPost({ post }) {
       <ImgTextBox>
         <ImgBox>
           <ImgElement
-            src={`http://strong-nation.online/api/v2/post-photo/download/${post.id}`}
+            src={`https://strong-nation.online/api/v2/post-photo/download/${post.id}`}
             alt="smth"
           />
         </ImgBox>
