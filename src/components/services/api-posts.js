@@ -1,17 +1,17 @@
 import axios from 'axios';
 
 export const post = axios.create({
-  baseURL: 'http://strong-nation.online/api/v2/post/',
+  baseURL: 'https://strong-nation.online/api/v2/post/',
   // timeout: 1000,
 });
 
 export const postGET = axios.create({
-  baseURL: 'http://strong-nation.online/api/v2/post/',
+  baseURL: 'https://strong-nation.online/api/v2/post/',
   // timeout: 1000,
 });
 
 export const photo = axios.create({
-  baseURL: 'http://strong-nation.online/api/v2/post-photo/',
+  baseURL: 'https://strong-nation.online/api/v2/post-photo/',
   timeout: 30000,
 });
 

@@ -3,7 +3,7 @@ import { regions } from './api';
 import { photo, post } from './api-posts';
 
 export const adminApi = axios.create({
-  baseURL: 'http://strong-nation.online/api/v2/auth/authenticate',
+  baseURL: 'https://strong-nation.online/api/v2/auth/authenticate',
 });
 
 export const setAuthHeader = token => {

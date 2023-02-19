@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const country = axios.create({
-  baseURL: 'http://strong-nation.online/api/v2/country/',
+  baseURL: 'https://strong-nation.online/api/v2/country/',
   timeout: 3000,
 });
 
