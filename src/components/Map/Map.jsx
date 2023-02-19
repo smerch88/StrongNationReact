@@ -12,11 +12,9 @@ export const Map = () => {
   const dispatch = useDispatch();
   const [isShown, setIsShown] = useState(false);
   const oblList = useSelector(getRegions);
-  console.log(oblList);
   const svgRef = useRef(null);
 
   const oblID = useSelector(getOblId);
-  console.log('oblID', oblID);
 
   useEffect(() => {
     const paths = svgRef.current.querySelectorAll('path');

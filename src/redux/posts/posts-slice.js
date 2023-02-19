@@ -52,7 +52,6 @@ const postSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(deletePost.fulfilled, (state, action) => {
-        console.log(action)
         state.items = state.items.filter(item => item.id !== action.payload.id);
         state.isLoading = true;
         state.error = false;

@@ -12,7 +12,6 @@ export const loginAdminRequest = createAsyncThunk(
   async (formData, thunkApi) => {
     try {
       const response = await loginAdmin(formData);
-      console.log(response);
       if (!response.token) {
         throw new Error('Invalid email or password');
       }

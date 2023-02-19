@@ -23,8 +23,6 @@ const CirclesUl = styled('ul')(({ theme }) => ({
 }));
 
 export const Circles = ({ oblList, currentId }) => {
-  console.log(oblList, 'oblList Circles');
-  console.log(currentId, 'oblList currentId');
   return (
     <>
       <Box>

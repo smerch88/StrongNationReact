@@ -131,7 +131,6 @@ export default function TemporaryDrawer() {
       </List>
     </Box>
   );
-  console.log('open', open);
   return (
     <>
       <Hamburger
