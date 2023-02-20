@@ -33,20 +33,4 @@ export const AboutTextWrapper = styled('div')(({ theme }) => ({
 
 
 export const AutoPlayBox = styled('div')(({ theme }) => ({
-
-  // transform: 'translateY(-73px)',
-  // transformBox: 'stroke-box',
-  // height: '100%',
-  // [theme.breakpoints.up('phablet')]: {
-  //   height: '300px',
-  //   height: '10vw',
-  // },
-  // [theme.breakpoints.up('tablet')]: {
-  //   height: '108px',
-  //   height: '15vw',
-  // },
-  // [theme.breakpoints.up('desktop')]: {
-  //   height: '281px',
-  //   height: '15vw',
-  // },
 }));
