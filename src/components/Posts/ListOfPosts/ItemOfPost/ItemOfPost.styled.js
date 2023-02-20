@@ -91,7 +91,7 @@ export const LinkElement = styled('a')(({ theme }) => ({
   [theme.breakpoints.up('tablet')]: {
     fontSize: '10px',
     lineHeight: '11px',
-    width: '120px',
+    width: '115px',
   },
   [theme.breakpoints.up('desktop')]: {
     fontSize: '12px',
@@ -114,3 +114,5 @@ export const WrapOfBtn = styled('div')(({ theme }) => ({
     padding: '0px 10px',
   },
 }));
+
+

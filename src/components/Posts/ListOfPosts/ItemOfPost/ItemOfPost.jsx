@@ -16,6 +16,7 @@ import FormUpdatePost from '../FormUpdatePost/FormUpdatePost';
 import { useEffect, useState } from 'react';
 import { getPostById } from 'components/services/api-posts';
 import { Button } from '@mui/material';
+import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import ClearOutlinedIcon from '@mui/icons-material/ClearOutlined';
 import { isLoggedInSelector } from 'redux/admin/admin-selectors';
 
@@ -48,6 +49,9 @@ export default function ItemOfPost({ post }) {
       </WrapOfLink>
       {isLoggedIn && (
         <WrapOfBtn>
+          <Button variant="favorite" type="button" size='small'>
+<StarOutlineIcon />
+          </Button>
           <Button
             variant="edit"
             type="button"
@@ -55,7 +59,7 @@ export default function ItemOfPost({ post }) {
               dispatch(deletePost(post.id));
             }}
           >
-            Видалити <ClearOutlinedIcon fontSize="small" sx={{ ml: '7px' }} />
+            Видалити <ClearOutlinedIcon fontSize="small" sx={{ ml: '2px' }} />
           </Button>
           <FormUpdatePost infoOfPost={infoOfPost} post={post} />
         </WrapOfBtn>
