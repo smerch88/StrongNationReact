@@ -31,6 +31,7 @@ export const ReadMore = props => {
 
     dispatch(getFilter(name));
     dispatch(setOblId({ id: Number(id), name: name }));
+    props.setIsActiveRegion(name);
   };
 
   // First half of oblList

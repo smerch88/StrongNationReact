@@ -22,6 +22,8 @@ import { useState } from 'react';
 
 const Home = () => {
   const [circles, setCircles] = useState(false);
+  const [isActiveRegion, setIsActiveRegion] = useState('');
+  console.log('isActiveRegion', isActiveRegion);
 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('tablet'));
@@ -40,8 +42,14 @@ const Home = () => {
     <>
       <MapSection>
         <Container>
-          {isMobile ? !circles && <Map /> : <Map />}
-          <ReadMore circles={circles} setCircles={setCircles} />
+          {(!circles || !isMobile) && <Map isActiveRegion={isActiveRegion} />}
+          {/* {isMobile && !circles ? <Map /> : null} */}
+          {/* {!isMobile && <Map />} */}
+          <ReadMore
+            circles={circles}
+            setCircles={setCircles}
+            setIsActiveRegion={setIsActiveRegion}
+          />
         </Container>
         {/* Якщо не помістити слайдер в секцію то буде вилазити за межі, видно на 480 і менше я не знаю як пофіксити */}
       </MapSection>
