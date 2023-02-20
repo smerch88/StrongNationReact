@@ -1,4 +1,4 @@
-import { Container, Typography, useTheme } from '@mui/material';
+import { Container, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { AutoPlay } from 'components/Slider/Slider';
 
 import content1 from '../../images/sliderImages/1.jpeg';
@@ -22,6 +22,11 @@ import { useState } from 'react';
 
 const Home = () => {
   const [circles, setCircles] = useState(false);
+  const [isActiveRegion, setIsActiveRegion] = useState('');
+  console.log('isActiveRegion', isActiveRegion);
+
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('tablet'));
 
   const images1 = [content1, content2, content3, content4, content5, content6];
   const images2 = [
@@ -33,13 +38,18 @@ const Home = () => {
     content1,
     content1,
   ];
-  const theme = useTheme();
   return (
     <>
       <MapSection>
         <Container>
-          {!circles && <Map />}
-          <ReadMore circles={circles} setCircles={setCircles} />
+          {(!circles || !isMobile) && <Map isActiveRegion={isActiveRegion} />}
+          {/* {isMobile && !circles ? <Map /> : null} */}
+          {/* {!isMobile && <Map />} */}
+          <ReadMore
+            circles={circles}
+            setCircles={setCircles}
+            setIsActiveRegion={setIsActiveRegion}
+          />
         </Container>
         {/* Якщо не помістити слайдер в секцію то буде вилазити за межі, видно на 480 і менше я не знаю як пофіксити */}
       </MapSection>

@@ -39,8 +39,6 @@
   <li><strong>Frontend Team Lead</strong> - <em>Frontend Development</em> - <a href="https://github.com/smerch88">Smerch88</a></li>
   <li><strong>Frontend Developer</strong> - <em>Frontend Development</em> - <a href="https://github.com/KuznietsovaOksana">KuznietsovaOksana
 </a></li>
-  <li><strong>Frontend Developer</strong> - <em>Frontend Development</em> - <a href="https://github.com/zanderol">ZanderOl
-</a></li>
   <li><strong>Frontend Developer</strong> - <em>Frontend Development</em> - <a href="https://github.com/TurchynykOleksii">TurchynykOleksii
 </a></li>
   <li><strong>Backend Developer</strong> - <em>Backend Java Development</em> - <a href="https://github.com/SehiiSterniichuk">SehiiSterniichuk

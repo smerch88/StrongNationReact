@@ -25,7 +25,6 @@ export default function FormNewPost() {
   const [open, setOpen] = useState(false);
   const [region, setRegion] = useState('');
   const [date, setDate] = useState(new Date());
-
   const [photo, setPhoto] = useState(defaultPhoto.files);
   const dispatch = useDispatch();
 

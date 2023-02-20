@@ -7,8 +7,14 @@ export const RegionsList = styled('ul')(({ theme }) => ({
   paddingBottom: '20px',
   [theme.breakpoints.up('tablet')]: {
     paddingBottom: '40px',
+    '&:first-of-type': {
+      paddingBottom: '20px',
+    },
   },
   [theme.breakpoints.up('desktop')]: {
     display: 'none',
+  },
+  '&:firrst-of-type': {
+    paddingBottom: '20px',
   },
 }));
