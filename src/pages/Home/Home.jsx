@@ -23,6 +23,7 @@ import { useState } from 'react';
 const Home = () => {
   const [circles, setCircles] = useState(false);
   const [isActiveRegion, setIsActiveRegion] = useState('');
+  console.log('isActiveRegion', isActiveRegion);
 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('tablet'));
