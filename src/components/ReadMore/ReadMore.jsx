@@ -33,6 +33,12 @@ export const ReadMore = props => {
     dispatch(setOblId({ id: Number(id), name: name }));
   };
 
+  // First half of oblList
+  const firstHalf = oblList.slice(0, Math.ceil(oblList.length / 2));
+
+  // Second half of oblList
+  const secondHalf = oblList.slice(Math.ceil(oblList.length / 2));
+
   return (
     <>
       {props.circles && <Circles oblList={oblList} currentId={currentId} />}
@@ -50,8 +56,23 @@ export const ReadMore = props => {
         </Box>
       )}
       <RegionsList>
-        {oblList &&
-          oblList.map(item => (
+        {firstHalf &&
+          firstHalf.map(item => (
+            <li key={item.id}>
+              <Button
+                variant="regions"
+                onClick={handleOpen}
+                data-id={item.id}
+                data-name={item.name}
+              >
+                <TranslateRegionName name={item.name} />
+              </Button>
+            </li>
+          ))}
+      </RegionsList>
+      <RegionsList>
+        {secondHalf &&
+          secondHalf.map(item => (
             <li key={item.id}>
               <Button
                 variant="regions"
