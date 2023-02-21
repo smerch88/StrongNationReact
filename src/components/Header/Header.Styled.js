@@ -16,7 +16,7 @@ export const StyledLogo = styled(ReactLogo)(({ theme }) => ({
 export const StyledBurger = styled(Burger)(({ theme }) => ({}));
 
 export const StyledHeader = styled(AppBar)(({ theme }) => ({
-  position: 'relative',
+  position: 'absolute',
 
   background: '#FFFFFF',
   opacity: '0.7',

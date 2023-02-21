@@ -13,7 +13,12 @@ import content9 from '../../images/sliderImages/9.jpeg';
 import content10 from '../../images/sliderImages/10.jpeg';
 import content11 from '../../images/sliderImages/11.jpeg';
 
-import { AboutSection, AboutTextWrapper, AutoPlayBox, MapSection } from './Home.styled';
+import {
+  AboutSection,
+  AboutTextWrapper,
+  AutoPlayBox,
+  MapSection,
+} from './Home.styled';
 import { ReadMore } from 'components/ReadMore/ReadMore';
 import { Stats } from 'components/Stats/Stats';
 import { Map } from 'components/Map/Map';
@@ -43,21 +48,19 @@ const Home = () => {
       <MapSection>
         <Container>
           {(!circles || !isMobile) && <Map isActiveRegion={isActiveRegion} />}
-          {/* {isMobile && !circles ? <Map /> : null} */}
-          {/* {!isMobile && <Map />} */}
-          <ReadMore
-            circles={circles}
-            setCircles={setCircles}
-            setIsActiveRegion={setIsActiveRegion}
-          />
         </Container>
+        <ReadMore
+          circles={circles}
+          setCircles={setCircles}
+          setIsActiveRegion={setIsActiveRegion}
+        />
         {/* Якщо не помістити слайдер в секцію то буде вилазити за межі, видно на 480 і менше я не знаю як пофіксити */}
       </MapSection>
       <AutoPlayBox>
-        <div style={{transform: 'translateY(-73px)'}}>
-      <AutoPlay images={images1} rtl={true} />
-      <AutoPlay images={images2} rtl={false} />
-      </div>
+        <div style={{}}>
+          <AutoPlay images={images1} rtl={true} />
+          <AutoPlay images={images2} rtl={false} />
+        </div>
       </AutoPlayBox>
       <FreshNews />
       <Stats />

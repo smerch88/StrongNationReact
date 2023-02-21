@@ -97,7 +97,18 @@ export const Circles = ({ oblList, currentId }) => {
             display: { desktop: 'none' },
           }}
         >
-          <Button data-id={1} component={Link} to="/news">
+          <Button
+            data-id={1}
+            component={Link}
+            to="/news"
+            sx={{
+              border: '1px solid #FFFFFF',
+              paddingLeft: {
+                tablet: '20px',
+                desktop: '29px',
+              },
+            }}
+          >
             дивитись бiльше <HiArrowLongRight />
           </Button>
         </Box>
