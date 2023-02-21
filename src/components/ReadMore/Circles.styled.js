@@ -17,7 +17,6 @@ export const Circle = styled('li')(({ theme }) => ({
 
 export const CirclesUl = styled('ul')(({ theme }) => ({
   display: 'flex',
-  overflowX: 'scroll',
   gap: '12px',
   padding: '32px 10px',
 }));

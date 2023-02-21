@@ -24,7 +24,7 @@ export const AutoPlay = ({ ...props }) => {
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 5,
+          slidesToShow: 4,
         },
       },
       {

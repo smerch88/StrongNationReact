@@ -7,6 +7,7 @@ import { getRegions } from 'redux/regions/regions-selectors';
 import { useDispatch } from 'react-redux';
 import { setOblId } from 'redux/oblID/oblId-slice';
 import { getOblId } from 'redux/oblID/oblId-selectors';
+import { useMediaQuery } from '@mui/material';
 
 export const Map = ({ isActiveRegion }) => {
   const dispatch = useDispatch();
@@ -14,6 +15,9 @@ export const Map = ({ isActiveRegion }) => {
   const oblList = useSelector(getRegions);
   const svgRef = useRef(null);
 
+  const isSmallScreen = useMediaQuery(theme =>
+    theme.breakpoints.down('desktop')
+  );
   const oblID = useSelector(getOblId);
 
   useEffect(() => {
@@ -29,6 +33,9 @@ export const Map = ({ isActiveRegion }) => {
   }, [oblList]);
 
   function handlePathHover(event) {
+    if (isSmallScreen) {
+      return;
+    }
     const pathId = Number(event.target.getAttribute('id'));
     const hoveredObl = oblList.find(obl => obl.id === pathId);
     if (hoveredObl) {

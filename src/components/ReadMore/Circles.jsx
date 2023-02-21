@@ -1,5 +1,7 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
 import { Circle, CirclesUl } from './Circles.styled';
+import { HiArrowLongRight } from 'react-icons/hi2';
+import { Link } from 'react-router-dom';
 
 export const Circles = ({ oblList, currentId }) => {
   return (
@@ -88,6 +90,28 @@ export const Circles = ({ oblList, currentId }) => {
                 </Box>
               ))}
         </CirclesUl>
+        <Box
+          textAlign="center"
+          sx={{
+            marginBottom: { phone: '22px', tablet: '42px' },
+            display: { desktop: 'none' },
+          }}
+        >
+          <Button
+            data-id={1}
+            component={Link}
+            to="/news"
+            sx={{
+              border: '1px solid #FFFFFF',
+              paddingLeft: {
+                tablet: '20px',
+                desktop: '29px',
+              },
+            }}
+          >
+            дивитись бiльше <HiArrowLongRight />
+          </Button>
+        </Box>
       </Box>
     </>
   );

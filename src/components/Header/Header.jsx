@@ -65,7 +65,11 @@ export const Header = () => {
                     {page.name}
                   </Button>
                 ))}
-                <Button component={Link} to="/support">
+                <Button
+                  component={Link}
+                  to="/support"
+                  sx={{ paddingLeft: '22px' }}
+                >
                   пiдтримати
                   <TrendingFlatIcon sx={{ marginLeft: '10px' }} />
                 </Button>
