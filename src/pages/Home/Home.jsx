@@ -71,7 +71,12 @@ const Home = () => {
               </span>
             </div>
           )}
-          {(!circles || !isMobile) && <Map isActiveRegion={isActiveRegion} />}
+          {(!circles || !isMobile) && (
+            <Map
+              setIsActiveRegion={setIsActiveRegion}
+              isActiveRegion={isActiveRegion}
+            />
+          )}
         </Container>
         <ReadMore
           circles={circles}
