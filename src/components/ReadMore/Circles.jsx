@@ -12,14 +12,25 @@ export const Circles = ({ oblList, currentId }) => {
             oblList
               .filter(item => Number(item.id) === Number(currentId))
               .map(item => (
-                <Box sx={{ display: 'flex', flexWrap: 'wrap' }} key={item.id}>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                  }}
+                  key={item.id}
+                >
                   <Box
                     sx={{
                       display: 'flex',
                       flexWrap: 'wrap',
                       justifyContent: 'space-around',
                       marginBottom: { phone: '22px', tablet: '30px' },
-                      width: { tablet: '50%' },
+                      width: { tablet: '50%', desktop: '330px' },
+                      flexDirection: { tablet: 'row', desktop: 'row' },
+
+                      position: { desktop: 'absolute' },
+                      left: '200px',
+                      top: '650px',
                     }}
                   >
                     <Typography
@@ -30,15 +41,26 @@ export const Circles = ({ oblList, currentId }) => {
                         textAlign: 'right',
                         fontSize: {
                           tablet: '30px',
-                          desktop: '30px',
+                          desktop: '40px',
                           textAlign: 'left',
+                          fontSize: { desktop: '40px' },
+                        },
+                        lineHeight: {
+                          desktop: 'calc(48/40)',
+                          tablet: 'calc(36/30)',
                         },
                       }}
                     >
                       витрачено на потреби вiйськових
                     </Typography>
                     <Circle>
-                      <Typography variant="h3" component="p">
+                      <Typography
+                        variant="h3"
+                        component="p"
+                        sx={{
+                          fontSize: { desktop: '40px' },
+                        }}
+                      >
                         {Math.round(item?.categories[0]?.number ?? 0)}{' '}
                         <Typography
                           variant="h3"
@@ -56,12 +78,24 @@ export const Circles = ({ oblList, currentId }) => {
                       flexWrap: 'wrap',
                       justifyContent: 'space-around',
                       marginBottom: '22px',
-                      width: { tablet: '50%' },
+                      width: { tablet: '50%', desktop: '330px' },
                       flexDirection: { tablet: 'row-reverse' },
+
+                      position: { desktop: 'absolute' },
+                      right: '100px',
+                      top: '140px',
+                      fontSize: { desktop: '40px' },
                     }}
                   >
                     <Circle>
-                      <Typography variant="h3" component="p">
+                      <Typography
+                        variant="h3"
+                        component="p"
+                        sx={{
+                          fontSize: { desktop: '40px' },
+                          lineHeight: { desktop: '1' },
+                        }}
+                      >
                         {Math.round(item?.categories[1]?.number ?? 0)}{' '}
                         <Typography
                           variant="h3"
@@ -79,9 +113,13 @@ export const Circles = ({ oblList, currentId }) => {
                         width: '50%',
                         fontSize: {
                           tablet: '30px',
-                          desktop: '30px',
+                          desktop: '40px',
                         },
                         textAlign: { phone: 'right', tablet: 'left' },
+                        lineHeight: {
+                          desktop: 'calc(48/40)',
+                          tablet: 'calc(36/30)',
+                        },
                       }}
                     >
                       витрачено на потреби громадян
@@ -94,7 +132,9 @@ export const Circles = ({ oblList, currentId }) => {
           textAlign="center"
           sx={{
             marginBottom: { phone: '22px', tablet: '42px' },
-            display: { desktop: 'none' },
+            position: { desktop: 'absolute' },
+            left: '200px',
+            top: '855px',
           }}
         >
           <Button
