@@ -19,6 +19,7 @@ import { Stats } from 'components/Stats/Stats';
 import { Map } from 'components/Map/Map';
 import FreshNews from 'components/FreshNews/FreshNews';
 import { useState } from 'react';
+import sprite from '../../images/map/sprite-of-regions2.svg';
 
 const Home = () => {
   const [circles, setCircles] = useState(false);
@@ -42,9 +43,16 @@ const Home = () => {
     <>
       <MapSection>
         <Container>
+          {isMobile && (
+            <svg
+              width="211"
+              height="224"
+              style={{ margin: '0 auto', display: 'block' }}
+            >
+              <use href={`${sprite}#${isActiveRegion}`}></use>
+            </svg>
+          )}
           {(!circles || !isMobile) && <Map isActiveRegion={isActiveRegion} />}
-          {/* {isMobile && !circles ? <Map /> : null} */}
-          {/* {!isMobile && <Map />} */}
           <ReadMore
             circles={circles}
             setCircles={setCircles}
