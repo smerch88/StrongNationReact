@@ -218,9 +218,10 @@ theme.components = {
         props: { variant: 'edit' },
         style: {
           textTransform: 'capitalize',
-          blockSize: '20px',
+          // blockSize: '20px',
           whiteSpace: 'nowrap',
-          padding: '13px 6px 10px',
+          maxHeight: '25px',
+          padding: '3px',
           border: '1px solid',
           borderColor: theme.palette.colorList.grey,
           borderRadius: '8px 8px 8px 4px',
@@ -231,6 +232,9 @@ theme.components = {
           lineHeight: 'calc(12px/10px)',
           color: theme.palette.colorList.grey,
           background: 'transparent',
+          [theme.breakpoints.up('desktop')]: {
+            padding: '15px',
+          },
           '&:hover': {
             background: theme.palette.colorList.lightgrey,
             color: theme.palette.colorList.white,
@@ -241,12 +245,13 @@ theme.components = {
       {
         props: { variant: 'favorite' },
         style: {
-          minWidth: '24px',
+          minWidth: '25px',
+          maxHeight: '25px',
           whiteSpace: 'nowrap',
           padding: '0px',
           border: '1px solid',
           borderColor: theme.palette.colorList.grey,
-          borderRadius: '8px 8px 8px 8px',
+          borderRadius: '8px 8px 8px 2px',
           fontFamily: 'Arial',
           fontStyle: 'normal',
           fontWeight: '500',
@@ -254,6 +259,9 @@ theme.components = {
           lineHeight: 'calc(12px/10px)',
           color: theme.palette.colorList.grey,
           background: 'transparent',
+          [theme.breakpoints.up('desktop')]: {
+            padding: '15px 5px',
+          },
           '&:hover': {
             background: theme.palette.colorList.lightgrey,
             color: theme.palette.colorList.white,
@@ -281,8 +289,8 @@ theme.typography.body1 = {
     lineHeight: '21px',
   },
   [theme.breakpoints.up('desktop')]: {
-    fontSize: '21px',
-    lineHeight: 'calc(21px/18px)',
+    fontSize: '25px',
+    lineHeight: 'calc(29/25)',
   },
 };
 theme.typography.h1 = {
