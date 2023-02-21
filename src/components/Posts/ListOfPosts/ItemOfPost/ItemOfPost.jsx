@@ -14,7 +14,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { deletePost } from 'redux/posts/posts-operations';
 import FormUpdatePost from '../FormUpdatePost/FormUpdatePost';
 import { useEffect, useState } from 'react';
-import { getPostById } from 'components/services/api-posts';
+import { getPostById } from 'services/api-posts';
 import { Button } from '@mui/material';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import ClearOutlinedIcon from '@mui/icons-material/ClearOutlined';

@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { getCountry } from 'components/services/api-country';
+import { getCountry } from 'services/api-country';
 
 export const fetchCountry = createAsyncThunk(
   'country/fetchCountry',
