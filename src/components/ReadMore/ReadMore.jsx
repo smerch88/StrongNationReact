@@ -43,19 +43,6 @@ export const ReadMore = props => {
   return (
     <>
       {props.circles && <Circles oblList={oblList} currentId={currentId} />}
-      {props.circles && (
-        <Box
-          textAlign="center"
-          sx={{
-            marginBottom: { phone: '22px', tablet: '42px' },
-            display: { desktop: 'none' },
-          }}
-        >
-          <Button data-id={1} component={Link} to="/news">
-            дивитись бiльше <HiArrowLongRight />
-          </Button>
-        </Box>
-      )}
       <RegionsList>
         {firstHalf &&
           firstHalf.map(item => (
