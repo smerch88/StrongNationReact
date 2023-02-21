@@ -4,7 +4,7 @@ import {
   clearAuthHeader,
   loginAdmin,
   setAuthHeader,
-} from 'components/services/api-admin';
+} from 'services/api-admin';
 import { Notify } from 'notiflix';
 
 export const loginAdminRequest = createAsyncThunk(

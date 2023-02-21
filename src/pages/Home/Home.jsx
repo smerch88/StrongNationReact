@@ -13,7 +13,7 @@ import content9 from '../../images/sliderImages/9.jpeg';
 import content10 from '../../images/sliderImages/10.jpeg';
 import content11 from '../../images/sliderImages/11.jpeg';
 
-import { AboutSection, AboutTextWrapper, MapSection } from './Home.styled';
+import { AboutSection, AboutTextWrapper, AutoPlayBox, MapSection } from './Home.styled';
 import { ReadMore } from 'components/ReadMore/ReadMore';
 import { Stats } from 'components/Stats/Stats';
 import { Map } from 'components/Map/Map';
@@ -53,8 +53,12 @@ const Home = () => {
         </Container>
         {/* Якщо не помістити слайдер в секцію то буде вилазити за межі, видно на 480 і менше я не знаю як пофіксити */}
       </MapSection>
+      <AutoPlayBox>
+        <div style={{transform: 'translateY(-73px)'}}>
       <AutoPlay images={images1} rtl={true} />
       <AutoPlay images={images2} rtl={false} />
+      </div>
+      </AutoPlayBox>
       <FreshNews />
       <Stats />
       <AboutSection>

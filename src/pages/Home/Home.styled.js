@@ -17,8 +17,9 @@ export const AboutSection = styled('section')(({ theme }) => ({
 
 export const MapSection = styled('section')(({ theme }) => ({
   color: [theme.palette.primary.contrastText],
-  background: `url(${bg})`,
+  backgroundImage: `linear-gradient(to bottom, rgba(255,255,255,0) 90%, rgba(255,255,255,1) 100%), url(${bg})`,
   backgroundSize: 'cover',
+  paddingBottom: '73px',
 }));
 
 export const AboutTextWrapper = styled('div')(({ theme }) => ({
@@ -28,4 +29,8 @@ export const AboutTextWrapper = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('desktop')]: {
     margin: '0 62px',
   },
+}));
+
+
+export const AutoPlayBox = styled('div')(({ theme }) => ({
 }));
