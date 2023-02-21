@@ -318,7 +318,7 @@ theme.typography.h3 = {
   },
   [theme.breakpoints.up('desktop')]: {
     fontSize: '50px',
-    lineHeight: '60px',
+    lineHeight: 'calc(50/60)',
   },
 };
 theme.typography.h4 = {

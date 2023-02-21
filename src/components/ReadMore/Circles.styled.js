@@ -13,6 +13,10 @@ export const Circle = styled('li')(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
+  [theme.breakpoints.up('desktop')]: {
+    width: '161px',
+    height: '161px',
+  },
 }));
 
 export const CirclesUl = styled('ul')(({ theme }) => ({
