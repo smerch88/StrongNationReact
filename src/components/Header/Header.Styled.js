@@ -16,14 +16,10 @@ export const StyledLogo = styled(ReactLogo)(({ theme }) => ({
 export const StyledBurger = styled(Burger)(({ theme }) => ({}));
 
 export const StyledHeader = styled(AppBar)(({ theme }) => ({
-  position: 'relative',
+  position: 'absolute',
 
-  background: '#FFFFFF',
-  opacity: '0.7',
+  background: 'rgba(255, 255, 255, .7)', // opacity: '0.7',
   boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
-
-  paddingTop: '10px',
-  paddingBottom: '10px',
 
   zIndex: theme.zIndex.drawer + 1,
 

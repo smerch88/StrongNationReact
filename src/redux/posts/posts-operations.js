@@ -5,9 +5,9 @@ import {
   addPostByNameOfRegion,
   deletePostById,
   updatePostById,
-} from 'components/services/api-posts';
+} from 'services/api-posts';
 
-import { addPhotoForPost } from 'components/services/api-posts';
+import { addPhotoForPost } from 'services/api-posts';
 
 export const fetchAllPostsByCountry = createAsyncThunk(
   'posts/fetchAll',

@@ -30,7 +30,7 @@ export default function FreshNews() {
   if (allPosts.length === 0) return;
   return (
     <section>
-      <Container>
+      <Container style={{marginTop: '-73px'}}>
         <TitleBox>
           <Typography
             variant="h3"

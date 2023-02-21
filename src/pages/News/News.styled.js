@@ -2,12 +2,15 @@ import { styled } from '@mui/material';
 
 export const SectionNews = styled('section')(({ theme }) => ({
   padding: '25px 0',
+  paddingTop: '81px',
 
   [theme.breakpoints.up('tablet')]: {
     padding: '44px 0',
+    paddingTop: '122px',
   },
   [theme.breakpoints.up('desktop')]: {
     padding: '54px 0',
+    paddingTop: '146px',
   },
 }));
 

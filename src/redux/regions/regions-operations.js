@@ -5,7 +5,7 @@ import {
   getRegionById,
   getRegionByName,
   regions,
-} from 'components/services/api';
+} from 'services/api';
 
 export const fetchRegions = createAsyncThunk(
   // gets all regions

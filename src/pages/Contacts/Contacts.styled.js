@@ -7,10 +7,21 @@ export const StyledContainer = styled(Container)(({ theme }) => ({
   padding: '31px 18px',
   margin: '0 auto',
   width: '100%',
+  paddingTop: '88px',
+
   [theme.breakpoints.up('tablet')]: {
     padding: '51px 59px',
+    paddingTop: '160px',
   },
 }));
+
+// paddingTop: '88px',
+// [theme.breakpoints.up('tablet')]: {
+//   paddingTop: '160px',
+// },
+// [theme.breakpoints.up('desktop')]: {
+//   paddingTop: '160px',
+// },
 
 export const SmallStyledBox = styled(Box)(({ theme }) => ({
   display: 'flex',
