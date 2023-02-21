@@ -16,15 +16,16 @@ export const AboutSection = styled('section')(({ theme }) => ({
 }));
 
 export const MapSection = styled('section')(({ theme }) => ({
-  paddingTop: '120px',
+  paddingTop: '77px',
   color: [theme.palette.primary.contrastText],
   backgroundImage: `linear-gradient(to bottom, rgba(255,255,255,0) 90%, rgba(255,255,255,1) 100%), url(${bg})`,
   backgroundSize: 'cover',
-  paddingBottom: '73px',
+  paddingBottom: '126px',
   [theme.breakpoints.up('tablet')]: {
     paddingTop: '180px',
   },
   [theme.breakpoints.up('desktop')]: {
+    backgroundImage: `linear-gradient(to bottom, rgba(255,255,255,0) 92%, rgba(255,255,255,1) 100%), url(${bg})`,
     paddingTop: '204px',
     marginBottom: '53px',
   },
@@ -40,7 +41,7 @@ export const AboutTextWrapper = styled('div')(({ theme }) => ({
 }));
 
 export const AutoPlayBox = styled('div')(({ theme }) => ({
-  transform: 'translateY(-73px)',
+  transform: 'translateY(-126px)',
   [theme.breakpoints.up('tablet')]: {},
   [theme.breakpoints.up('desktop')]: {},
 }));

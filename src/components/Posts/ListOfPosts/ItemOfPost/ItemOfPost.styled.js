@@ -100,8 +100,10 @@ export const LinkElement = styled('a')(({ theme }) => ({
 }));
 
 export const WrapOfBtn = styled('div')(({ theme }) => ({
+  alignContent:'center',
+  justifyContent: 'center',
   display: 'flex',
-  gap: '6px',
+  gap: '5px',
   marginTop: '17px',
 
   [theme.breakpoints.up('tablet')]: {

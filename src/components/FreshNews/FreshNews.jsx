@@ -46,6 +46,10 @@ export default function FreshNews() {
               to="/news"
               sx={{
                 gap: '7px',
+                width: {
+                  desktop: '190px',
+                  tablet: '136px',
+                },
                 height: {
                   desktop: '54px',
                   tablet: '38px',
@@ -63,13 +67,22 @@ export default function FreshNews() {
         </NewsList>
 
         {isSmallScreen && (
-          <TitleBox>
+          <TitleBox    sx={{
+            mb: '25px',
+            mt: '25px',
+          }}>
             <Button
               component={Link}
               to="/news"
               sx={{
+                lineHeight: '24px',
                 height: '54px',
                 gap: '7px',
+                width: '190px',
+                borderRadius: '10px',
+                fontSize: '20px',
+                mb: '0',
+                mt: '0',
               }}
             >
               дивитись бiльше
