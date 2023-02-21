@@ -85,7 +85,7 @@ export const WrapOfLink = styled('div')(({ theme }) => ({
 export const LinkElement = styled('a')(({ theme }) => ({
   color: theme.palette.text.header,
   display: 'block',
-  width: '150px',
+  width: '220px',
   whiteSpace: 'nowrap',
   textOverflow: 'ellipsis',
   overflow: 'hidden',
@@ -97,6 +97,7 @@ export const LinkElement = styled('a')(({ theme }) => ({
   [theme.breakpoints.up('desktop')]: {
     fontSize: '12px',
     lineHeight: '14px',
+    width: '240px',
   },
 }));
 

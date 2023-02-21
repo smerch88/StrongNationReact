@@ -45,12 +45,14 @@ export default function ItemOfPost({ post }) {
         <LinkElement href={post.link} target="_blank">
           {post.link}
         </LinkElement>
-        <PElement>{new Date(post.date).toLocaleDateString()}</PElement>
+        <PElement sx={{ paddingTop: '0' }}>
+          {new Date(post.date).toLocaleDateString()}
+        </PElement>
       </WrapOfLink>
       {isLoggedIn && (
         <WrapOfBtn>
-          <Button variant="favorite" type="button" size='small'>
-<StarOutlineIcon />
+          <Button variant="favorite" type="button" size="small">
+            <StarOutlineIcon />
           </Button>
           <Button
             variant="edit"
