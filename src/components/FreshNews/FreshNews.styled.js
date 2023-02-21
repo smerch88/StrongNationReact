@@ -22,16 +22,16 @@ export const TitleBox = styled('div')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'row',
   justifyContent: 'center',
-  margin: '27px auto 11px auto',
+  margin: '25px auto 18px auto',
 
   [theme.breakpoints.up('tablet')]: {
     justifyContent: 'space-between',
-    margin: '38px auto 26px auto',
+    margin: '36px auto 25px auto',
     alignItems: 'center',
   },
 
   [theme.breakpoints.up('desktop')]: {
-    margin: '54px auto 36px auto',
+    margin: '52px auto 36px auto',
     alignItems: 'center',
   },
 }));
