@@ -13,6 +13,8 @@ import content9 from '../../images/sliderImages/9.jpeg';
 import content10 from '../../images/sliderImages/10.jpeg';
 import content11 from '../../images/sliderImages/11.jpeg';
 
+import { TranslateRegionName } from '../../components/ReadMore/TranslateRegionName';
+
 import {
   AboutSection,
   AboutTextWrapper,
@@ -48,14 +50,26 @@ const Home = () => {
     <>
       <MapSection>
         <Container>
-          {isMobile && (
-            <svg
-              width="211"
-              height="224"
-              style={{ margin: '0 auto', display: 'block' }}
-            >
-              <use href={`${sprite}#${isActiveRegion}`}></use>
-            </svg>
+          {isMobile && isActiveRegion && (
+            <div style={{ position: 'relative' }}>
+              <svg
+                width="211"
+                height="224"
+                style={{ margin: '0 auto', display: 'block' }}
+              >
+                <use href={`${sprite}#${isActiveRegion}`}></use>
+              </svg>
+              <span
+                style={{
+                  position: 'absolute',
+                  top: '50%',
+                  left: '50%',
+                  transform: 'translate(-50%, -50%)',
+                }}
+              >
+                {<TranslateRegionName name={isActiveRegion} />}
+              </span>
+            </div>
           )}
           {(!circles || !isMobile) && <Map isActiveRegion={isActiveRegion} />}
         </Container>
