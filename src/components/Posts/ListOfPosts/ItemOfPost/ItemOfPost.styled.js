@@ -55,6 +55,7 @@ export const ImgBox = styled('div')(({ theme }) => ({
 export const PElement = styled('p')(({ theme }) => ({
   margin: '0',
   wordBreak: 'break-all',
+  paddingTop: '7px',
   [theme.breakpoints.up('tablet')]: {
     fontSize: '10px',
     lineHeight: '11px',
@@ -100,7 +101,7 @@ export const LinkElement = styled('a')(({ theme }) => ({
 }));
 
 export const WrapOfBtn = styled('div')(({ theme }) => ({
-  alignContent:'center',
+  alignContent: 'center',
   justifyContent: 'center',
   display: 'flex',
   gap: '5px',
@@ -116,5 +117,3 @@ export const WrapOfBtn = styled('div')(({ theme }) => ({
     padding: '0px 10px',
   },
 }));
-
-
