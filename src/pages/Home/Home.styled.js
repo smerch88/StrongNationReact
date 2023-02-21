@@ -16,7 +16,7 @@ export const AboutSection = styled('section')(({ theme }) => ({
 }));
 
 export const MapSection = styled('section')(({ theme }) => ({
-  paddingTop: '120px',
+  paddingTop: '77px',
   color: [theme.palette.primary.contrastText],
   backgroundImage: `linear-gradient(to bottom, rgba(255,255,255,0) 90%, rgba(255,255,255,1) 100%), url(${bg})`,
   backgroundSize: 'cover',
