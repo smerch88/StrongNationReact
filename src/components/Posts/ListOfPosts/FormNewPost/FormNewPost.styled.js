@@ -4,6 +4,7 @@ import { Form, Field } from 'formik';
 export const StyledForm = styled(Form)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
+  paddingTop: '24px',
 
   //   [theme.breakpoints.up('desktop')]: {},
 }));
