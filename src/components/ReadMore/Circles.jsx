@@ -29,7 +29,7 @@ export const Circles = ({ oblList, currentId }) => {
                       flexDirection: { tablet: 'row', desktop: 'row' },
 
                       position: { desktop: 'absolute' },
-                      left: '200px',
+                      left: 'calc(50% - 550px)',
                       top: '650px',
                     }}
                   >
@@ -82,7 +82,7 @@ export const Circles = ({ oblList, currentId }) => {
                       flexDirection: { tablet: 'row-reverse' },
 
                       position: { desktop: 'absolute' },
-                      right: '100px',
+                      right: 'calc(50% - 600px)',
                       top: '140px',
                       fontSize: { desktop: '40px' },
                     }}
@@ -127,31 +127,31 @@ export const Circles = ({ oblList, currentId }) => {
                   </Box>
                 </Box>
               ))}
-        </CirclesUl>
-        <Box
-          textAlign="center"
-          sx={{
-            marginBottom: { phone: '22px', tablet: '42px' },
-            position: { desktop: 'absolute' },
-            left: '200px',
-            top: '855px',
-          }}
-        >
-          <Button
-            data-id={1}
-            component={Link}
-            to="/news"
+          <Box
+            textAlign="center"
             sx={{
-              border: '1px solid #FFFFFF',
-              paddingLeft: {
-                tablet: '20px',
-                desktop: '29px',
-              },
+              marginBottom: { phone: '22px', tablet: '42px' },
+              position: { desktop: 'absolute' },
+              left: 'calc(50% - 550px)',
+              top: '855px',
             }}
           >
-            дивитись бiльше <HiArrowLongRight />
-          </Button>
-        </Box>
+            <Button
+              data-id={1}
+              component={Link}
+              to="/news"
+              sx={{
+                border: '1px solid #FFFFFF',
+                paddingLeft: {
+                  tablet: '20px',
+                  desktop: '29px',
+                },
+              }}
+            >
+              дивитись бiльше <HiArrowLongRight />
+            </Button>
+          </Box>
+        </CirclesUl>
       </Box>
     </>
   );

@@ -20,6 +20,7 @@ import {
 } from './FormNewPost.styled';
 
 import BasicDatePicker from 'components/Posts/DatePicker/DatePicker';
+import { Box, Button, TextField } from '@mui/material';
 
 export default function FormNewPost() {
   const [open, setOpen] = useState(false);
@@ -27,6 +28,8 @@ export default function FormNewPost() {
   const [date, setDate] = useState(new Date());
   const [photo, setPhoto] = useState(defaultPhoto.files);
   const dispatch = useDispatch();
+
+  console.log(photo);
 
   const handleChangeRegion = event => {
     setRegion(event.target.value);
@@ -161,12 +164,46 @@ export default function FormNewPost() {
                 date={date}
               />
             </label>
-            <label>
-              <Field type="file" name="photo" onChange={handleGetPhoto} />
+            <label
+              style={{
+                border: '1px dashed black',
+                borderRadius: '10px',
+                textAlign: 'center',
+                height: '100px',
+                marginTop: '17px',
+              }}
+            >
+              {photo?.name ? (
+                <Box
+                  component="p"
+                  sx={{
+                    marginTop: '38px',
+                  }}
+                >
+                  Фото завантажено
+                </Box>
+              ) : (
+                <Box
+                  component="p"
+                  sx={{
+                    marginTop: '38px',
+                  }}
+                >
+                  Завантажте фото
+                </Box>
+              )}
+              <TextField
+                type="file"
+                name="photo"
+                onChange={handleGetPhoto}
+                sx={{
+                  opacity: 0,
+                }}
+              />
             </label>
-            <button style={{ marginTop: '20px' }} type="submit">
+            <Button sx={{ marginTop: '20px' }} type="submit">
               Готово
-            </button>
+            </Button>
           </StyledForm>
         </Formik>
       </ModalEl>

@@ -20,8 +20,10 @@ export const Map = ({ setIsActiveRegion, isActiveRegion }) => {
   );
   const oblID = useSelector(getOblId);
 
+  let paths = null;
+
   useEffect(() => {
-    const paths = svgRef.current.querySelectorAll('path');
+    paths = svgRef.current.querySelectorAll('path');
     paths.forEach(path => {
       path.addEventListener('mouseover', handlePathHover);
       path.addEventListener('click', onClick);
@@ -38,10 +40,13 @@ export const Map = ({ setIsActiveRegion, isActiveRegion }) => {
       return;
     }
     const pathId = Number(event.target.getAttribute('id'));
-    const hoveredObl = oblList.find(obl => obl.id === pathId);
-    if (hoveredObl) {
-      dispatch(setOblId(hoveredObl));
+    const clickObl = oblList.find(obl => obl.id === pathId);
+    if (clickObl) {
+      dispatch(setOblId(clickObl));
       setIsActiveRegion(event.target.dataset.name);
+      paths.forEach(path => {
+        path.removeEventListener('mouseover', handlePathHover);
+      });
     }
   }
 
@@ -52,7 +57,7 @@ export const Map = ({ setIsActiveRegion, isActiveRegion }) => {
     const pathId = Number(event.target.getAttribute('id'));
     const hoveredObl = oblList.find(obl => obl.id === pathId);
     if (hoveredObl) {
-      // dispatch(setOblId(hoveredObl));
+      dispatch(setOblId(hoveredObl));
       setIsShown(true);
     }
   }
