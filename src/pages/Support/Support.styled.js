@@ -78,10 +78,10 @@ export const SupportCopyButton = styled('button')(({ theme }) => ({
   cursor: 'pointer',
   display: 'flex',
   fontSize: '22px',
+  alignItems:'center',
   color: theme.palette.colorList.grey,
   backgroundColor: 'inherit',
   border: 'none',
-  gap: '7px',
   transition: 'all 0.2s ease-out',
   [theme.breakpoints.up('tablet')]: {},
 

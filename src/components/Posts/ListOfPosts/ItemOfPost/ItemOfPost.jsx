@@ -19,6 +19,7 @@ import { Button } from '@mui/material';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import ClearOutlinedIcon from '@mui/icons-material/ClearOutlined';
 import { isLoggedInSelector } from 'redux/admin/admin-selectors';
+import { CristDeleteIcon, StarButtonIcon } from 'components/MockupIcons/MockupIcons';
 
 export default function ItemOfPost({ post }) {
   const isLoggedIn = useSelector(isLoggedInSelector);
@@ -52,7 +53,7 @@ export default function ItemOfPost({ post }) {
       {isLoggedIn && (
         <WrapOfBtn>
           <Button variant="favorite" type="button" size="small">
-            <StarOutlineIcon />
+            <StarButtonIcon />
           </Button>
           <Button
             variant="edit"
@@ -61,7 +62,7 @@ export default function ItemOfPost({ post }) {
               dispatch(deletePost(post.id));
             }}
           >
-            Видалити <ClearOutlinedIcon fontSize="small" sx={{ ml: '2px' }} />
+            Видалити <CristDeleteIcon />
           </Button>
           <FormUpdatePost infoOfPost={infoOfPost} post={post} />
         </WrapOfBtn>

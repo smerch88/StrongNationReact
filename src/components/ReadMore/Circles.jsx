@@ -2,6 +2,7 @@ import { Box, Button, Typography } from '@mui/material';
 import { Circle, CirclesUl } from './Circles.styled';
 import { HiArrowLongRight } from 'react-icons/hi2';
 import { Link } from 'react-router-dom';
+import { MoreArrowIcon } from 'components/MockupIcons/MockupIcons';
 
 export const Circles = ({ oblList, currentId }) => {
   return (
@@ -149,7 +150,7 @@ export const Circles = ({ oblList, currentId }) => {
               },
             }}
           >
-            дивитись бiльше <HiArrowLongRight />
+            дивитись бiльше <MoreArrowIcon />
           </Button>
         </Box>
       </Box>

@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 import { fetchAllPostsByCountry } from 'redux/posts/posts-operations';
 import { getAllPosts } from 'redux/posts/posts-selectors';
 import { NewsList, TitleBox } from './FreshNews.styled';
-import { HiArrowLongRight } from 'react-icons/hi2';
+import { MoreArrowIcon } from 'components/MockupIcons/MockupIcons';
 
 export default function FreshNews() {
   const allPosts = useSelector(getAllPosts);
@@ -45,7 +45,6 @@ export default function FreshNews() {
               component={Link}
               to="/news"
               sx={{
-                gap: '7px',
                 width: {
                   desktop: '190px',
                   tablet: '136px',
@@ -56,7 +55,7 @@ export default function FreshNews() {
                 },
               }}
             >
-              дивитись бiльше <HiArrowLongRight />
+              дивитись бiльше <MoreArrowIcon  size='small'/>
             </Button>
           )}
         </TitleBox>
@@ -77,7 +76,6 @@ export default function FreshNews() {
               sx={{
                 lineHeight: '24px',
                 height: '54px',
-                gap: '7px',
                 width: '190px',
                 borderRadius: '10px',
                 fontSize: '20px',
@@ -86,7 +84,7 @@ export default function FreshNews() {
               }}
             >
               дивитись бiльше
-              <HiArrowLongRight />
+              <MoreArrowIcon />
             </Button>
           </TitleBox>
         )}
