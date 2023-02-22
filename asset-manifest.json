@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/StrongNationReact/static/css/main.055ace08.css",
-    "main.js": "/StrongNationReact/static/js/main.ba93287c.js",
-    "static/js/84.954723f7.chunk.js": "/StrongNationReact/static/js/84.954723f7.chunk.js",
-    "static/js/421.373b72ab.chunk.js": "/StrongNationReact/static/js/421.373b72ab.chunk.js",
+    "main.js": "/StrongNationReact/static/js/main.c6d90b73.js",
+    "static/js/84.7c9375bc.chunk.js": "/StrongNationReact/static/js/84.7c9375bc.chunk.js",
+    "static/js/421.c1bb4290.chunk.js": "/StrongNationReact/static/js/421.c1bb4290.chunk.js",
     "static/js/883.b9bf2faa.chunk.js": "/StrongNationReact/static/js/883.b9bf2faa.chunk.js",
     "static/js/876.14de0eac.chunk.js": "/StrongNationReact/static/js/876.14de0eac.chunk.js",
     "static/js/857.03eaed20.chunk.js": "/StrongNationReact/static/js/857.03eaed20.chunk.js",
     "static/js/70.b90ff7f9.chunk.js": "/StrongNationReact/static/js/70.b90ff7f9.chunk.js",
     "static/js/815.29448575.chunk.js": "/StrongNationReact/static/js/815.29448575.chunk.js",
     "static/js/537.c3554bfa.chunk.js": "/StrongNationReact/static/js/537.c3554bfa.chunk.js",
-    "static/js/861.e6b58457.chunk.js": "/StrongNationReact/static/js/861.e6b58457.chunk.js",
+    "static/js/861.0f997581.chunk.js": "/StrongNationReact/static/js/861.0f997581.chunk.js",
     "static/media/bgimagesection.jpeg": "/StrongNationReact/static/media/bgimagesection.2ca838f2a0d5d2e5d204.jpeg",
     "static/media/montserrat-all-400-normal.woff": "/StrongNationReact/static/media/montserrat-all-400-normal.327fab0afc997a2d9b16.woff",
     "static/media/sprite-of-regions2.svg": "/StrongNationReact/static/media/sprite-of-regions2.faf23085558f3c6e1555d58996ae68a0.svg",
@@ -32,19 +32,19 @@
     "index.html": "/StrongNationReact/index.html",
     "static/media/burger.svg": "/StrongNationReact/static/media/burger.9648735d64c6175bba3a7b62a2ba5b09.svg",
     "main.055ace08.css.map": "/StrongNationReact/static/css/main.055ace08.css.map",
-    "main.ba93287c.js.map": "/StrongNationReact/static/js/main.ba93287c.js.map",
-    "84.954723f7.chunk.js.map": "/StrongNationReact/static/js/84.954723f7.chunk.js.map",
-    "421.373b72ab.chunk.js.map": "/StrongNationReact/static/js/421.373b72ab.chunk.js.map",
+    "main.c6d90b73.js.map": "/StrongNationReact/static/js/main.c6d90b73.js.map",
+    "84.7c9375bc.chunk.js.map": "/StrongNationReact/static/js/84.7c9375bc.chunk.js.map",
+    "421.c1bb4290.chunk.js.map": "/StrongNationReact/static/js/421.c1bb4290.chunk.js.map",
     "883.b9bf2faa.chunk.js.map": "/StrongNationReact/static/js/883.b9bf2faa.chunk.js.map",
     "876.14de0eac.chunk.js.map": "/StrongNationReact/static/js/876.14de0eac.chunk.js.map",
     "857.03eaed20.chunk.js.map": "/StrongNationReact/static/js/857.03eaed20.chunk.js.map",
     "70.b90ff7f9.chunk.js.map": "/StrongNationReact/static/js/70.b90ff7f9.chunk.js.map",
     "815.29448575.chunk.js.map": "/StrongNationReact/static/js/815.29448575.chunk.js.map",
     "537.c3554bfa.chunk.js.map": "/StrongNationReact/static/js/537.c3554bfa.chunk.js.map",
-    "861.e6b58457.chunk.js.map": "/StrongNationReact/static/js/861.e6b58457.chunk.js.map"
+    "861.0f997581.chunk.js.map": "/StrongNationReact/static/js/861.0f997581.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.055ace08.css",
-    "static/js/main.ba93287c.js"
+    "static/js/main.c6d90b73.js"
   ]
 }
