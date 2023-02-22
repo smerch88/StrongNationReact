@@ -127,31 +127,31 @@ export const Circles = ({ oblList, currentId }) => {
                   </Box>
                 </Box>
               ))}
-          <Box
-            textAlign="center"
+        </CirclesUl>
+        <Box
+          textAlign="center"
+          sx={{
+            marginBottom: { phone: '22px', tablet: '42px' },
+            position: { desktop: 'absolute' },
+            left: 'calc(50% - 550px)',
+            top: '855px',
+          }}
+        >
+          <Button
+            data-id={1}
+            component={Link}
+            to="/news"
             sx={{
-              marginBottom: { phone: '22px', tablet: '42px' },
-              position: { desktop: 'absolute' },
-              left: 'calc(50% - 550px)',
-              top: '855px',
+              border: '1px solid #FFFFFF',
+              paddingLeft: {
+                tablet: '20px',
+                desktop: '29px',
+              },
             }}
           >
-            <Button
-              data-id={1}
-              component={Link}
-              to="/news"
-              sx={{
-                border: '1px solid #FFFFFF',
-                paddingLeft: {
-                  tablet: '20px',
-                  desktop: '29px',
-                },
-              }}
-            >
-              дивитись бiльше <MoreArrowIcon />
-            </Button>
-          </Box>
-        </CirclesUl>
+            дивитись бiльше <MoreArrowIcon />
+          </Button>
+        </Box>
       </Box>
     </>
   );
