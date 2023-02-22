@@ -34,6 +34,9 @@ export const Map = ({ setIsActiveRegion, isActiveRegion }) => {
   }, [oblList]);
 
   function onClick(event) {
+    if (isSmallScreen) {
+      return;
+    }
     const pathId = Number(event.target.getAttribute('id'));
     const hoveredObl = oblList.find(obl => obl.id === pathId);
     if (hoveredObl) {
