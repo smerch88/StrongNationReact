@@ -1,7 +1,15 @@
 import { styled } from '@mui/material';
 
+export const MapWrap = styled('div')(({ theme }) => ({
+  [theme.breakpoints.up('tablet')]: {
+    paddingBottom: '12px',
+  },
+  [theme.breakpoints.up('desktop')]: {
+    paddingBottom: '0px',
+  },
+}));
+
 export const Text = styled('text')(({ theme }) => ({
-  [theme.breakpoints.up('tablet')]: {},
   [theme.breakpoints.up('desktop')]: {
     cursor: 'pointer',
     textAnchor: 'middle',
@@ -13,7 +21,6 @@ export const Text = styled('text')(({ theme }) => ({
 
 export const Path = styled('path')(({ theme }) => ({
   cursor: 'pointer',
-  [theme.breakpoints.up('tablet')]: {},
   [theme.breakpoints.up('desktop')]: {
     '&:hover': {
       fill: '#455A64',
