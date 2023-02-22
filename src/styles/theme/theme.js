@@ -231,6 +231,7 @@ theme.components = {
           fontSize: '10px',
           lineHeight: 'calc(12px/10px)',
           color: theme.palette.colorList.grey,
+          stroke:theme.palette.colorList.grey,
           background: 'transparent',
           [theme.breakpoints.up('desktop')]: {
             padding: '15px',
@@ -238,6 +239,7 @@ theme.components = {
           '&:hover': {
             background: theme.palette.colorList.lightgrey,
             color: theme.palette.colorList.white,
+            stroke: theme.palette.colorList.white,
             borderColor: theme.palette.colorList.lightgrey,
           },
         },
@@ -259,6 +261,7 @@ theme.components = {
           lineHeight: 'calc(12px/10px)',
           color: theme.palette.colorList.grey,
           background: 'transparent',
+          stroke:theme.palette.colorList.grey,
           [theme.breakpoints.up('desktop')]: {
             padding: '15px 5px',
           },
@@ -266,6 +269,7 @@ theme.components = {
             background: theme.palette.colorList.lightgrey,
             color: theme.palette.colorList.white,
             borderColor: theme.palette.colorList.lightgrey,
+            stroke: theme.palette.colorList.white,
           },
         },
       },

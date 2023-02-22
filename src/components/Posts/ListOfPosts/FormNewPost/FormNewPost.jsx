@@ -1,4 +1,4 @@
-import React, {useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { Formik, ErrorMessage, Field } from 'formik';
@@ -46,10 +46,17 @@ export default function FormNewPost() {
             borderBottom: '1px solid #000000',
           }}
           rows="1"
-          as="textarea"
+          type="textarea"
           name="description"
         />
-        <p style={{ margin: '0', fontSize: '12px', minWidth: '68px', marginLeft: '10px'}}>
+        <p
+          style={{
+            margin: '0',
+            fontSize: '12px',
+            minWidth: '52px',
+            marginLeft: '10px',
+          }}
+        >
           {remainingChars} / {maxChars}
         </p>
       </div>
@@ -169,7 +176,7 @@ export default function FormNewPost() {
             <StyledLabel style={{ marginTop: '14px' }}>
               <StyledSpan>Короткий опис</StyledSpan>
               <Field
-              // ===============Counter
+                // ===============Counter
 
                 component={CharacterCountInput}
                 maxChars={150}

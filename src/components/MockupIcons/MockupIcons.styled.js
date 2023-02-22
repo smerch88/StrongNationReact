@@ -37,6 +37,7 @@ export const DropdownIconBox = styled('div')(({ theme }) => ({
 export const EditIconsBox = styled('div')(({ theme }) => ({
     width: '10px',
     marginLeft: '3px',
+    stroke:'inherit',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
