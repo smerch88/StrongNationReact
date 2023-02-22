@@ -23,6 +23,49 @@ import BasicDatePicker from 'components/Posts/DatePicker/DatePicker';
 import { Box, Button, TextField } from '@mui/material';
 
 export default function FormNewPost() {
+  // =======================Symbols counter
+  const CharacterCountInput = ({ field, form, maxChars, ...props }) => {
+    const remainingChars = maxChars - field.value.length;
+
+    return (
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'center',
+          width: '100%',
+        }}
+      >
+        <input
+          {...field}
+          {...props}
+          style={{
+            width: '100%',
+            paddingBottom: '5px',
+            border: 'none',
+            outline: 'transparent',
+            borderBottom: '1px solid #000000',
+          }}
+          rows="1"
+          type="textarea"
+          name="description"
+        />
+        <p
+          style={{
+            margin: '0',
+            fontSize: '12px',
+            minWidth: '52px',
+            marginLeft: '10px',
+          }}
+        >
+          {remainingChars} / {maxChars}
+        </p>
+      </div>
+    );
+  };
+
+  // ==========================
+
   const [open, setOpen] = useState(false);
   const [region, setRegion] = useState('');
   const [date, setDate] = useState(new Date());
@@ -136,6 +179,10 @@ export default function FormNewPost() {
             <StyledLabel style={{ marginTop: '14px' }}>
               <StyledSpan>Короткий опис</StyledSpan>
               <Field
+                // ===============Counter
+
+                component={CharacterCountInput}
+                maxChars={150}
                 style={{
                   paddingBottom: '5px',
                   border: 'none',

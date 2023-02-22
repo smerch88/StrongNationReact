@@ -3,6 +3,8 @@ export const TranslateRegionName = ({ name }) => {
     <>
       {(() => {
         switch (name) {
+          case 'Всі області':
+            return 'Всі області';
           case 'Cherkasy':
             return 'Черкаси';
           case 'Chernihiv':

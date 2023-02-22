@@ -1,21 +1,40 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ModalEl from 'components/Modal/Modal';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getFilter } from 'redux/posts/posts-slice';
-import { Btn, LineTop, WrapOfRegions } from './ListOfRegions.styled';
+import { Btn, LineTop, SpanEl, WrapOfRegions } from './ListOfRegions.styled';
+import { TranslateRegionName } from 'components/ReadMore/TranslateRegionName';
+import { getFilterPosts } from '../../../../redux/posts/posts-selectors';
 
 export default function ListOfRegions() {
   const [open, setOpen] = useState(false);
+  const [activeRegion, setActiveRegion] = useState('');
+
+  const chosenRegionOnMap = useSelector(getFilterPosts);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (chosenRegionOnMap) {
+      setActiveRegion(<TranslateRegionName name={chosenRegionOnMap} />);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleClick = e => {
     dispatch(getFilter(e.target.name));
     setOpen(false);
+    setActiveRegion(
+      <TranslateRegionName name={e.target.name || e.target.dataset.name} />
+    );
   };
-
+  console.log('chosenRegionOnMap', chosenRegionOnMap);
   return (
     <>
-      <ModalEl nameOfButton={'Всі області'} open={open} setOpen={setOpen}>
+      <ModalEl
+        nameOfButton={activeRegion || 'Всі області'}
+        open={open}
+        setOpen={setOpen}
+      >
         <LineTop></LineTop>
         <WrapOfRegions>
           <div
@@ -29,8 +48,10 @@ export default function ListOfRegions() {
               style={{ textAlign: 'left' }}
               type="button"
               name=""
+              data-name="Всі області"
               onClick={handleClick}
             >
+              {activeRegion.props?.name === 'Всі області' && <SpanEl />}
               всi областi
             </Btn>
             <Btn
@@ -39,6 +60,8 @@ export default function ListOfRegions() {
               name="Vinnytsia"
               onClick={handleClick}
             >
+              {(activeRegion.props?.name === 'Vinnytsia' ||
+                chosenRegionOnMap === 'Vinnytsia') && <SpanEl />}
               Вiнниця
             </Btn>
             <Btn
@@ -47,6 +70,8 @@ export default function ListOfRegions() {
               name="Dnipro"
               onClick={handleClick}
             >
+              {(activeRegion.props?.name === 'Dnipro' ||
+                chosenRegionOnMap === 'Dnipro') && <SpanEl />}
               Днiпро
             </Btn>
             <Btn
@@ -55,6 +80,8 @@ export default function ListOfRegions() {
               name="Donetsk"
               onClick={handleClick}
             >
+              {(activeRegion.props?.name === 'Donetsk' ||
+                chosenRegionOnMap === 'Donetsk') && <SpanEl />}
               Донецьк
             </Btn>
             <Btn
@@ -63,6 +90,8 @@ export default function ListOfRegions() {
               name="Zhytomyr"
               onClick={handleClick}
             >
+              {(activeRegion.props?.name === 'Zhytomyr' ||
+                chosenRegionOnMap === 'Zhytomyr') && <SpanEl />}
               Житомир
             </Btn>
             <Btn
@@ -71,6 +100,8 @@ export default function ListOfRegions() {
               name="Zaporizhzhia"
               onClick={handleClick}
             >
+              {(activeRegion.props?.name === 'Zaporizhzhia' ||
+                chosenRegionOnMap === 'Zaporizhzhia') && <SpanEl />}
               Запорiжжя
             </Btn>
             <Btn
@@ -79,6 +110,8 @@ export default function ListOfRegions() {
               name="Ivano-Frankivsk"
               onClick={handleClick}
             >
+              {(activeRegion.props?.name === 'Ivano-Frankivsk' ||
+                chosenRegionOnMap === 'Ivano-Frankivsk') && <SpanEl />}
               Івано-Франкiвськ
             </Btn>
             <Btn
@@ -87,6 +120,8 @@ export default function ListOfRegions() {
               name="Kyiv"
               onClick={handleClick}
             >
+              {(activeRegion.props?.name === 'Kyiv' ||
+                chosenRegionOnMap === 'Kyiv') && <SpanEl />}
               Київ
             </Btn>
             <Btn
@@ -95,6 +130,8 @@ export default function ListOfRegions() {
               name="Kropyvnytskyi"
               onClick={handleClick}
             >
+              {(activeRegion.props?.name === 'Kropyvnytskyi' ||
+                chosenRegionOnMap === 'Kropyvnytskyi') && <SpanEl />}
               Кропивницький
             </Btn>
           </div>
@@ -111,6 +148,8 @@ export default function ListOfRegions() {
               name="Crimea"
               onClick={handleClick}
             >
+              {(activeRegion.props?.name === 'Crimea' ||
+                chosenRegionOnMap === 'Crimea') && <SpanEl />}
               Крим
             </Btn>
             <Btn
@@ -119,6 +158,8 @@ export default function ListOfRegions() {
               name="Luhansk"
               onClick={handleClick}
             >
+              {(activeRegion.props?.name === 'Luhansk' ||
+                chosenRegionOnMap === 'Luhansk') && <SpanEl />}
               Луганськ
             </Btn>
             <Btn
@@ -127,6 +168,8 @@ export default function ListOfRegions() {
               name="Lviv"
               onClick={handleClick}
             >
+              {(activeRegion.props?.name === 'Lviv' ||
+                chosenRegionOnMap === 'Lviv') && <SpanEl />}
               Львiв
             </Btn>
             <Btn
@@ -135,6 +178,8 @@ export default function ListOfRegions() {
               name="Lutsk"
               onClick={handleClick}
             >
+              {(activeRegion.props?.name === 'Lutsk' ||
+                chosenRegionOnMap === 'Lutsk') && <SpanEl />}
               Луцьк
             </Btn>
             <Btn
@@ -143,6 +188,8 @@ export default function ListOfRegions() {
               name="Mykolaiv"
               onClick={handleClick}
             >
+              {(activeRegion.props?.name === 'Mykolaiv' ||
+                chosenRegionOnMap === 'Mykolaiv') && <SpanEl />}
               Миколаїв
             </Btn>
             <Btn
@@ -151,6 +198,8 @@ export default function ListOfRegions() {
               name="Odesa"
               onClick={handleClick}
             >
+              {(activeRegion.props?.name === 'Odesa' ||
+                chosenRegionOnMap === 'Odesa') && <SpanEl />}
               Одеса
             </Btn>
             <Btn
@@ -159,6 +208,8 @@ export default function ListOfRegions() {
               name="Poltava"
               onClick={handleClick}
             >
+              {(activeRegion.props?.name === 'Poltava' ||
+                chosenRegionOnMap === 'Poltava') && <SpanEl />}
               Полтава
             </Btn>
             <Btn
@@ -167,6 +218,8 @@ export default function ListOfRegions() {
               name="Rivne"
               onClick={handleClick}
             >
+              {(activeRegion.props?.name === 'Rivne' ||
+                chosenRegionOnMap === 'Rivne') && <SpanEl />}
               Рiвне
             </Btn>
             <Btn
@@ -175,6 +228,8 @@ export default function ListOfRegions() {
               name="Sumy"
               onClick={handleClick}
             >
+              {(activeRegion.props?.name === 'Sumy' ||
+                chosenRegionOnMap === 'Sumy') && <SpanEl />}
               Суми
             </Btn>
           </div>
@@ -191,6 +246,8 @@ export default function ListOfRegions() {
               name="Ternopil"
               onClick={handleClick}
             >
+              {(activeRegion.props?.name === 'Ternopil' ||
+                chosenRegionOnMap === 'Ternopil') && <SpanEl />}
               Тернопiль
             </Btn>
             <Btn
@@ -199,6 +256,8 @@ export default function ListOfRegions() {
               name="Uzhhorod"
               onClick={handleClick}
             >
+              {(activeRegion.props?.name === 'Uzhhorod' ||
+                chosenRegionOnMap === 'Uzhhorod') && <SpanEl />}
               Ужгород
             </Btn>
             <Btn
@@ -207,6 +266,8 @@ export default function ListOfRegions() {
               name="Kharkiv"
               onClick={handleClick}
             >
+              {(activeRegion.props?.name === 'Kharkiv' ||
+                chosenRegionOnMap === 'Kharkiv') && <SpanEl />}
               Харкiв
             </Btn>
             <Btn
@@ -215,6 +276,8 @@ export default function ListOfRegions() {
               name="Kherson"
               onClick={handleClick}
             >
+              {(activeRegion.props?.name === 'Kherson' ||
+                chosenRegionOnMap === 'Kherson') && <SpanEl />}
               Херсон
             </Btn>
             <Btn
@@ -223,6 +286,8 @@ export default function ListOfRegions() {
               name="Khmelnytskyi"
               onClick={handleClick}
             >
+              {(activeRegion.props?.name === 'Khmelnytskyi' ||
+                chosenRegionOnMap === 'Khmelnytskyi') && <SpanEl />}
               Хмельницький
             </Btn>
             <Btn
@@ -231,6 +296,8 @@ export default function ListOfRegions() {
               name="Cherkasy"
               onClick={handleClick}
             >
+              {(activeRegion.props?.name === 'Cherkasy' ||
+                chosenRegionOnMap === 'Cherkasy') && <SpanEl />}
               Черкаси
             </Btn>
             <Btn
@@ -239,6 +306,8 @@ export default function ListOfRegions() {
               name="Chernivtsi"
               onClick={handleClick}
             >
+              {(activeRegion.props?.name === 'Chernivtsi' ||
+                chosenRegionOnMap === 'Chernivtsi') && <SpanEl />}
               Чернiвцi
             </Btn>
             <Btn
@@ -247,6 +316,8 @@ export default function ListOfRegions() {
               name="Chernihiv"
               onClick={handleClick}
             >
+              {(activeRegion.props?.name === 'Chernihiv' ||
+                chosenRegionOnMap === 'Chernihiv') && <SpanEl />}
               Чернiгiв
             </Btn>
           </div>
