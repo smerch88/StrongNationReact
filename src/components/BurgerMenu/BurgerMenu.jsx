@@ -74,7 +74,7 @@ export default function TemporaryDrawer() {
             align="center"
             primary={
               <Typography variant="h3" component="p" sx={itemProps}>
-                про нас
+                головна
               </Typography>
             }
             variant="h3"
