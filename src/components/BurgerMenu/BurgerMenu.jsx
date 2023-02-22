@@ -11,6 +11,7 @@ import { Typography, useTheme } from '@mui/material';
 import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
 import { useLocation } from 'react-router-dom';
 import { useState } from 'react';
+import { MoreArrowIcon } from 'components/MockupIcons/MockupIcons';
 
 export default function TemporaryDrawer() {
   const [open, setOpen] = useState(false);
@@ -121,7 +122,7 @@ export default function TemporaryDrawer() {
                 }}
               >
                 підтримати
-                <TrendingFlatIcon sx={{ marginLeft: '10px' }} />
+                <MoreArrowIcon/>
               </Button>
             }
             variant="h3"

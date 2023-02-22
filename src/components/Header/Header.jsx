@@ -13,6 +13,7 @@ import ErrorBoundary from 'components/ErrorBoundary/ErrorBoundary';
 import { StyledHeader, StyledLogo } from './Header.Styled';
 import BurgerMenu from 'components/BurgerMenu/BurgerMenu';
 import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
+import { MoreArrowIcon } from 'components/MockupIcons/MockupIcons';
 
 const pages = [
   { name: 'новини', link: '/news' },
@@ -71,7 +72,7 @@ export const Header = () => {
                   sx={{ paddingLeft: '22px' }}
                 >
                   пiдтримати
-                  <TrendingFlatIcon sx={{ marginLeft: '10px' }} />
+                  <MoreArrowIcon />
                 </Button>
               </Box>
             )}

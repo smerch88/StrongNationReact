@@ -2,10 +2,9 @@ import React from 'react';
 
 import Modal from '@mui/material/Modal';
 import { Box, Button } from '@mui/material';
-import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import CloseIcon from '@mui/icons-material/Close';
 import { BtnCloseModal } from './Modal.styled';
+import { DropdownArrowIcon, PencilEditIcon } from 'components/MockupIcons/MockupIcons';
 
 const style = {
   position: 'absolute',
@@ -44,9 +43,9 @@ export default function ModalEl({ children, nameOfButton, open, setOpen }) {
       <Button variant={variantOfButton(nameOfButton)} onClick={handleOpen}>
         {nameOfButton}
         {nameOfButton === 'Редагувати' ? (
-          <EditOutlinedIcon fontSize="small" sx={{ ml: '3px' }} />
+          <PencilEditIcon/>
         ) : nameOfButton === 'Всі області' ? (
-          <KeyboardArrowDownIcon fontSize="small" sx={{ ml: '10px' }} />
+          <DropdownArrowIcon/>
         ) : null}
       </Button>
       <Modal
