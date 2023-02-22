@@ -17,7 +17,7 @@ import { MoreArrowIcon } from 'components/MockupIcons/MockupIcons';
 
 const pages = [
   { name: 'новини', link: '/news' },
-  { name: 'про нас', link: '/' },
+  { name: 'головна', link: '/' },
   { name: 'контакти', link: '/contacts' },
 ];
 
