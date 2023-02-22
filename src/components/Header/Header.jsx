@@ -16,7 +16,7 @@ import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
 
 const pages = [
   { name: 'новини', link: '/news' },
-  { name: 'про нас', link: '/' },
+  { name: 'головна', link: '/' },
   { name: 'контакти', link: '/contacts' },
 ];
 
