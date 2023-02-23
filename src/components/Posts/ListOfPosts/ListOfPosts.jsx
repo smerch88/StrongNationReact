@@ -14,13 +14,25 @@ export default function ListOfPosts() {
     return;
   }
 
+  console.log(allPosts);
+
+  const compare = (a, b) => {
+    if (a.date > b.date) {
+      return -1;
+    }
+    if (a.date < b.date) {
+      return 1;
+    }
+    return 0;
+  };
+
   const filteredPosts = allPosts.filter(item =>
     item.region.includes(filterPost)
   );
 
   return (
     <UlElement>
-      {filteredPosts.map(item => (
+      {filteredPosts.sort(compare).map(item => (
         <ItemOfPost key={item.id} post={item} />
       ))}
     </UlElement>
