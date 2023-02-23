@@ -15,6 +15,11 @@ export const photo = axios.create({
   timeout: 30000,
 });
 
+export const important = axios.create({
+  baseURL: 'https://strong-nation.online/api/v2/post/important/',
+  // timeout: 1000,
+});
+
 export const getAllPostsByCountry = async () => {
   try {
     const { data } = await postGET.get('all/Ukraine');
@@ -81,6 +86,24 @@ export const addPhotoForPost = async (id, body) => {
 export const deletePostById = async id => {
   try {
     const { data } = await post.delete(`delete/${id}`);
+    return data;
+  } catch (error) {
+    return error;
+  }
+};
+
+export const addImportant = async id => {
+  try {
+    const { data } = await important.put(`${id}/true`);
+    return data;
+  } catch (error) {
+    return error;
+  }
+};
+
+export const deleteImportant = async id => {
+  try {
+    const { data } = await important.put(`${id}/false`);
     return data;
   } catch (error) {
     return error;

@@ -17,7 +17,10 @@ import { useEffect, useState } from 'react';
 import { getPostById } from 'services/api-posts';
 import { Button } from '@mui/material';
 import { isLoggedInSelector } from 'redux/admin/admin-selectors';
-import { CristDeleteIcon, StarButtonIcon } from 'components/MockupIcons/MockupIcons';
+import {
+  CristDeleteIcon,
+  StarButtonIcon,
+} from 'components/MockupIcons/MockupIcons';
 
 export default function ItemOfPost({ post }) {
   const isLoggedIn = useSelector(isLoggedInSelector);
@@ -50,8 +53,15 @@ export default function ItemOfPost({ post }) {
       </WrapOfLink>
       {isLoggedIn && (
         <WrapOfBtn>
-          <Button variant="favorite" type="button" size="small">
-            <StarButtonIcon/>
+          <Button
+            variant="favorite"
+            type="button"
+            size="small"
+            onClick={() => {
+              console.log(post.id)
+            }}
+          >
+            <StarButtonIcon />
           </Button>
           <Button
             variant="edit"
@@ -60,8 +70,8 @@ export default function ItemOfPost({ post }) {
               dispatch(deletePost(post.id));
             }}
           >
-            Видалити 
-            <CristDeleteIcon/>
+            Видалити
+            <CristDeleteIcon />
           </Button>
           <FormUpdatePost infoOfPost={infoOfPost} post={post} />
         </WrapOfBtn>
