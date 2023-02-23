@@ -41,7 +41,7 @@ export default function ItemOfPost({ post }) {
         <PElement>{post.description}</PElement>
       </ImgTextBox>
       <WrapOfLink>
-        <LinkElement href={post.link} target="_blank">
+        <LinkElement href={post.link} target="_blank" rel="noopener noreferrer">
           {post.link}
         </LinkElement>
         <PElement sx={{ paddingTop: '0' }}>

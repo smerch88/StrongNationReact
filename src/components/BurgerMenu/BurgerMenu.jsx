@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom';
 // import MenuIcon from '@mui/icons-material/Menu';
 import { Spin as Hamburger } from 'hamburger-react';
 import { Typography, useTheme } from '@mui/material';
-import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
 import { useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import { MoreArrowIcon } from 'components/MockupIcons/MockupIcons';

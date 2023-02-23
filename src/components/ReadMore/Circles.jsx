@@ -1,6 +1,5 @@
 import { Box, Button, Typography } from '@mui/material';
 import { Circle, CirclesUl } from './Circles.styled';
-import { HiArrowLongRight } from 'react-icons/hi2';
 import { Link } from 'react-router-dom';
 import { MoreArrowIcon } from 'components/MockupIcons/MockupIcons';
 
@@ -30,7 +29,7 @@ export const Circles = ({ oblList, currentId }) => {
                       flexDirection: { tablet: 'row', desktop: 'row' },
 
                       position: { desktop: 'absolute' },
-                      left: '200px',
+                      left: 'calc(50% - 550px)',
                       top: '650px',
                     }}
                   >
@@ -83,7 +82,7 @@ export const Circles = ({ oblList, currentId }) => {
                       flexDirection: { tablet: 'row-reverse' },
 
                       position: { desktop: 'absolute' },
-                      right: '100px',
+                      right: 'calc(50% - 600px)',
                       top: '140px',
                       fontSize: { desktop: '40px' },
                     }}
@@ -134,7 +133,7 @@ export const Circles = ({ oblList, currentId }) => {
           sx={{
             marginBottom: { phone: '22px', tablet: '42px' },
             position: { desktop: 'absolute' },
-            left: '200px',
+            left: 'calc(50% - 550px)',
             top: '855px',
           }}
         >

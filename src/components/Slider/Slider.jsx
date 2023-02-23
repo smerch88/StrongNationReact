@@ -10,7 +10,7 @@ export const AutoPlay = ({ ...props }) => {
     infinite: true,
     autoplay: true,
     speed: 10000,
-    autoplaySpeed: 1000,
+    autoplaySpeed: 0,
     cssEase: 'linear',
     arrows: false,
     rtl: props.rtl,
