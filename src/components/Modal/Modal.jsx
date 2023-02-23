@@ -1,10 +1,14 @@
 import React from 'react';
 
 import Modal from '@mui/material/Modal';
-import { Box, Button } from '@mui/material';
+import { Box } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import { BtnCloseModal } from './Modal.styled';
-import { DropdownArrowIcon, PencilEditIcon } from 'components/MockupIcons/MockupIcons';
+import {
+  DropdownArrowIcon,
+  PencilEditIcon,
+} from 'components/MockupIcons/MockupIcons';
+import { ButtonEl } from 'components/Posts/ListOfPosts/ItemOfPost/ItemOfPost.styled';
 
 const style = {
   position: 'absolute',
@@ -40,14 +44,14 @@ export default function ModalEl({ children, nameOfButton, open, setOpen }) {
   };
   return (
     <div>
-      <Button variant={variantOfButton(nameOfButton)} onClick={handleOpen}>
+      <ButtonEl variant={variantOfButton(nameOfButton)} onClick={handleOpen}>
         {nameOfButton}
         {nameOfButton === 'Редагувати' ? (
-          <PencilEditIcon/>
+          <PencilEditIcon />
         ) : nameOfButton === 'Всі області' ? (
-          <DropdownArrowIcon/>
+          <DropdownArrowIcon />
         ) : null}
-      </Button>
+      </ButtonEl>
       <Modal
         open={open ?? false}
         onClose={handleClose}

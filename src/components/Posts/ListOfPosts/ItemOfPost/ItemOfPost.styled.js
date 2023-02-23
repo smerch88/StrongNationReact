@@ -1,4 +1,5 @@
 import { styled } from '@mui/material';
+import { Button } from '@mui/material';
 
 export const LiElement = styled('li')(({ theme }) => ({
   padding: '10px 10px 8px 13px',
@@ -15,9 +16,19 @@ export const LiElement = styled('li')(({ theme }) => ({
   [theme.breakpoints.up('desktop')]: {
     width: 'calc((100% - 72px) / 3)',
   },
-  '&:hover':{
-    backgroundColor: 'red'
-  }
+  '&:hover': {
+    color: [theme.palette.colorList.white],
+    backgroundColor: [theme.palette.colorList.grey],
+  },
+}));
+
+export const ButtonEl = styled(Button)(({ theme }) => ({
+  transition: 'all 0.5s ease',
+  'li:hover  &': {
+    color: [theme.palette.colorList.white],
+    borderColor: [theme.palette.colorList.white],
+    stroke: [theme.palette.colorList.white],
+  },
 }));
 
 export const ImgElement = styled('img')(({ theme }) => ({
@@ -86,7 +97,7 @@ export const WrapOfLink = styled('div')(({ theme }) => ({
 }));
 
 export const LinkElement = styled('a')(({ theme }) => ({
-  color: theme.palette.text.header,
+  color: 'inherit',
   display: 'block',
   width: '220px',
   whiteSpace: 'nowrap',
