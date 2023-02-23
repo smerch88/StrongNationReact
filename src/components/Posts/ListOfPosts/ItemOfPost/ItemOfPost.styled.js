@@ -15,6 +15,11 @@ export const LiElement = styled('li')(({ theme }) => ({
   [theme.breakpoints.up('desktop')]: {
     width: 'calc((100% - 72px) / 3)',
   },
+  '&:hover': {
+    color: 'white',
+    backgroundColor: '#455A64',
+  },
+  transition: 'all 300ms ease-out',
 }));
 
 export const ImgElement = styled('img')(({ theme }) => ({
@@ -83,7 +88,7 @@ export const WrapOfLink = styled('div')(({ theme }) => ({
 }));
 
 export const LinkElement = styled('a')(({ theme }) => ({
-  color: theme.palette.text.header,
+  color: 'inherit',
   display: 'block',
   width: '220px',
   whiteSpace: 'nowrap',

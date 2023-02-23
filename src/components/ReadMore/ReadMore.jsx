@@ -2,23 +2,35 @@ import { Button, Container } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchRegions } from 'redux/regions/regions-operations';
-import { getRegions } from 'redux/regions/regions-selectors';
+import { getIsLoading, getRegions } from 'redux/regions/regions-selectors';
 import { Circles } from './Circles';
 import { TranslateRegionName } from './TranslateRegionName';
 import { RegionsList } from './ReadMore.styled';
 import { setOblId } from 'redux/oblID/oblId-slice';
 import { getFilter } from 'redux/posts/posts-slice';
+import { Loading } from 'notiflix/build/notiflix-loading-aio';
 
 export const ReadMore = props => {
   const dispatch = useDispatch();
 
   const [currentId, setCurrentId] = useState(null);
   const oblList = useSelector(getRegions);
-  console.log(oblList);
+  const isLoading = useSelector(getIsLoading);
 
   useEffect(() => {
     dispatch(fetchRegions());
   }, [dispatch]);
+
+  useEffect(() => {
+    if (isLoading) {
+      Loading.pulse({
+        svgColor: '#455A64',
+      });
+      Loading.dots('Loading...');
+    } else {
+      Loading.remove();
+    }
+  }, [isLoading]);
 
   const handleOpen = e => {
     const id = e.currentTarget.dataset.id;

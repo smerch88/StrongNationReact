@@ -27,7 +27,7 @@ const postSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(fetchAllPostsByCountry.fulfilled, (state, action) => {
-        state.isLoading = true;
+        state.isLoading = false;
         state.error = false;
         state.items = action.payload;
       })
@@ -39,7 +39,7 @@ const postSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(addPost.fulfilled, (state, action) => {
-        state.isLoading = true;
+        state.isLoading = false;
         state.error = false;
         state.items = [action.payload, ...state.items];
         state.idOfPost = action.payload.id;
@@ -53,7 +53,7 @@ const postSlice = createSlice({
       })
       .addCase(deletePost.fulfilled, (state, action) => {
         state.items = state.items.filter(item => item.id !== action.payload.id);
-        state.isLoading = true;
+        state.isLoading = false;
         state.error = false;
       })
       .addCase(deletePost.rejected, (state, action) => {
@@ -70,7 +70,7 @@ const postSlice = createSlice({
           }
           return item;
         });
-        state.isLoading = true;
+        state.isLoading = false;
         state.error = false;
       })
       .addCase(updatePost.rejected, (state, action) => {
