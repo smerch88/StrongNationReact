@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux';
 import { setOblId } from 'redux/oblID/oblId-slice';
 import { getOblId } from 'redux/oblID/oblId-selectors';
 import { useMediaQuery } from '@mui/material';
+import { getFilter } from 'redux/posts/posts-slice';
 
 export const Map = ({ setIsActiveRegion, isActiveRegion }) => {
   const dispatch = useDispatch();
@@ -41,6 +42,8 @@ export const Map = ({ setIsActiveRegion, isActiveRegion }) => {
     }
     const pathId = Number(event.target.getAttribute('id'));
     const clickObl = oblList.find(obl => obl.id === pathId);
+    dispatch(getFilter(clickObl.name));
+
     if (clickObl) {
       dispatch(setOblId(clickObl));
       setIsActiveRegion(event.target.dataset.name);
