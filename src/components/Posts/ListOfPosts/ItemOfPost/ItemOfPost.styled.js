@@ -20,6 +20,7 @@ export const LiElement = styled('li')(({ theme }) => ({
     color: [theme.palette.colorList.white],
     backgroundColor: [theme.palette.colorList.grey],
   },
+  transition: 'all 250ms ease-out',
 }));
 
 export const ButtonEl = styled(Button)(({ theme }) => ({
