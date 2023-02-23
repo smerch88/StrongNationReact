@@ -5,6 +5,8 @@ import {
   addPostByNameOfRegion,
   deletePostById,
   updatePostById,
+  addImportant,
+  deleteImportant,
 } from 'services/api-posts';
 
 import { addPhotoForPost } from 'services/api-posts';
@@ -61,3 +63,28 @@ export const updatePost = createAsyncThunk(
     }
   }
 );
+
+export const addPostToImportant = createAsyncThunk(
+  'posts/addImportant',
+  async (id, thunkAPI) => {
+    try {
+      const res = await addImportant(id);
+      return res;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const deletePostFromImportant = createAsyncThunk(
+  'posts/removeImportant',
+  async (id, thunkAPI) => {
+    try {
+      const res = await deleteImportant(id);
+      return res;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+

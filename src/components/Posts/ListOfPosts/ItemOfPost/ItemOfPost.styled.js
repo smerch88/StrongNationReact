@@ -15,6 +15,9 @@ export const LiElement = styled('li')(({ theme }) => ({
   [theme.breakpoints.up('desktop')]: {
     width: 'calc((100% - 72px) / 3)',
   },
+  '&:hover':{
+    backgroundColor: 'red'
+  }
 }));
 
 export const ImgElement = styled('img')(({ theme }) => ({
@@ -54,7 +57,7 @@ export const ImgBox = styled('div')(({ theme }) => ({
 
 export const PElement = styled('p')(({ theme }) => ({
   margin: '0',
-  wordBreak: 'break-all',
+  // wordBreak: 'break-all',
   paddingTop: '7px',
   [theme.breakpoints.up('tablet')]: {
     fontSize: '10px',
