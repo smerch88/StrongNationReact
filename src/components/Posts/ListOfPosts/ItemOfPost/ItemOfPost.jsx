@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
+  ButtonEl,
   ImgBox,
   ImgElement,
   ImgTextBox,
@@ -15,7 +16,7 @@ import { deletePost } from 'redux/posts/posts-operations';
 import FormUpdatePost from '../FormUpdatePost/FormUpdatePost';
 import { useEffect, useState } from 'react';
 import { getPostById } from 'services/api-posts';
-import { Button } from '@mui/material';
+
 import { isLoggedInSelector } from 'redux/admin/admin-selectors';
 import {
   CristDeleteIcon,
@@ -53,17 +54,17 @@ export default function ItemOfPost({ post }) {
       </WrapOfLink>
       {isLoggedIn && (
         <WrapOfBtn>
-          <Button
+          <ButtonEl
             variant="favorite"
             type="button"
             size="small"
             onClick={() => {
-              console.log(post.id)
+              console.log(post.id);
             }}
           >
             <StarButtonIcon />
-          </Button>
-          <Button
+          </ButtonEl>
+          <ButtonEl
             variant="edit"
             type="button"
             onClick={() => {
@@ -72,7 +73,7 @@ export default function ItemOfPost({ post }) {
           >
             Видалити
             <CristDeleteIcon />
-          </Button>
+          </ButtonEl>
           <FormUpdatePost infoOfPost={infoOfPost} post={post} />
         </WrapOfBtn>
       )}
