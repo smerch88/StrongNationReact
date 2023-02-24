@@ -21,9 +21,22 @@ export const Timer = () => {
     };
   }, []);
 
+  function getDayWord(num) {
+    const lastDigit = num % 10;
+    const lastTwoDigits = num % 100;
+    
+    if (lastDigit === 1 && lastTwoDigits !== 11) {
+      return 'день';
+    } else if ([2, 3, 4].includes(lastDigit) && ![12, 13, 14].includes(lastTwoDigits)) {
+      return 'дні';
+    } else {
+      return 'днів';
+    }
+  }
+
   return (
     <Typography variant="h3" component="span" sx={{ display: 'inline-block' }}>
-      нашi досягнення за {days} дні
+      нашi досягнення за {days} {getDayWord(days)}
     </Typography>
   );
 };
