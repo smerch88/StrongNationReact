@@ -61,14 +61,32 @@ export const Circles = ({ oblList, currentId }) => {
                           fontSize: { desktop: '40px' },
                         }}
                       >
-                        {Math.round(item?.categories[0]?.number ?? 0)}{' '}
-                        <Typography
-                          variant="h3"
-                          component="span"
-                          sx={{ fontSize: { tablet: '25px', desktop: '25px' } }}
-                        >
-                          грн
-                        </Typography>
+                        {Math.round(item?.categories[0]?.number ?? 0) === 0 ? (
+                          <Typography
+                            variant="h5"
+                            component="span"
+                            sx={{
+                              fontSize: { phone: '20px', desktop: '25px' },
+                              lineHeight: 'calc(23/20)',
+                              textTransform: 'none',
+                            }}
+                          >
+                            Працюємо над цим...
+                          </Typography>
+                        ) : (
+                          <>
+                            {Math.round(item?.categories[0]?.number)}{' '}
+                            <Typography
+                              variant="h3"
+                              component="span"
+                              sx={{
+                                fontSize: { tablet: '25px', desktop: '25px' },
+                              }}
+                            >
+                              грн
+                            </Typography>
+                          </>
+                        )}
                       </Typography>
                     </Circle>
                   </Box>
@@ -96,14 +114,32 @@ export const Circles = ({ oblList, currentId }) => {
                           lineHeight: { desktop: '1' },
                         }}
                       >
-                        {Math.round(item?.categories[1]?.number ?? 0)}{' '}
-                        <Typography
-                          variant="h3"
-                          component="span"
-                          sx={{ fontSize: { tablet: '25px', desktop: '25px' } }}
-                        >
-                          грн
-                        </Typography>
+                        {Math.round(item?.categories[1]?.number ?? 0) === 0 ? (
+                          <Typography
+                            variant="h5"
+                            component="span"
+                            sx={{
+                              fontSize: { phone: '20px', desktop: '25px' },
+                              lineHeight: 'calc(23/20)',
+                              textTransform: 'none',
+                            }}
+                          >
+                            Працюємо над цим...
+                          </Typography>
+                        ) : (
+                          <>
+                            {Math.round(item?.categories[1]?.number)}{' '}
+                            <Typography
+                              variant="h3"
+                              component="span"
+                              sx={{
+                                fontSize: { tablet: '25px', desktop: '25px' },
+                              }}
+                            >
+                              грн
+                            </Typography>
+                          </>
+                        )}
                       </Typography>
                     </Circle>
                     <Typography

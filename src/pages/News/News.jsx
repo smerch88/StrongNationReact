@@ -13,7 +13,7 @@ import { isLoggedInSelector } from 'redux/admin/admin-selectors';
 const News = () => {
   const dispatch = useDispatch();
   const theme = useTheme();
-  const isLoggedIn = useSelector(isLoggedInSelector) 
+  const isLoggedIn = useSelector(isLoggedInSelector);
 
   useEffect(() => {
     dispatch(fetchAllPostsByCountry());

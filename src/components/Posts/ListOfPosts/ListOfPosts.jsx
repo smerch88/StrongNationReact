@@ -5,6 +5,7 @@ import { getAllPosts, getFilterPosts } from 'redux/posts/posts-selectors';
 import ItemOfPost from './ItemOfPost/ItemOfPost';
 
 import { UlElement } from './ListOfPosts.styled';
+import { Box, Typography } from '@mui/material';
 
 export default function ListOfPosts() {
   const allPosts = useSelector(getAllPosts);
@@ -29,6 +30,23 @@ export default function ListOfPosts() {
   const filteredPosts = allPosts.filter(item =>
     item.region.includes(filterPost)
   );
+
+  if (filteredPosts.length === 0) {
+    return (
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '50vh',
+        }}
+      >
+        <Typography sx={{ fontSize: '20px', margin: 'auto' }}>
+          Ми ще працюємо над допомогою для цієї області
+        </Typography>
+      </Box>
+    );
+  }
 
   return (
     <UlElement>
