@@ -231,7 +231,7 @@ theme.components = {
           fontSize: '10px',
           lineHeight: 'calc(12px/10px)',
           color: theme.palette.colorList.grey,
-          stroke:theme.palette.colorList.grey,
+          stroke: theme.palette.colorList.grey,
           background: 'transparent',
           [theme.breakpoints.up('desktop')]: {
             padding: '15px',
@@ -261,7 +261,7 @@ theme.components = {
           lineHeight: 'calc(12px/10px)',
           color: theme.palette.colorList.grey,
           background: 'transparent',
-          stroke:theme.palette.colorList.grey,
+          stroke: theme.palette.colorList.grey,
           [theme.breakpoints.up('desktop')]: {
             padding: '15px 5px',
           },
