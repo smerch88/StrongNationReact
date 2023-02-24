@@ -32,6 +32,7 @@ export const Map = ({ setIsActiveRegion, isActiveRegion }) => {
     return () => {
       paths.forEach(path => {
         path.removeEventListener('mouseover', handlePathHover);
+        path.removeEventListener('click', onClick);
       });
     };
   }, [oblList]);
