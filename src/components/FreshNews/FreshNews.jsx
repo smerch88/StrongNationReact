@@ -23,6 +23,13 @@ export default function FreshNews() {
     theme.breakpoints.down('tablet')
   );
 
+  const preparedPosts = allPosts => {
+    const importantPosts = allPosts.filter(post => post.important === true);
+    const notImportantPosts = allPosts.filter(post => !post.important);
+    const ArrayOfPosts = [...importantPosts, ...notImportantPosts];
+    return ArrayOfPosts;
+  };
+
   useEffect(() => {
     dispatch(fetchAllPostsByCountry());
   }, [dispatch]);
@@ -30,7 +37,7 @@ export default function FreshNews() {
   if (allPosts.length === 0) return;
   return (
     <section>
-      <Container style={{marginTop: '-73px'}}>
+      <Container style={{ marginTop: '-73px' }}>
         <TitleBox>
           <Typography
             variant="h3"
@@ -55,21 +62,25 @@ export default function FreshNews() {
                 },
               }}
             >
-              дивитись бiльше <MoreArrowIcon  size='small'/>
+              дивитись бiльше <MoreArrowIcon size="small" />
             </Button>
           )}
         </TitleBox>
         <NewsList>
-          {allPosts.slice(0, 3).map(post => (
-            <ItemOfPost key={post.id} post={post} />
-          ))}
+          {preparedPosts(allPosts)
+            .slice(0, 3)
+            .map(post => (
+              <ItemOfPost key={post.id} post={post} />
+            ))}
         </NewsList>
 
         {isSmallScreen && (
-          <TitleBox    sx={{
-            mb: '25px',
-            mt: '25px',
-          }}>
+          <TitleBox
+            sx={{
+              mb: '25px',
+              mt: '25px',
+            }}
+          >
             <Button
               component={Link}
               to="/news"

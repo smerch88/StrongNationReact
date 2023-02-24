@@ -12,7 +12,11 @@ import {
   WrapOfLink,
 } from './ItemOfPost.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { deletePost } from 'redux/posts/posts-operations';
+import {
+  addPostToImportant,
+  deletePost,
+  deletePostFromImportant,
+} from 'redux/posts/posts-operations';
 import FormUpdatePost from '../FormUpdatePost/FormUpdatePost';
 import { useEffect, useState } from 'react';
 import { getPostById } from 'services/api-posts';
@@ -26,7 +30,21 @@ import {
 export default function ItemOfPost({ post }) {
   const isLoggedIn = useSelector(isLoggedInSelector);
   const [infoOfPost, setInfoOfPost] = useState({});
+  const [isImportant, setIsImportant] = useState(post.important);
   const dispatch = useDispatch();
+
+  const switchImportant = () => {
+    if (isImportant === false) {
+      dispatch(addPostToImportant(post.id));
+      setIsImportant(true);
+    }
+    if (isImportant === true) {
+      dispatch(deletePostFromImportant(post.id));
+      setIsImportant(false);
+    }
+  };
+
+  useEffect(() => {}, [isImportant]);
 
   useEffect(() => {
     getPostById(post.id).then(data => setInfoOfPost(data));
@@ -55,12 +73,11 @@ export default function ItemOfPost({ post }) {
       {isLoggedIn && (
         <WrapOfBtn>
           <ButtonEl
+            style={{ backgroundColor: isImportant ? '#FFD749' : 'inherit' }}
             variant="favorite"
             type="button"
             size="small"
-            onClick={() => {
-              console.log(post.id);
-            }}
+            onClick={switchImportant}
           >
             <StarButtonIcon />
           </ButtonEl>
