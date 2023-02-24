@@ -1,4 +1,4 @@
-import { Button, Container } from '@mui/material';
+import { Box, Button, Container } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchRegions } from 'redux/regions/regions-operations';
@@ -42,36 +42,38 @@ export const ReadMore = props => {
       <Container>
         {props.circles && <Circles oblList={oblList} currentId={currentId} />}
       </Container>
-      <RegionsList>
-        {firstHalf &&
-          firstHalf.map(item => (
-            <li key={item.id}>
-              <Button
-                variant="regions"
-                onClick={handleOpen}
-                data-id={item.id}
-                data-name={item.name}
-              >
-                <TranslateRegionName name={item.name} />
-              </Button>
-            </li>
-          ))}
-      </RegionsList>
-      <RegionsList>
-        {secondHalf &&
-          secondHalf.map(item => (
-            <li key={item.id}>
-              <Button
-                variant="regions"
-                onClick={handleOpen}
-                data-id={item.id}
-                data-name={item.name}
-              >
-                <TranslateRegionName name={item.name} />
-              </Button>
-            </li>
-          ))}
-      </RegionsList>
+      <Box sx={{ overflowX: 'auto' }}>
+        <RegionsList>
+          {firstHalf &&
+            firstHalf.map(item => (
+              <li key={item.id}>
+                <Button
+                  variant="regions"
+                  onClick={handleOpen}
+                  data-id={item.id}
+                  data-name={item.name}
+                >
+                  <TranslateRegionName name={item.name} />
+                </Button>
+              </li>
+            ))}
+        </RegionsList>
+        <RegionsList>
+          {secondHalf &&
+            secondHalf.map(item => (
+              <li key={item.id}>
+                <Button
+                  variant="regions"
+                  onClick={handleOpen}
+                  data-id={item.id}
+                  data-name={item.name}
+                >
+                  <TranslateRegionName name={item.name} />
+                </Button>
+              </li>
+            ))}
+        </RegionsList>
+      </Box>
     </>
   );
 };

@@ -57,50 +57,63 @@ const theme = createTheme({
 theme.components = {
   MuiCssBaseline: {
     styleOverrides: `
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-        @font-face {
-          font-family: 'Bebas';
-          src: url(${Bebas_Neue_Cyrillic}) format('truetype');
-          font-style: normal;
-          font-weight: 400;
-        }
-        body {
-       
-          overflow-x: hidden;
-        }
-        #root {
-          display: flex;
-          flex-direction: column;
-          min-height: 100vh;
-        }
-        main { 
-          flex-grow: 1;
-          overflow-x: hidden;
-        }
-        footer {
-          flex-shrink: 0;
-        }
-        h1{
-          margin: 0;
-        }
-        ul{
-          margin: 0;
-          padding: 0;
-          list-style: none;
-        }
-        a{
-          text-decoration: none;
-          color: currentColor;
-          margin: 0;
-          padding: 0;
-        }
-        .slick-slide > div {
-          margin: 0 10px;
-        }
-        .slick-list {
-          margin: 0 -10px;
-        }
-      `,
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+  @font-face {
+    font-family: 'Bebas';
+    src: url(${Bebas_Neue_Cyrillic}) format('truetype');
+    font-style: normal;
+    font-weight: 400;
+  }
+  body {
+    overflow-x: hidden;
+  }
+  #root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  main { 
+    flex-grow: 1;
+    overflow-x: hidden;
+  }
+  footer {
+    flex-shrink: 0;
+  }
+  h1{
+    margin: 0;
+  }
+  ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  a{
+    text-decoration: none;
+    color: currentColor;
+    margin: 0;
+    padding: 0;
+  }
+  .slick-slide > div {
+    margin: 0 10px;
+  }
+  .slick-list {
+    margin: 0 -10px;
+  }
+
+  /* Custom Scrollbar for screens wider than 768px */
+  @media screen and (min-width: 768px) {
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.5);
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 5px;
+    }
+  }
+`,
   },
   MuiContainer: {
     defaultProps: {
