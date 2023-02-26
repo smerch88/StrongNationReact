@@ -119,7 +119,7 @@ export default function FormNewPost() {
       region: region,
       description: values.description,
       link: values.link,
-      date: date,
+      date: date.toISOString(),
       categories: [
         {
           name: 'militaryDonations',

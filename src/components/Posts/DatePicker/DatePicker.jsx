@@ -40,7 +40,7 @@ export default function BasicDatePicker({ handleChangeDate, date }) {
         inputFormat="DD.MM.YY"
         value={date}
         onChange={newValue => {
-          handleChangeDate(newValue.toISOString());
+          handleChangeDate(newValue);
         }}
         renderInput={params => <DateTextField {...params} />}
       />
