@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { regions } from './api';
 import { photo, post } from './api-posts';
+import { sliderImages } from './api-slider';
 
 export const adminApi = axios.create({
   baseURL: 'https://strong-nation.online/api/v2/auth/authenticate',
@@ -11,6 +12,7 @@ export const setAuthHeader = token => {
   post.defaults.headers.common.Authorization = `Bearer ${token}`;
   photo.defaults.headers.common.Authorization = `Bearer ${token}`;
   regions.defaults.headers.common.Authorization = `Bearer ${token}`;
+  sliderImages.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 
 export const clearAuthHeader = () => {

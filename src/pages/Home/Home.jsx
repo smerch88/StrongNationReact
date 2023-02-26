@@ -1,18 +1,6 @@
 import { Container, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { AutoPlay } from 'components/Slider/Slider';
 
-import content1 from '../../images/sliderImages/1.jpeg';
-import content2 from '../../images/sliderImages/2.jpeg';
-import content3 from '../../images/sliderImages/3.jpeg';
-import content4 from '../../images/sliderImages/4.jpeg';
-import content5 from '../../images/sliderImages/5.jpeg';
-import content6 from '../../images/sliderImages/6.jpeg';
-import content7 from '../../images/sliderImages/7.jpeg';
-import content8 from '../../images/sliderImages/8.jpeg';
-import content9 from '../../images/sliderImages/9.jpeg';
-import content10 from '../../images/sliderImages/10.jpeg';
-import content11 from '../../images/sliderImages/11.jpeg';
-
 import { TranslateRegionName } from '../../components/ReadMore/TranslateRegionName';
 
 import {
@@ -25,27 +13,27 @@ import { ReadMore } from 'components/ReadMore/ReadMore';
 import { Stats } from 'components/Stats/Stats';
 import { Map } from 'components/Map/Map';
 import FreshNews from 'components/FreshNews/FreshNews';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import sprite from '../../images/map/sprite-of-regions2.svg';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchAllSliderId } from 'redux/slider/slider-operations';
+import { getSlides } from 'redux/slider/slider-selectors';
 
 const Home = () => {
   const [circles, setCircles] = useState(false);
   const [isActiveRegion, setIsActiveRegion] = useState('');
-  console.log('isActiveRegion', isActiveRegion);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchAllSliderId());
+  }, [dispatch]);
 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('tablet'));
 
-  const images1 = [content1, content2, content3, content4, content5, content6];
-  const images2 = [
-    content7,
-    content8,
-    content9,
-    content10,
-    content11,
-    content1,
-    content1,
-  ];
+  const slideIDs = useSelector(getSlides);
+  console.log(slideIDs);
+
   return (
     <>
       <MapSection>
@@ -87,8 +75,8 @@ const Home = () => {
       </MapSection>
       <AutoPlayBox>
         <div style={{}}>
-          <AutoPlay images={images1} rtl={true} />
-          <AutoPlay images={images2} rtl={false} />
+          <AutoPlay images={slideIDs} rtl={true} />
+          <AutoPlay images={slideIDs} rtl={false} />
         </div>
       </AutoPlayBox>
       <FreshNews />
