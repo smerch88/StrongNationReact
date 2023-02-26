@@ -129,7 +129,7 @@ export default function FormNewPost() {
         {
           name: 'civiliansDonations',
           number: values.civiliansDonations,
-          units: 'kg',
+          units: null,
         },
       ],
     };

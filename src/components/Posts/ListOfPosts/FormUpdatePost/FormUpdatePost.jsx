@@ -89,7 +89,7 @@ export default function FormUpdatePost({ infoOfPost, post }) {
         {
           name: 'civiliansDonations',
           number: values.civiliansDonations,
-          units: 'kg',
+          units: null,
         },
       ],
     };
