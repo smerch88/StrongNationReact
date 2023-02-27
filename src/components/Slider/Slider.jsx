@@ -48,7 +48,7 @@ export const AutoPlay = ({ ...props }) => {
         {props.images.map(img => (
           <Box key={nanoid()}>
             <StyledImg
-              src={img}
+              src={`https://strong-nation.online/api/v2/slider-photo/download/${img}`}
               alt="зображення демонструє роботу волонтерів"
               loading="lazy"
             />
