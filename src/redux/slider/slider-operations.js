@@ -1,4 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { Notify } from 'notiflix';
 import {
   deleteSliderImage,
   getAllSliderId,
@@ -22,8 +23,10 @@ export const removeSliderImage = createAsyncThunk(
   async (id, thunkAPI) => {
     try {
       const res = await deleteSliderImage(id);
+      Notify.info('Зроблено!');
       return res;
     } catch (error) {
+      Notify.failure(error.message);
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -34,8 +37,10 @@ export const uploadSImage = createAsyncThunk(
   async (body, thunkAPI) => {
     try {
       const res = await uploadSliderImage(body);
+      Notify.info('Зроблено!');
       return res;
     } catch (error) {
+      Notify.failure(error.message);
       return thunkAPI.rejectWithValue(error.message);
     }
   }

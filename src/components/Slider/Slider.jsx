@@ -1,5 +1,4 @@
 import { Box } from '@mui/material';
-import { nanoid } from 'nanoid';
 import Slider from 'react-slick';
 import { AutoPlayContainer, StyledImg } from './Slider.styled';
 
@@ -46,7 +45,7 @@ export const AutoPlay = ({ ...props }) => {
     <AutoPlayContainer>
       <Slider {...settings}>
         {props.images.map(img => (
-          <Box key={nanoid()}>
+          <Box key={img}>
             <StyledImg
               src={`https://strong-nation.online/api/v2/slider-photo/download/${img}`}
               alt="зображення демонструє роботу волонтерів"

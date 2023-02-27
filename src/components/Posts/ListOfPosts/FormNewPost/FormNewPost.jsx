@@ -72,8 +72,6 @@ export default function FormNewPost() {
   const [photo, setPhoto] = useState(defaultPhoto.files);
   const dispatch = useDispatch();
 
-  console.log(photo);
-
   const handleChangeRegion = event => {
     setRegion(event.target.value);
   };
