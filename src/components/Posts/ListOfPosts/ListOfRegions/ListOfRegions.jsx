@@ -27,7 +27,6 @@ export default function ListOfRegions() {
       <TranslateRegionName name={e.target.name || e.target.dataset.name} />
     );
   };
-  console.log('chosenRegionOnMap', chosenRegionOnMap);
   return (
     <>
       <ModalEl

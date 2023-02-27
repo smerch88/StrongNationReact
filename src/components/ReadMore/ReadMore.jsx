@@ -14,7 +14,6 @@ export const ReadMore = props => {
 
   const [currentId, setCurrentId] = useState(null);
   const oblList = useSelector(getRegions);
-  // console.log(oblList);
 
   useEffect(() => {
     dispatch(fetchRegions());

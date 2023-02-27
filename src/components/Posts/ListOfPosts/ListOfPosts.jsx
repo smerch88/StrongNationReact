@@ -15,8 +15,6 @@ export default function ListOfPosts() {
     return;
   }
 
-  console.log(allPosts);
-
   const compare = (a, b) => {
     if (a.date > b.date) {
       return -1;
