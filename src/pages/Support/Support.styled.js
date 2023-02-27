@@ -31,7 +31,7 @@ export const SupportTitle = styled(Typography)(({ theme }) => ({
   },
 
   [theme.breakpoints.up('desktop')]: {
-    fontSize: '50px',
+    fontSize: '48px',
     lineHeight: '60px',
   },
 }));
@@ -78,7 +78,7 @@ export const SupportCopyButton = styled('button')(({ theme }) => ({
   cursor: 'pointer',
   display: 'flex',
   fontSize: '22px',
-  alignItems:'center',
+  alignItems: 'center',
   color: theme.palette.colorList.grey,
   backgroundColor: 'inherit',
   border: 'none',
