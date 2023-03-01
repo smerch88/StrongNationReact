@@ -83,8 +83,16 @@ const Home = () => {
       </MapSection>
       <AutoPlayBox>
         <div>
-          <AutoPlay images={slideIDs} rtl={true} />
-          <AutoPlay images={slideIDs} rtl={false} />
+          <AutoPlay
+            images={slideIDs}
+            // reverseDirection={false}
+            // rtl={true}
+          />
+          <AutoPlay
+            images={slideIDs}
+            // reverseDirection={true}
+            // rtl={false}
+          />
         </div>
         <Box textAlign="center">
           {isLoggedIn && <SliderImages center slideIDs={slideIDs} />}
