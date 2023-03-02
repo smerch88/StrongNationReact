@@ -2,23 +2,23 @@
 
 <h1>Strong Nation</h1>
 
+<p>The site of a charitable organization that promotes and supports volunteering in Ukraine</p>
+
 <a href="https://strong-nation.online/">Original site</a>
 
 <a href="smerch88.github.io/StrongNationReact/">Github page</a>
 
-<p>The site of a charitable organization that promotes and supports volunteering in Ukraine</p>
-
 <p>The repository is organized into various directories, each directory contains the code for a specific feature or component of the website. The code is well-documented and follows best practices for React development, including the use of functional components and hooks.</p>
 
-<p>The home page is unique with its hero section. You can find a map that is interactive and displays different regions of Ukraine. Each region is represented by a separate colored marker. When you hover your mouse over a particular region, it displays the total amount of money that has been collected for that region in the form of a tooltip. If you click on the region, it will take you to the News page related to that particular region where you can read about the donations and other relevant news.</p>
+<p>The <b>Home page</b> is unique with its hero section. You can find a map that is interactive and displays different regions of Ukraine. Each region is represented by a separate colored marker. When you hover your mouse over a particular region, it displays the total amount of money that has been collected for that region in the form of a tooltip. If you click on the region, it will take you to the News page related to that particular region where you can read about the donations and other relevant news.</p>
 
-<p>The News page displays a list of news articles as well as images and links to the original sources. You can select any region to view the news using filter</p>
+<p>The <b>News page</b> displays a list of news articles as well as images and links to the original sources. You can select any region to view the news using filter</p>
 
-<p>The Contacts page provides some contact information and a map displaying the location of the organization.</p>
+<p>The <b>Contacts page</b> provides some contact information and a map displaying the location of the organization.</p>
 
-<p>The Support page provides information on how to donate to the organization. You can copy this information by click.</p
+<p>The <b>Support page</b> provides information on how to donate to the organization. You can copy this information by click.</p
 
-<p>Also there is the admin panel with various opportunities. From the admin panel, authorized users can add, edit, and delete various types of content. Admin can add posts, edit images, post news etc. That's the most interesting part. So if you want to see how it works, you can contact us! </p>
+<p>Also there is the <b>Admin panel</b> with various opportunities. From the admin panel, authorized users can add, edit, and delete various types of content. Admin can add posts, edit images, post news etc. That's the most interesting part. So if you want to see how it works, you can contact us! </p>
 
 <h2>Built With</h2>
 
