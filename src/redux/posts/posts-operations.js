@@ -34,6 +34,7 @@ export const addPost = createAsyncThunk(
       await addPhotoForPost(res.id, body.formData);
       return res;
     } catch (error) {
+      console.log('ERRRRRRRORRRRRRR', error.message)
       return thunkAPI.rejectWithValue(error.message);
     }
   }
