@@ -1,4 +1,5 @@
 import { Container, styled } from '@mui/material';
+
 import { ReactComponent as ReactLogo } from './pictures/footer_logo.svg';
 
 const StyledContainer = styled(Container)(({ theme }) => ({

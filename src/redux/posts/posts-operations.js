@@ -1,5 +1,6 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
 import { omit } from 'lodash';
+import { createAsyncThunk } from '@reduxjs/toolkit';
+
 import {
   getAllPostsByCountry,
   addPostByNameOfRegion,
@@ -7,9 +8,8 @@ import {
   updatePostById,
   addImportant,
   deleteImportant,
+  addPhotoForPost,
 } from 'services/api-posts';
-
-import { addPhotoForPost } from 'services/api-posts';
 
 export const fetchAllPostsByCountry = createAsyncThunk(
   'posts/fetchAll',
@@ -87,4 +87,3 @@ export const deletePostFromImportant = createAsyncThunk(
     }
   }
 );
-

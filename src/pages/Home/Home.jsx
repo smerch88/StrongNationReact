@@ -1,3 +1,6 @@
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
 import {
   Box,
   Container,
@@ -5,8 +8,17 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material';
-import { AutoPlay } from 'components/Slider/Slider';
 
+import { Map } from 'components/Map/Map';
+import { Stats } from 'components/Stats/Stats';
+import { AutoPlay } from 'components/Slider/Slider';
+import FreshNews from 'components/FreshNews/FreshNews';
+import { ReadMore } from 'components/ReadMore/ReadMore';
+import { getSlides } from 'redux/slider/slider-selectors';
+import sprite from '../../images/map/sprite-of-regions2.svg';
+import { isLoggedInSelector } from 'redux/admin/admin-selectors';
+import { fetchAllSliderId } from 'redux/slider/slider-operations';
+import { SliderImages } from 'components/SliderImages/SliderImages';
 import { TranslateRegionName } from '../../components/ReadMore/TranslateRegionName';
 
 import {
@@ -15,17 +27,6 @@ import {
   AutoPlayBox,
   MapSection,
 } from './Home.styled';
-import { ReadMore } from 'components/ReadMore/ReadMore';
-import { Stats } from 'components/Stats/Stats';
-import { Map } from 'components/Map/Map';
-import FreshNews from 'components/FreshNews/FreshNews';
-import { useEffect, useState } from 'react';
-import sprite from '../../images/map/sprite-of-regions2.svg';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchAllSliderId } from 'redux/slider/slider-operations';
-import { getSlides } from 'redux/slider/slider-selectors';
-import { SliderImages } from 'components/SliderImages/SliderImages';
-import { isLoggedInSelector } from 'redux/admin/admin-selectors';
 
 const Home = () => {
   const [circles, setCircles] = useState(false);
@@ -79,7 +80,6 @@ const Home = () => {
           setCircles={setCircles}
           setIsActiveRegion={setIsActiveRegion}
         />
-        {/* Якщо не помістити слайдер в секцію то буде вилазити за межі, видно на 480 і менше я не знаю як пофіксити */}
       </MapSection>
       <AutoPlayBox>
         <div>

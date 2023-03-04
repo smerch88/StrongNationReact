@@ -1,13 +1,16 @@
-import { Box, Button, Container } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchRegions } from 'redux/regions/regions-operations';
-import { getRegions } from 'redux/regions/regions-selectors';
-import { Circles } from './Circles';
-import { TranslateRegionName } from './TranslateRegionName';
-import { RegionsList } from './ReadMore.styled';
+
+import { Box, Button, Container } from '@mui/material';
+
 import { setOblId } from 'redux/oblID/oblId-slice';
 import { getFilter } from 'redux/posts/posts-slice';
+import { TranslateRegionName } from './TranslateRegionName';
+import { getRegions } from 'redux/regions/regions-selectors';
+import { fetchRegions } from 'redux/regions/regions-operations';
+
+import { Circles } from './Circles';
+import { RegionsList } from './ReadMore.styled';
 
 export const ReadMore = props => {
   const dispatch = useDispatch();

@@ -1,14 +1,15 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchAllPostsByCountry } from 'redux/posts/posts-operations';
 
 import { Container, Typography, useTheme } from '@mui/material';
 
+import { isLoggedInSelector } from 'redux/admin/admin-selectors';
 import ListOfPosts from 'components/Posts/ListOfPosts/ListOfPosts';
+import { fetchAllPostsByCountry } from 'redux/posts/posts-operations';
 import FormNewPost from 'components/Posts/ListOfPosts/FormNewPost/FormNewPost';
 import ListOfRegions from 'components/Posts/ListOfPosts/ListOfRegions/ListOfRegions';
+
 import { Box, SectionNews, WrapOfBtn } from './News.styled';
-import { isLoggedInSelector } from 'redux/admin/admin-selectors';
 
 const News = () => {
   const dispatch = useDispatch();

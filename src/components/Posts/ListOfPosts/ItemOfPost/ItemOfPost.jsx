@@ -1,5 +1,22 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import {
+  addPostToImportant,
+  deletePost,
+  deletePostFromImportant,
+} from 'redux/posts/posts-operations';
+
+import {
+  CristDeleteIcon,
+  StarButtonIcon,
+} from 'components/MockupIcons/MockupIcons';
+
+import { getPostById } from 'services/api-posts';
+import FormUpdatePost from '../FormUpdatePost/FormUpdatePost';
+import { isLoggedInSelector } from 'redux/admin/admin-selectors';
+
 import {
   ButtonEl,
   ImgBox,
@@ -11,21 +28,6 @@ import {
   WrapOfBtn,
   WrapOfLink,
 } from './ItemOfPost.styled';
-import { useDispatch, useSelector } from 'react-redux';
-import {
-  addPostToImportant,
-  deletePost,
-  deletePostFromImportant,
-} from 'redux/posts/posts-operations';
-import FormUpdatePost from '../FormUpdatePost/FormUpdatePost';
-import { useEffect, useState } from 'react';
-import { getPostById } from 'services/api-posts';
-
-import { isLoggedInSelector } from 'redux/admin/admin-selectors';
-import {
-  CristDeleteIcon,
-  StarButtonIcon,
-} from 'components/MockupIcons/MockupIcons';
 
 export default function ItemOfPost({ post }) {
   const isLoggedIn = useSelector(isLoggedInSelector);
