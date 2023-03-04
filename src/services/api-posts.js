@@ -91,7 +91,7 @@ export const addImportant = async id => {
   try {
     const { data } = await post.put(`/update/important/${id}/true`);
     return data;
-  } catch (error) {
+  } catch ( error) {
     return error;
   }
 };

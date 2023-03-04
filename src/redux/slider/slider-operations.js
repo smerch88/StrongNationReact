@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { Notify } from 'notiflix';
+import { logOutAdminRequest } from 'redux/admin/admin-operations';
 import {
   deleteSliderImage,
   getAllSliderId,
@@ -20,28 +21,30 @@ export const fetchAllSliderId = createAsyncThunk(
 
 export const removeSliderImage = createAsyncThunk(
   'slider/deleteSliderImage',
-  async (id, thunkAPI) => {
+  async (id, {rejectWithValue, dispatch}) => {
     try {
       const res = await deleteSliderImage(id);
+      if(res.response.data.debugMessage.startsWith("Token is not valid.")){dispatch(logOutAdminRequest())};
       Notify.info('Зроблено!');
       return res;
     } catch (error) {
       Notify.failure(error.message);
-      return thunkAPI.rejectWithValue(error.message);
+      return rejectWithValue(error.message);
     }
   }
 );
 
 export const uploadSImage = createAsyncThunk(
   'slider/uploadSImage',
-  async (body, thunkAPI) => {
+  async (body, {rejectWithValue, dispatch}) => {
     try {
       const res = await uploadSliderImage(body);
+      if(res.response.data.debugMessage.startsWith("Token is not valid.")){dispatch(logOutAdminRequest())};
       Notify.info('Зроблено!');
       return res;
     } catch (error) {
       Notify.failure(error.message);
-      return thunkAPI.rejectWithValue(error.message);
+      return rejectWithValue(error.message);
     }
   }
 );
