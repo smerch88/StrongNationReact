@@ -262,7 +262,7 @@ export const Map = ({ setIsActiveRegion, isActiveRegion }) => {
             strokeLinejoin="round"
           />
           <Text x="55.3%" y="50%">
-            КІРОВОГРАД
+            Кропивницький
           </Text>
           <Path
             id="31"
