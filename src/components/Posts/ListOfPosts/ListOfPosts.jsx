@@ -1,11 +1,11 @@
+import React from 'react';
 import { useSelector } from 'react-redux';
 
-import { Box, Typography } from '@mui/material';
-
-import ItemOfPost from './ItemOfPost/ItemOfPost';
 import { getAllPosts, getFilterPosts } from 'redux/posts/posts-selectors';
+import ItemOfPost from './ItemOfPost/ItemOfPost';
 
 import { UlElement } from './ListOfPosts.styled';
+import { Box, Typography } from '@mui/material';
 
 export default function ListOfPosts() {
   const allPosts = useSelector(getAllPosts);

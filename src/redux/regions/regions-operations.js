@@ -1,5 +1,4 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-
 import {
   addNewRegion,
   getAllRegions,

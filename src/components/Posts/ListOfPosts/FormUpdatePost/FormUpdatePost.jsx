@@ -1,14 +1,15 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import * as Yup from 'yup';
 import { Formik, ErrorMessage, Field } from 'formik';
+import * as Yup from 'yup';
+
+import { updatePost } from 'redux/posts/posts-operations';
 
 import ModalEl from 'components/Modal/Modal';
-import { updatePost } from 'redux/posts/posts-operations';
 import NativeSelectRegion from '../SelectInput/SelectInput';
+
 import defaultPhoto from '../../../../images/error/notFound.jpg';
-import BasicDatePicker from 'components/Posts/DatePicker/DatePicker';
 
 import {
   StyledError,
@@ -17,6 +18,8 @@ import {
   StyledLabel,
   StyledSpan,
 } from '../FormNewPost/FormNewPost.styled';
+
+import BasicDatePicker from 'components/Posts/DatePicker/DatePicker';
 
 export default function FormUpdatePost({ infoOfPost, post }) {
   const [region, setRegion] = useState(post.region);

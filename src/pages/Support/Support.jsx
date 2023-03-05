@@ -1,7 +1,4 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-
-import { CopySupportIcon } from 'components/MockupIcons/MockupIcons';
-
 import {
   StyledContainer,
   SupportCopyButton,
@@ -10,6 +7,7 @@ import {
   SupportTextPhrase,
   SupportTitle,
 } from './Support.styled';
+import { CopySupportIcon } from 'components/MockupIcons/MockupIcons';
 
 const Support = () => {
   const copyToClipboard = e => {

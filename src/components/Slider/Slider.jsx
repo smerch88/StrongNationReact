@@ -1,6 +1,5 @@
-import Slider from 'react-slick';
 import { Box } from '@mui/material';
-
+import Slider from 'react-slick';
 import { AutoPlayContainer, StyledImg } from './Slider.styled';
 
 export const AutoPlay = ({ ...props }) => {

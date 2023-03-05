@@ -1,10 +1,7 @@
-import { Link } from 'react-router-dom';
-
 import { Box, Button, Typography } from '@mui/material';
-
-import { MoreArrowIcon } from 'components/MockupIcons/MockupIcons';
-
 import { Circle, CirclesUl } from './Circles.styled';
+import { Link } from 'react-router-dom';
+import { MoreArrowIcon } from 'components/MockupIcons/MockupIcons';
 
 export const Circles = ({ oblList, currentId }) => {
   return (

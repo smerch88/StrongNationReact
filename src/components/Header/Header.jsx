@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-
 import {
   Box,
   Button,
@@ -9,11 +7,12 @@ import {
   useTheme,
 } from '@mui/material';
 
-import BurgerMenu from 'components/BurgerMenu/BurgerMenu';
-import ErrorBoundary from 'components/ErrorBoundary/ErrorBoundary';
-import { MoreArrowIcon } from 'components/MockupIcons/MockupIcons';
+import { Link } from 'react-router-dom';
 
+import ErrorBoundary from 'components/ErrorBoundary/ErrorBoundary';
 import { StyledHeader, StyledLogo } from './Header.Styled';
+import BurgerMenu from 'components/BurgerMenu/BurgerMenu';
+import { MoreArrowIcon } from 'components/MockupIcons/MockupIcons';
 
 const pages = [
   { name: 'новини', link: '/news' },

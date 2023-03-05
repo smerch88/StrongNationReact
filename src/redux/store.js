@@ -1,5 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
+import { countryReducer } from './country/country-slice';
+import { regionsReducer } from './regions/regions-slice';
+import { adminReducer } from './admin/admin-slice';
+import { oblIdReducer } from './oblID/oblId-slice';
+import postsReducer from './posts/posts-slice';
+import { sliderReducer } from './slider/slider-slice';
 
+import storage from 'redux-persist/lib/storage';
 import {
   persistStore,
   persistReducer,
@@ -10,14 +17,6 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
-
-import postsReducer from './posts/posts-slice';
-import { adminReducer } from './admin/admin-slice';
-import { oblIdReducer } from './oblID/oblId-slice';
-import { sliderReducer } from './slider/slider-slice';
-import { countryReducer } from './country/country-slice';
-import { regionsReducer } from './regions/regions-slice';
 
 const persistConfig = {
   key: 'token',

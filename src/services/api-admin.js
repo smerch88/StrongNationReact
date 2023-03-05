@@ -1,5 +1,4 @@
 import axios from 'axios';
-
 import { regions } from './api';
 import { photo, post } from './api-posts';
 import { sliderImages } from './api-slider';

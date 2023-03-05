@@ -1,12 +1,9 @@
-import { useDispatch, useSelector } from 'react-redux';
-
-import { Button, Container, Typography } from '@mui/material';
-
-import theme from 'styles/theme/theme';
 import { AdminForm } from 'components/AdminForm/AdminForm';
-import { isLoggedInSelector } from 'redux/admin/admin-selectors';
+import { Button, Container, Typography } from '@mui/material';
+import { useDispatch, useSelector } from 'react-redux';
 import { logOutAdminRequest } from 'redux/admin/admin-operations';
-
+import { isLoggedInSelector } from 'redux/admin/admin-selectors';
+import theme from 'styles/theme/theme';
 import { AdminSection } from './Admin.styled';
 
 const Admin = () => {

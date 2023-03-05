@@ -1,12 +1,11 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
 
-import IconButton from '@mui/material/IconButton';
 import { Box, Button, TextField } from '@mui/material';
-import Visibility from '@mui/icons-material/Visibility';
+import IconButton from '@mui/material/IconButton';
 import InputAdornment from '@mui/material/InputAdornment';
+import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-
+import { useDispatch } from 'react-redux';
 import { loginAdminRequest } from 'redux/admin/admin-operations';
 
 export const AdminForm = () => {

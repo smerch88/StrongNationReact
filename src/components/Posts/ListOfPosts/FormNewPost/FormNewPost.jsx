@@ -1,15 +1,15 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import * as Yup from 'yup';
 import { Formik, ErrorMessage, Field } from 'formik';
-import { Box, Button, TextField } from '@mui/material';
+import * as Yup from 'yup';
+
+import { addPost } from 'redux/posts/posts-operations';
 
 import ModalEl from 'components/Modal/Modal';
-import { addPost } from 'redux/posts/posts-operations';
 import NativeSelectRegion from '../SelectInput/SelectInput';
+
 import defaultPhoto from '../../../../images/error/notFound.jpg';
-import BasicDatePicker from 'components/Posts/DatePicker/DatePicker';
 
 import {
   StyledError,
@@ -18,6 +18,9 @@ import {
   StyledLabel,
   StyledSpan,
 } from './FormNewPost.styled';
+
+import BasicDatePicker from 'components/Posts/DatePicker/DatePicker';
+import { Box, Button, TextField } from '@mui/material';
 
 export default function FormNewPost() {
   // =======================Symbols counter
