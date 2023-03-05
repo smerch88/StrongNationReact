@@ -4,9 +4,9 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { useMediaQuery } from '@mui/material';
 
-import { Circles } from 'components/ReadMore/Circles';
 import { setOblId } from 'redux/oblID/oblId-slice';
 import { getFilter } from 'redux/posts/posts-slice';
+import { Circles } from 'components/ReadMore/Circles';
 import { getOblId } from 'redux/oblID/oblId-selectors';
 import { getRegions } from 'redux/regions/regions-selectors';
 
