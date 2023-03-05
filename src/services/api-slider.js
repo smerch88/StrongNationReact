@@ -11,7 +11,10 @@ export const sliderPubImages = axios.create({
 
 export const getAllSliderId = async () => {
   try {
-    const { data } = await sliderPubImages.get('all-id');
+    const { data, status } = await sliderPubImages.get('all-id');
+    if (status !== 200) {
+      throw new Error(`Failed to fetch: ${status}`);
+    }
     return data;
   } catch (error) {
     return error;
@@ -20,20 +23,30 @@ export const getAllSliderId = async () => {
 
 export const deleteSliderImage = async id => {
   try {
-    const { data } = await sliderImages.delete(`delete/${id}`);
+    const { data, status } = await sliderImages.delete(`delete/${id}`);
+    if (status !== 200) {
+      throw new Error(`Failed to fetch: ${status}`);
+    }
     return data;
   } catch (error) {
-    if(error.response.data.debugMessage.startsWith("Token is not valid.")){logOutAdminRequest()}
+    if (error.response.data.debugMessage.startsWith('Token is not valid.')) {
+      logOutAdminRequest();
+    }
     return error;
   }
 };
 
 export const uploadSliderImage = async body => {
   try {
-    const { data } = await sliderImages.post(`upload`, body);
+    const { data, status } = await sliderImages.post(`upload`, body);
+    if (status !== 200) {
+      throw new Error(`Failed to fetch: ${status}`);
+    }
     return data;
   } catch (error) {
-    if(error.response.data.debugMessage.startsWith("Token is not valid.")){logOutAdminRequest()}
+    if (error.response.data.debugMessage.startsWith('Token is not valid.')) {
+      logOutAdminRequest();
+    }
     return error;
   }
 };

@@ -31,10 +31,14 @@ export const ReadMore = props => {
   };
 
   // First half of oblList
-  const firstHalf = oblList.slice(0, Math.ceil(oblList.length / 2));
+  const firstHalf = oblList
+    ? oblList.slice(0, Math.ceil(oblList.length / 2))
+    : '';
 
   // Second half of oblList
-  const secondHalf = oblList.slice(Math.ceil(oblList.length / 2));
+  const secondHalf = oblList
+    ? oblList.slice(Math.ceil(oblList.length / 2))
+    : '';
 
   return (
     <>

@@ -12,6 +12,9 @@ export const fetchAllSliderId = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const res = await getAllSliderId();
+      if (res.status !== 200) {
+        throw new Error(`Failed to fetch: ${res.status}`);
+      }
       return res;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -21,11 +24,16 @@ export const fetchAllSliderId = createAsyncThunk(
 
 export const removeSliderImage = createAsyncThunk(
   'slider/deleteSliderImage',
-  async (id, {rejectWithValue, dispatch}) => {
+  async (id, { rejectWithValue, dispatch }) => {
     try {
       const res = await deleteSliderImage(id);
-      if(res.response.data.debugMessage.startsWith("Token is not valid.")){dispatch(logOutAdminRequest())};
+      if (res.response.data.debugMessage.startsWith('Token is not valid.')) {
+        dispatch(logOutAdminRequest());
+      }
       Notify.info('Зроблено!');
+      if (res.status !== 200) {
+        throw new Error(`Failed to fetch: ${res.status}`);
+      }
       return res;
     } catch (error) {
       Notify.failure(error.message);
@@ -36,11 +44,16 @@ export const removeSliderImage = createAsyncThunk(
 
 export const uploadSImage = createAsyncThunk(
   'slider/uploadSImage',
-  async (body, {rejectWithValue, dispatch}) => {
+  async (body, { rejectWithValue, dispatch }) => {
     try {
       const res = await uploadSliderImage(body);
-      if(res.response.data.debugMessage.startsWith("Token is not valid.")){dispatch(logOutAdminRequest())};
+      if (res.response.data.debugMessage.startsWith('Token is not valid.')) {
+        dispatch(logOutAdminRequest());
+      }
       Notify.info('Зроблено!');
+      if (res.status !== 200) {
+        throw new Error(`Failed to fetch: ${res.status}`);
+      }
       return res;
     } catch (error) {
       Notify.failure(error.message);
