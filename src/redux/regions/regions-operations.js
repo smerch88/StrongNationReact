@@ -13,9 +13,9 @@ export const fetchRegions = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const res = await getAllRegions();
-      if (res.status !== 200) {
-        throw new Error(`Failed to fetch: ${res.status}`);
-      }
+      // if (res.status !== 200) {
+      //   throw new Error(`Failed to fetch: ${res.status}`);
+      // }
       return res;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
@@ -29,9 +29,9 @@ export const fetchRegionById = createAsyncThunk(
   async (id, thunkAPI) => {
     try {
       const res = await getRegionById(id);
-      if (res.status !== 200) {
-        throw new Error(`Failed to fetch: ${res.status}`);
-      }
+      // if (res.status !== 200) {
+      //   throw new Error(`Failed to fetch: ${res.status}`);
+      // }
       return res;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
@@ -45,9 +45,9 @@ export const fetchRegionByName = createAsyncThunk(
   async (region, thunkAPI) => {
     try {
       const res = await getRegionByName(region);
-      if (res.status !== 200) {
-        throw new Error(`Failed to fetch: ${res.status}`);
-      }
+      // if (res.status !== 200) {
+      //   throw new Error(`Failed to fetch: ${res.status}`);
+      // }
       return res;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
@@ -61,9 +61,9 @@ export const addRegion = createAsyncThunk(
   async (region, thunkAPI) => {
     try {
       const res = await addNewRegion(region);
-      if (res.status !== 200) {
-        throw new Error(`Failed to fetch: ${res.status}`);
-      }
+      // if (res.status !== 200) {
+      //   throw new Error(`Failed to fetch: ${res.status}`);
+      // }
       return res;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);

@@ -12,9 +12,9 @@ export const fetchAllSliderId = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const res = await getAllSliderId();
-      if (res.status !== 200) {
-        throw new Error(`Failed to fetch: ${res.status}`);
-      }
+      // if (res.status !== 200) {
+      //   throw new Error(`Failed to fetch: ${res.status}`);
+      // }
       return res;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -31,9 +31,9 @@ export const removeSliderImage = createAsyncThunk(
         dispatch(logOutAdminRequest());
       }
       Notify.info('Зроблено!');
-      if (res.status !== 200) {
-        throw new Error(`Failed to fetch: ${res.status}`);
-      }
+      // if (res.status !== 200) {
+      //   throw new Error(`Failed to fetch: ${res.status}`);
+      // }
       return res;
     } catch (error) {
       Notify.failure(error.message);
@@ -51,9 +51,9 @@ export const uploadSImage = createAsyncThunk(
         dispatch(logOutAdminRequest());
       }
       Notify.info('Зроблено!');
-      if (res.status !== 200) {
-        throw new Error(`Failed to fetch: ${res.status}`);
-      }
+      // if (res.status !== 200) {
+      //   throw new Error(`Failed to fetch: ${res.status}`);
+      // }
       return res;
     } catch (error) {
       Notify.failure(error.message);

@@ -6,9 +6,9 @@ export const fetchCountry = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const res = await getCountry();
-      if (res.status !== 200) {
-        throw new Error(`Failed to fetch: ${res.status}`);
-      }
+      // if (res.status !== 200) {
+      //   throw new Error(`Failed to fetch: ${res.status}`);
+      // }
       return res;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
