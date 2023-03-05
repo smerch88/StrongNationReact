@@ -25,7 +25,10 @@ export const clearAuthHeader = () => {
 
 export const loginAdmin = async formData => {
   try {
-    const { data } = await adminApi.post('', formData);
+    const { data, status } = await adminApi.post('', formData);
+    if (status !== 200) {
+      throw new Error(`Failed to fetch: ${status}`);
+    }
     return data;
   } catch (error) {
     return error;
@@ -34,7 +37,10 @@ export const loginAdmin = async formData => {
 
 export const adminLogOut = async () => {
   try {
-    const { data } = await adminApi.post();
+    const { data, status } = await adminApi.post();
+    if (status !== 200) {
+      throw new Error(`Failed to fetch: ${status}`);
+    }
     return data;
   } catch (error) {
     return error;

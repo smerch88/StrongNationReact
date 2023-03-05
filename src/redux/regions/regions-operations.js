@@ -13,8 +13,11 @@ export const fetchRegions = createAsyncThunk(
   'regions/fetchAll',
   async (_, thunkAPI) => {
     try {
-      const response = await getAllRegions();
-      return response;
+      const res = await getAllRegions();
+      // if (res.status !== 200) {
+      //   throw new Error(`Failed to fetch: ${res.status}`);
+      // }
+      return res;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
     }
@@ -26,8 +29,11 @@ export const fetchRegionById = createAsyncThunk(
   'regions/getRegionById',
   async (id, thunkAPI) => {
     try {
-      const response = await getRegionById(id);
-      return response;
+      const res = await getRegionById(id);
+      // if (res.status !== 200) {
+      //   throw new Error(`Failed to fetch: ${res.status}`);
+      // }
+      return res;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
     }
@@ -39,8 +45,11 @@ export const fetchRegionByName = createAsyncThunk(
   'regions/getRegionByName',
   async (region, thunkAPI) => {
     try {
-      const response = await getRegionByName(region);
-      return response;
+      const res = await getRegionByName(region);
+      // if (res.status !== 200) {
+      //   throw new Error(`Failed to fetch: ${res.status}`);
+      // }
+      return res;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
     }
@@ -52,8 +61,11 @@ export const addRegion = createAsyncThunk(
   'regions/addRegion',
   async (region, thunkAPI) => {
     try {
-      const response = await addNewRegion(region);
-      return response;
+      const res = await addNewRegion(region);
+      // if (res.status !== 200) {
+      //   throw new Error(`Failed to fetch: ${res.status}`);
+      // }
+      return res;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
     }
@@ -64,8 +76,8 @@ export const removeRegion = createAsyncThunk(
   'regions/removeRegion',
   async (userId, thunkAPI) => {
     try {
-      const response = await regions.delete(`${userId}`);
-      return response.data;
+      const res = await regions.delete(`${userId}`);
+      return res.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
     }
@@ -76,8 +88,8 @@ export const addCountry = createAsyncThunk(
   'regions/addCountry',
   async (data, thunkAPI) => {
     try {
-      const response = await regions.post('', { ...data });
-      return response.data;
+      const res = await regions.post('', { ...data });
+      return res.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
     }

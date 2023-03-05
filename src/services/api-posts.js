@@ -17,7 +17,10 @@ export const photo = axios.create({
 
 export const getAllPostsByCountry = async () => {
   try {
-    const { data } = await postGET.get('all/Ukraine');
+    const { data, status } = await postGET.get('all/Ukraine');
+    if (status !== 200) {
+      throw new Error(`Failed to fetch: ${status}`);
+    }
     return data;
   } catch (error) {
     return error;
@@ -26,7 +29,10 @@ export const getAllPostsByCountry = async () => {
 
 export const getAllPostsByIdOfRegion = async id => {
   try {
-    const { data } = await postGET.get(`all-by-region-id/${id}`);
+    const { data, status } = await postGET.get(`all-by-region-id/${id}`);
+    if (status !== 200) {
+      throw new Error(`Failed to fetch: ${status}`);
+    }
     return data;
   } catch (error) {
     return error;
@@ -35,7 +41,10 @@ export const getAllPostsByIdOfRegion = async id => {
 
 export const getAllPostsByNameOfRegion = async region => {
   try {
-    const { data } = await postGET.get(`all/Ukraine/${region}`);
+    const { data, status } = await postGET.get(`all/Ukraine/${region}`);
+    if (status !== 200) {
+      throw new Error(`Failed to fetch: ${status}`);
+    }
     return data;
   } catch (error) {
     return error;
@@ -44,7 +53,10 @@ export const getAllPostsByNameOfRegion = async region => {
 
 export const addPostByNameOfRegion = async (region, body) => {
   try {
-    const { data } = await post.post(`add/Ukraine/${region}`, body);
+    const { data, status } = await post.post(`add/Ukraine/${region}`, body);
+    if (status !== 200) {
+      throw new Error(`Failed to fetch: ${status}`);
+    }
     return data;
   } catch (error) {
     return error;
@@ -53,7 +65,10 @@ export const addPostByNameOfRegion = async (region, body) => {
 
 export const getPostById = async id => {
   try {
-    const { data } = await postGET.get(`get-by-post-id/${id}`);
+    const { data, status } = await postGET.get(`get-by-post-id/${id}`);
+    if (status !== 200) {
+      throw new Error(`Failed to fetch: ${status}`);
+    }
     return data;
   } catch (error) {
     return error;
@@ -62,7 +77,10 @@ export const getPostById = async id => {
 
 export const updatePostById = async body => {
   try {
-    const { data } = await post.put('update', body);
+    const { data, status } = await post.put('update', body);
+    if (status !== 200) {
+      throw new Error(`Failed to fetch: ${status}`);
+    }
     return data;
   } catch (error) {
     return error;
@@ -71,7 +89,10 @@ export const updatePostById = async body => {
 
 export const addPhotoForPost = async (id, body) => {
   try {
-    const { data } = await photo.post(`upload/${id}`, body);
+    const { data, status } = await photo.post(`upload/${id}`, body);
+    if (status !== 200) {
+      throw new Error(`Failed to fetch: ${status}`);
+    }
     return data;
   } catch (error) {
     return error;
@@ -80,7 +101,10 @@ export const addPhotoForPost = async (id, body) => {
 
 export const deletePostById = async id => {
   try {
-    const { data } = await post.delete(`delete/${id}`);
+    const { data, status } = await post.delete(`delete/${id}`);
+    if (status !== 200) {
+      throw new Error(`Failed to fetch: ${status}`);
+    }
     return data;
   } catch (error) {
     return error;
@@ -89,7 +113,10 @@ export const deletePostById = async id => {
 
 export const addImportant = async id => {
   try {
-    const { data } = await post.put(`/update/important/${id}/true`);
+    const { data, status } = await post.put(`/update/important/${id}/true`);
+    if (status !== 200) {
+      throw new Error(`Failed to fetch: ${status}`);
+    }
     return data;
   } catch (error) {
     return error;
@@ -98,7 +125,10 @@ export const addImportant = async id => {
 
 export const deleteImportant = async id => {
   try {
-    const { data } = await post.put(`/update/important/${id}/false`);
+    const { data, status } = await post.put(`/update/important/${id}/false`);
+    if (status !== 200) {
+      throw new Error(`Failed to fetch: ${status}`);
+    }
     return data;
   } catch (error) {
     return error;

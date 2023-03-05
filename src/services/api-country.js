@@ -7,7 +7,10 @@ export const country = axios.create({
 
 export const getCountry = async () => {
   try {
-    const { data } = await country.get('get/Ukraine');
+    const { data, status } = await country.get('get/Ukraine');
+    if (status !== 200) {
+      throw new Error(`Failed to fetch: ${status}`);
+    }
     return data;
   } catch (error) {
     return error;

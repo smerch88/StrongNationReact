@@ -13,7 +13,7 @@ const Admin = () => {
   const isLoggedIn = useSelector(isLoggedInSelector);
   const dispatch = useDispatch();
 
-  const toLogOutAdmin = () => {
+const toLogOutAdmin = () => {
     dispatch(logOutAdminRequest());
   };
 
