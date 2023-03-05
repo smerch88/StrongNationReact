@@ -231,7 +231,6 @@ theme.components = {
         props: { variant: 'edit' },
         style: {
           textTransform: 'capitalize',
-          // blockSize: '20px',
           whiteSpace: 'nowrap',
           maxHeight: '25px',
           padding: '3px',

@@ -1,5 +1,6 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
 import { omit } from 'lodash';
+import { createAsyncThunk } from '@reduxjs/toolkit';
+
 import { logOutAdminRequest } from 'redux/admin/admin-operations';
 import {
   getAllPostsByCountry,
@@ -8,9 +9,8 @@ import {
   updatePostById,
   addImportant,
   deleteImportant,
+  addPhotoForPost,
 } from 'services/api-posts';
-
-import { addPhotoForPost } from 'services/api-posts';
 
 export const fetchAllPostsByCountry = createAsyncThunk(
   'posts/fetchAll',

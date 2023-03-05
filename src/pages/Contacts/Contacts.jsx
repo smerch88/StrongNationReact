@@ -1,6 +1,7 @@
-import React from 'react';
+import { CardMedia } from '@mui/material';
 
 import { EnvelopIcon, MapPointIcon, PhoneIcon } from './Icons';
+
 import {
   BigStyledBox,
   ContactsText,
@@ -11,7 +12,6 @@ import {
   StyledContainer,
   StyledLink,
 } from './Contacts.styled';
-import { CardMedia } from '@mui/material';
 
 const Contacts = () => {
   return (

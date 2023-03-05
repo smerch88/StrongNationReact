@@ -1,3 +1,7 @@
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+
 import {
   Button,
   Container,
@@ -5,14 +9,13 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material';
-import ItemOfPost from 'components/Posts/ListOfPosts/ItemOfPost/ItemOfPost';
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { fetchAllPostsByCountry } from 'redux/posts/posts-operations';
+
 import { getAllPosts } from 'redux/posts/posts-selectors';
-import { NewsList, TitleBox } from './FreshNews.styled';
 import { MoreArrowIcon } from 'components/MockupIcons/MockupIcons';
+import { fetchAllPostsByCountry } from 'redux/posts/posts-operations';
+import ItemOfPost from 'components/Posts/ListOfPosts/ItemOfPost/ItemOfPost';
+
+import { NewsList, TitleBox } from './FreshNews.styled';
 
 export default function FreshNews() {
   const allPosts = useSelector(getAllPosts);

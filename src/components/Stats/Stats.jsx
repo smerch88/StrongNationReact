@@ -1,11 +1,12 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { Timer } from 'components/Timer/Timer';
-import { fetchCountry } from 'redux/country/country-operations';
-import { getCountry } from 'redux/country/country-selectors';
-
 import { Container, Typography } from '@mui/material';
+
+import { Timer } from 'components/Timer/Timer';
+import { getCountry } from 'redux/country/country-selectors';
+import { fetchCountry } from 'redux/country/country-operations';
+
 import { Li, StatsSection, StyledBox, Ul } from './Stats.Styled';
 
 export const Stats = () => {

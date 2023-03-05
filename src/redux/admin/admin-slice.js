@@ -1,6 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { loginAdminRequest, logOutAdminRequest, refreshAdmin } from './admin-operations';
 
+import {
+  loginAdminRequest,
+  logOutAdminRequest,
+  refreshAdmin,
+} from './admin-operations';
 
 const initialState = {
   token: null,
@@ -18,46 +22,43 @@ const adminSlice = createSlice({
   //   }
   // },
   extraReducers: builder =>
-  builder
+    builder
 
-// LOG IN
+      // LOG IN
 
-  .addCase(loginAdminRequest.pending, (state) => {
-    state.isLoading = true;
-    state.error = null;
-    
-  })
-  .addCase(loginAdminRequest.fulfilled, (state, action) => {
-    state.isLoading = false;
-    state.token = action.payload.token;
-    state.isLoggedIn = true;
-  })
-  .addCase(loginAdminRequest.rejected, (state, action) => {
-    state.isLoading = false;
-    state.error = action.payload;
-  })
+      .addCase(loginAdminRequest.pending, state => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(loginAdminRequest.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.token = action.payload.token;
+        state.isLoggedIn = true;
+      })
+      .addCase(loginAdminRequest.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      })
 
-// LOG OUT
+      // LOG OUT
 
-  .addCase(logOutAdminRequest.pending, (state, action) => {
-    state.isLoading = true;
-    state.error = null;
-  })
-  .addCase(logOutAdminRequest.fulfilled, (state, action) => {
-    state.isLoading = false;
-    state.token = null;
-    state.isLoggedIn = false;
-  })
-  .addCase(logOutAdminRequest.rejected, (state, action) => {
-    state.isLoading = false;
-    state.error = action.payload;
-  })
+      .addCase(logOutAdminRequest.pending, (state, action) => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(logOutAdminRequest.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.token = null;
+        state.isLoggedIn = false;
+      })
+      .addCase(logOutAdminRequest.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      })
 
-  .addCase(refreshAdmin.fulfilled, (state) => {
-    state.isLoggedIn = true;
-  })
-
-
+      .addCase(refreshAdmin.fulfilled, state => {
+        state.isLoggedIn = true;
+      }),
 });
 
 // export const { refreshAdmin } = adminSlice.actions;

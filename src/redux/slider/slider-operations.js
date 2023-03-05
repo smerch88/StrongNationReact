@@ -1,5 +1,6 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
 import { Notify } from 'notiflix';
+import { createAsyncThunk } from '@reduxjs/toolkit';
+
 import { logOutAdminRequest } from 'redux/admin/admin-operations';
 import {
   deleteSliderImage,
