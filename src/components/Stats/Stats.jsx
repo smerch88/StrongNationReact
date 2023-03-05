@@ -32,7 +32,7 @@ export const Stats = () => {
                   Math.round(
                     categories.filter(
                       category => category.name === 'militaryDonations'
-                    )[0].number
+                    )[0]?.number ?? '0'
                   )
                 )}
             </Typography>
@@ -55,7 +55,7 @@ export const Stats = () => {
                   Math.round(
                     categories.filter(
                       category => category.name === 'civiliansDonations'
-                    )[0].number
+                    )[0]?.number ?? '0'
                   )
                 )}
             </Typography>
