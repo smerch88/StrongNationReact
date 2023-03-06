@@ -2,12 +2,10 @@ import axios from 'axios';
 
 export const regions = axios.create({
   baseURL: 'https://strong-nation.online/api/v2/region/',
-  // timeout: 1000,
 });
 
 export const regionsGet = axios.create({
   baseURL: 'https://strong-nation.online/api/v2/region/',
-  // timeout: 1000,
 });
 
 export const getAllRegions = async () => {
