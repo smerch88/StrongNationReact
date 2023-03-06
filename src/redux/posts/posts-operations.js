@@ -1,6 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { omit } from 'lodash';
-import { logOutAdminRequest } from 'redux/admin/admin-operations';
 import {
   getAllPostsByCountry,
   addPostByNameOfRegion,
@@ -17,9 +16,6 @@ export const fetchAllPostsByCountry = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const res = await getAllPostsByCountry();
-      // if (res.status !== 200) {
-      //   throw new Error(`Failed to fetch: ${res.status}`);
-      // }
       return res;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -35,13 +31,8 @@ export const addPost = createAsyncThunk(
         body.region,
         omit(body, 'region', 'formData')
       );
-      if (res.response.data.debugMessage.startsWith('Token is not valid.')) {
-        dispatch(logOutAdminRequest());
-      }
+
       await addPhotoForPost(res.id, body.formData);
-      // if (res.status !== 200) {
-      //   throw new Error(`Failed to fetch: ${res.status}`);
-      // }
       return res;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -54,12 +45,7 @@ export const deletePost = createAsyncThunk(
   async (id, { rejectWithValue, dispatch }) => {
     try {
       const res = await deletePostById(id);
-      if (res.response.data.debugMessage.startsWith('Token is not valid.')) {
-        dispatch(logOutAdminRequest());
-      }
-      // if (res.status !== 200) {
-      //   throw new Error(`Failed to fetch: ${res.status}`);
-      // }
+
       return res;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -72,13 +58,8 @@ export const updatePost = createAsyncThunk(
   async (body, { rejectWithValue, dispatch }) => {
     try {
       const res = await updatePostById(body);
-      if (res.response.data.debugMessage.startsWith('Token is not valid.')) {
-        dispatch(logOutAdminRequest());
-      }
+
       await addPhotoForPost(res.id, body.formData);
-      // if (res.status !== 200) {
-      //   throw new Error(`Failed to fetch: ${res.status}`);
-      // }
       return res;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -91,12 +72,7 @@ export const addPostToImportant = createAsyncThunk(
   async (id, { rejectWithValue, dispatch }) => {
     try {
       const res = await addImportant(id);
-      if (res.response.data.debugMessage.startsWith('Token is not valid.')) {
-        dispatch(logOutAdminRequest());
-      }
-      // if (res.status !== 200) {
-      //   throw new Error(`Failed to fetch: ${res.status}`);
-      // }
+
       return res;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -109,12 +85,7 @@ export const deletePostFromImportant = createAsyncThunk(
   async (id, { rejectWithValue, dispatch }) => {
     try {
       const res = await deleteImportant(id);
-      if (res.response.data.debugMessage.startsWith('Token is not valid.')) {
-        dispatch(logOutAdminRequest());
-      }
-      // if (res.status !== 200) {
-      //   throw new Error(`Failed to fetch: ${res.status}`);
-      // }
+
       return res;
     } catch (error) {
       return rejectWithValue(error.message);
