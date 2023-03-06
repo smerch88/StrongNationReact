@@ -35,10 +35,10 @@ export const addPost = createAsyncThunk(
         body.region,
         omit(body, 'region', 'formData')
       );
+      await addPhotoForPost(res.id, body.formData);
       if (res.response.data.debugMessage.startsWith('Token is not valid.')) {
         dispatch(logOutAdminRequest());
       }
-      await addPhotoForPost(res.id, body.formData);
       // if (res.status !== 200) {
       //   throw new Error(`Failed to fetch: ${res.status}`);
       // }
@@ -72,10 +72,10 @@ export const updatePost = createAsyncThunk(
   async (body, { rejectWithValue, dispatch }) => {
     try {
       const res = await updatePostById(body);
+      await addPhotoForPost(res.id, body.formData);
       if (res.response.data.debugMessage.startsWith('Token is not valid.')) {
         dispatch(logOutAdminRequest());
       }
-      await addPhotoForPost(res.id, body.formData);
       // if (res.status !== 200) {
       //   throw new Error(`Failed to fetch: ${res.status}`);
       // }
