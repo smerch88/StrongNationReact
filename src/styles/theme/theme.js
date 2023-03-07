@@ -71,6 +71,7 @@ theme.components = {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    letter-spacing: 1.02;
   }
   main { 
     flex-grow: 1;
@@ -148,6 +149,8 @@ theme.components = {
         style: {
           textTransform: 'uppercase',
           fontFamily: 'Bebas',
+          letterSpacing: 1.02,
+
           fontStyle: 'normal',
           fontWeight: 400,
           borderRadius: '8px',
@@ -173,6 +176,8 @@ theme.components = {
         style: {
           textTransform: 'uppercase',
           fontFamily: 'Bebas',
+          letterSpacing: 1.02,
+
           fontStyle: 'normal',
           fontWeight: 400,
           borderRadius: '8px',
@@ -200,6 +205,8 @@ theme.components = {
           margin: 0,
           padding: 0,
           fontFamily: 'Bebas',
+          letterSpacing: 1.02,
+
           fontStyle: 'normal',
           fontWeight: 400,
           fontSize: '20px',
@@ -216,6 +223,8 @@ theme.components = {
           borderColor: theme.palette.colorList.white,
           borderRadius: '12px',
           fontFamily: 'Bebas',
+          letterSpacing: 1.02,
+
           fontStyle: 'normal',
           fontWeight: '400',
           fontSize: '15px',
@@ -290,6 +299,7 @@ theme.components = {
     defaultProps: {
       variant: 'ukrstrong',
       size: 'medium',
+      letterSpacing: 1.02,
     },
   },
 };
@@ -300,7 +310,7 @@ theme.typography.body1 = {
   fontStyle: 'normal',
   fontWeight: 400,
   fontSize: '12px',
-  lineHeight: '14px',
+  lineHeight: 'calc(14 / 12)',
   [theme.breakpoints.up('tablet')]: {
     fontSize: '18px',
     lineHeight: '21px',
@@ -313,6 +323,8 @@ theme.typography.body1 = {
 theme.typography.h1 = {
   margin: 0,
   fontFamily: 'Bebas',
+  letterSpacing: 1.02,
+
   fontStyle: 'normal',
   fontWeight: 700,
   fontSize: ' 30px',
@@ -325,6 +337,8 @@ theme.typography.h1 = {
 theme.typography.h3 = {
   margin: 0,
   fontFamily: 'Bebas',
+  letterSpacing: 1.02,
+
   fontStyle: 'normal',
   fontWeight: 400,
   fontSize: '30px',
@@ -341,6 +355,8 @@ theme.typography.h3 = {
 theme.typography.h4 = {
   margin: 0,
   fontFamily: 'Bebas',
+  letterSpacing: 1.02,
+
   fontStyle: 'normal',
   fontWeight: 400,
   fontSize: '70px',
