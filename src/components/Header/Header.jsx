@@ -60,7 +60,7 @@ export const Header = () => {
                     component={Link}
                     to={page.link}
                     // onClick={handleCloseNavMenu}
-                    sx={{ my: 2, color: 'black', display: 'block' }}
+                    sx={{ my: 2, display: 'block' }}
                   >
                     {page.name}
                   </Button>
