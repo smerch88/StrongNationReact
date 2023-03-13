@@ -1,11 +1,12 @@
+import { Notify } from 'notiflix';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+
 import {
   adminLogOut,
   clearAuthHeader,
   loginAdmin,
   setAuthHeader,
 } from 'services/api-admin';
-import { Notify } from 'notiflix';
 
 export const loginAdminRequest = createAsyncThunk(
   'admin/login',

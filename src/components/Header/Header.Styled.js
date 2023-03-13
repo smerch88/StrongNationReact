@@ -1,6 +1,6 @@
-import { ReactComponent as ReactLogo } from './pictures/header_logo.svg';
-import { ReactComponent as Burger } from './pictures/burger.svg';
 import { AppBar, styled } from '@mui/material';
+import { ReactComponent as Burger } from './pictures/burger.svg';
+import { ReactComponent as ReactLogo } from './pictures/header_logo.svg';
 
 export const StyledLogo = styled(ReactLogo)(({ theme }) => ({
   [theme.breakpoints.up('tablet')]: {

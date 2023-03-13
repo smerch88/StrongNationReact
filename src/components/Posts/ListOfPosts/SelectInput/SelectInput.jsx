@@ -1,8 +1,6 @@
-import React from 'react';
-
+import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
 
 export default function NativeSelectRegion({ handleChangeRegion, region }) {
   const ITEM_HEIGHT = 50;

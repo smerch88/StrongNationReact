@@ -1,14 +1,14 @@
-import React from 'react';
-
-import Modal from '@mui/material/Modal';
 import { Box } from '@mui/material';
+import Modal from '@mui/material/Modal';
 import CloseIcon from '@mui/icons-material/Close';
-import { BtnCloseModal } from './Modal.styled';
+
 import {
   DropdownArrowIcon,
   PencilEditIcon,
 } from 'components/MockupIcons/MockupIcons';
 import { ButtonEl } from 'components/Posts/ListOfPosts/ItemOfPost/ItemOfPost.styled';
+
+import { BtnCloseModal } from './Modal.styled';
 
 const style = {
   position: 'absolute',
