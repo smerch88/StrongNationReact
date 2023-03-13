@@ -45,8 +45,6 @@ export const AutoPlay = React.memo(({ images, rtl }) => {
     [rtl]
   );
 
-  console.log('slider');
-
   return (
     <AutoPlayContainer>
       <Slider {...settings}>
