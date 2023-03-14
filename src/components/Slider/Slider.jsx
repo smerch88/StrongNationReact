@@ -1,3 +1,4 @@
+import React from 'react';
 import Slider from 'react-slick';
 import { Box } from '@mui/material';
 
