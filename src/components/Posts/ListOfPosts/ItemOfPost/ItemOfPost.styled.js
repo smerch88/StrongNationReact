@@ -1,5 +1,4 @@
-import { styled } from '@mui/material';
-import { Button } from '@mui/material';
+import { styled, Button } from '@mui/material';
 
 export const LiElement = styled('li')(({ theme }) => ({
   padding: '10px 10px 8px 13px',
@@ -69,7 +68,6 @@ export const ImgBox = styled('div')(({ theme }) => ({
 
 export const PElement = styled('p')(({ theme }) => ({
   margin: '0',
-  // wordBreak: 'break-all',
   paddingTop: '7px',
   [theme.breakpoints.up('tablet')]: {
     fontSize: '10px',

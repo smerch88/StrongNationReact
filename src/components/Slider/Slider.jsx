@@ -1,6 +1,6 @@
-import React from 'react';
-import { Box } from '@mui/material';
 import Slider from 'react-slick';
+import { Box } from '@mui/material';
+
 import { AutoPlayContainer, StyledImg } from './Slider.styled';
 
 export const AutoPlay = React.memo(({ images, rtl }) => {

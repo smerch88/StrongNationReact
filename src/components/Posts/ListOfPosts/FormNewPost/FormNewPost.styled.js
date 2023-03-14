@@ -5,15 +5,12 @@ export const StyledForm = styled(Form)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   paddingTop: '24px',
-
-  //   [theme.breakpoints.up('desktop')]: {},
 }));
 
 export const StyledLabel = styled('label')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   marginBottom: '14px',
-  //   [theme.breakpoints.up('desktop')]: {},
 }));
 
 export const StyledInput = styled(Field)(({ theme }) => ({
@@ -23,15 +20,12 @@ export const StyledInput = styled(Field)(({ theme }) => ({
   borderBottom: '1px solid #000000',
   width: '100%',
   textAlign: 'right',
-  //   [theme.breakpoints.up('desktop')]: {},
 }));
 
 export const StyledSpan = styled('span')(({ theme }) => ({
   marginBottom: '9px',
-  //   [theme.breakpoints.up('desktop')]: {},
 }));
 
 export const StyledError = styled('div')(({ theme }) => ({
   color: 'red',
-  //   [theme.breakpoints.up('desktop')]: {},
 }));

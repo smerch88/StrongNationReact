@@ -1,14 +1,16 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useRef, useState } from 'react';
-import { Text, Path, MapWrap } from './Map.styled';
-import { Circles } from 'components/ReadMore/Circles';
-import { useSelector } from 'react-redux';
-import { getRegions } from 'redux/regions/regions-selectors';
-import { useDispatch } from 'react-redux';
-import { setOblId } from 'redux/oblID/oblId-slice';
-import { getOblId } from 'redux/oblID/oblId-selectors';
+import { useSelector, useDispatch } from 'react-redux';
+
 import { useMediaQuery } from '@mui/material';
+
+import { setOblId } from 'redux/oblID/oblId-slice';
 import { getFilter } from 'redux/posts/posts-slice';
+import { Circles } from 'components/ReadMore/Circles';
+import { getOblId } from 'redux/oblID/oblId-selectors';
+import { getRegions } from 'redux/regions/regions-selectors';
+
+import { Text, Path, MapWrap } from './Map.styled';
 
 export const Map = ({ setIsActiveRegion, isActiveRegion }) => {
   const dispatch = useDispatch();

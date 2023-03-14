@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import ModalEl from 'components/Modal/Modal';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
+import ModalEl from 'components/Modal/Modal';
 import { getFilter } from 'redux/posts/posts-slice';
-import { Btn, LineTop, SpanEl, WrapOfRegions } from './ListOfRegions.styled';
-import { TranslateRegionName } from 'components/ReadMore/TranslateRegionName';
 import { getFilterPosts } from '../../../../redux/posts/posts-selectors';
+import { TranslateRegionName } from 'components/ReadMore/TranslateRegionName';
+
+import { Btn, LineTop, SpanEl, WrapOfRegions } from './ListOfRegions.styled';
 
 export default function ListOfRegions() {
   const [open, setOpen] = useState(false);

@@ -1,15 +1,15 @@
+import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { Spin as Hamburger } from 'hamburger-react';
+
 import Box from '@mui/material/Box';
+import List from '@mui/material/List';
 import Drawer from '@mui/material/Drawer';
 import Button from '@mui/material/Button';
-import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import { Link } from 'react-router-dom';
-// import MenuIcon from '@mui/icons-material/Menu';
-import { Spin as Hamburger } from 'hamburger-react';
 import { Typography, useTheme } from '@mui/material';
-import { useLocation } from 'react-router-dom';
-import { useState } from 'react';
+import ListItemText from '@mui/material/ListItemText';
+
 import { MoreArrowIcon } from 'components/MockupIcons/MockupIcons';
 
 export default function TemporaryDrawer() {
@@ -121,7 +121,7 @@ export default function TemporaryDrawer() {
                 }}
               >
                 підтримати
-                <MoreArrowIcon/>
+                <MoreArrowIcon />
               </Button>
             }
             variant="h3"

@@ -1,11 +1,15 @@
-import { Box, Button, Modal } from '@mui/material';
-import { StyledImg } from 'components/Slider/Slider.styled';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+
+import { Box, Button, Modal } from '@mui/material';
+
 import {
   removeSliderImage,
   uploadSImage,
 } from 'redux/slider/slider-operations';
+
+import { StyledImg } from 'components/Slider/Slider.styled';
+
 import { Ul, style } from './SliderImages.Styled';
 
 export const SliderImages = ({ slideIDs }) => {
